@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="posts-list">
+    {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+    {{ range $paginator.Pages }}
+    <div class="post-item">
+      {{ if not (in .RelPermalink "/weekly/") }}
+      <span class="post-date">{{ .Date.Format "Jan 2 2006" }}</span>
+      {{ end }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </div>
+    {{ end }}
+  </div>
+{{ end }}

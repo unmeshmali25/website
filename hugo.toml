@@ -1,0 +1,34 @@
+baseURL = 'https://unmeshmali25.github.io/website/'
+languageCode = 'en-us'
+title = 'Unmesh Mali'
+theme = "hugo-bearblog"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  mainSections = ["posts"]
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Essays"
+    url = "/posts/essays"
+    weight = 1
+[[menu.main]]
+    name = "Weekly Blogs"
+    url = "/posts/weekly/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 2
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/unmeshmali25"
+    weight = 3

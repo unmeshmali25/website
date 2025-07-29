@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unmesh Mali</title>
+    <link>http://localhost:57601/website/posts/weekly/</link>
+    <description>Recent content on Unmesh Mali</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Jul 2025 23:16:49 -0400</lastBuildDate>
+    <atom:link href="http://localhost:57601/website/posts/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 31, 2025</title>
+      <link>http://localhost:57601/website/posts/weekly/week-31-2025/</link>
+      <pubDate>Mon, 28 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:57601/website/posts/weekly/week-31-2025/</guid>
+      <description>&lt;h1 id=&#34;week-31-2025&#34;&gt;Week 31, 2025&lt;/h1&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;This was an interesting week at CVS Health. We had a team offsite on Monday and Tuesday. I was part of the planning committee. Since most of my team is spread-out all over the USA and remote, it was nice to meet everyone in person for a change.&#xA;We also retrained a few XGBoost Models which will run in production on a test cell next week. Unfortunately, I cannot talk a lot about the specifics of the work I do in interest of confidentiality. Having said that, I plan on writing essays on the work I have done with ML and MLOps in the retail space. I have learned a lot and it would be nice to write it down and share with others.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 30, 2025</title>
+      <link>http://localhost:57601/website/posts/weekly/week-30-2025/</link>
+      <pubDate>Sat, 26 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:57601/website/posts/weekly/week-30-2025/</guid>
+      <description>&lt;h1 id=&#34;week-30-2025&#34;&gt;Week 30, 2025&lt;/h1&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;This was an interesting week at CVS Health. We had a team offsite on Monday and Tuesday. I was part of the planning committee. Since most of my team is spread-out all over the USA and remote, it was nice to meet everyone in person for a change.&#xA;We also retrained a few XGBoost Models which will run in production on a test cell next week. Unfortunately, I cannot talk a lot about the specifics of the work I do in interest of confidentiality. Having said that, I plan on writing essays on the work I have done with ML and MLOps in the retail space. I have learned a lot and it would be nice to write it down and share with others.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

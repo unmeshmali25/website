@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to My Blog on Unmesh Mali</title>
+    <link>http://localhost:57601/website/</link>
+    <description>Recent content in Welcome to My Blog on Unmesh Mali</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Jul 2025 23:16:49 -0400</lastBuildDate>
+    <atom:link href="http://localhost:57601/website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Essay 2</title>
+      <link>http://localhost:57601/website/posts/essays/essay2/</link>
+      <pubDate>Mon, 28 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:57601/website/posts/essays/essay2/</guid>
+      <description>&lt;h1 id=&#34;essay-2&#34;&gt;Essay 2&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>Week 31, 2025</title>
+      <link>http://localhost:57601/website/posts/weekly/week-31-2025/</link>
+      <pubDate>Mon, 28 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:57601/website/posts/weekly/week-31-2025/</guid>
+      <description>&lt;h1 id=&#34;week-31-2025&#34;&gt;Week 31, 2025&lt;/h1&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;This was an interesting week at CVS Health. We had a team offsite on Monday and Tuesday. I was part of the planning committee. Since most of my team is spread-out all over the USA and remote, it was nice to meet everyone in person for a change.&#xA;We also retrained a few XGBoost Models which will run in production on a test cell next week. Unfortunately, I cannot talk a lot about the specifics of the work I do in interest of confidentiality. Having said that, I plan on writing essays on the work I have done with ML and MLOps in the retail space. I have learned a lot and it would be nice to write it down and share with others.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Essay 1</title>
+      <link>http://localhost:57601/website/posts/essays/essay1/</link>
+      <pubDate>Sat, 26 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:57601/website/posts/essays/essay1/</guid>
+      <description>&lt;h1 id=&#34;essay-1&#34;&gt;Essay 1&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>Week 30, 2025</title>
+      <link>http://localhost:57601/website/posts/weekly/week-30-2025/</link>
+      <pubDate>Sat, 26 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:57601/website/posts/weekly/week-30-2025/</guid>
+      <description>&lt;h1 id=&#34;week-30-2025&#34;&gt;Week 30, 2025&lt;/h1&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;This was an interesting week at CVS Health. We had a team offsite on Monday and Tuesday. I was part of the planning committee. Since most of my team is spread-out all over the USA and remote, it was nice to meet everyone in person for a change.&#xA;We also retrained a few XGBoost Models which will run in production on a test cell next week. Unfortunately, I cannot talk a lot about the specifics of the work I do in interest of confidentiality. Having said that, I plan on writing essays on the work I have done with ML and MLOps in the retail space. I have learned a lot and it would be nice to write it down and share with others.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Welcome to My Blog</title>
+      <link>http://localhost:57601/website/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:57601/website/about/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Welcome to my corner of the internet. Here I mostly write about this and that.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;I am currently working as a Machine Learning Engineer (or internally referred to Senior Data Scientist) at CVS Health. Specifically I work in the Offer Engine team of CVS Retail to make customers shop more and often by giving right offers to the right customers. The work sounds simple but at the scale of many millions of customers and working in a Fortune 500 company with its rate of change limitations, the personal, technical challenges and nuances quickly add up.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

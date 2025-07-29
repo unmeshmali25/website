@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Unmesh Mali</title>
+    <link>http://localhost:57601/website/tags/</link>
+    <description>Recent content in Tags on Unmesh Mali</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Jul 2025 23:16:49 -0400</lastBuildDate>
+    <atom:link href="http://localhost:57601/website/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Essay</title>
+      <link>http://localhost:57601/website/tags/essay/</link>
+      <pubDate>Mon, 28 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:57601/website/tags/essay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Weekly-Update</title>
+      <link>http://localhost:57601/website/tags/weekly-update/</link>
+      <pubDate>Mon, 28 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:57601/website/tags/weekly-update/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
