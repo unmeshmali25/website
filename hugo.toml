@@ -1,4 +1,4 @@
-baseURL = 'https://unmeshmali25.github.io/website/'
+baseURL = 'https://unmeshmali.com/'
 languageCode = 'en-us'
 title = 'Unmesh Mali'
 theme = "hugo-bearblog"
