@@ -9,5 +9,5 @@ I am currently working as a Machine Learning Engineer (or internally referred to
 
 Feel free to connect with me on <a href="https://www.linkedin.com/in/unmesh-mali/" role="button">LinkedIn</a> or <a href="https://x.com/unmesh_11" role="button">Twitter</a>
 
-For frequently updated content please check out my <a href="/posts/weekly/" role="button">Weekly blogs</a>. 
+For frequently updated content please check out my <a href="/posts/weekly/" role="button">WeeklyBlogs</a>. 
 

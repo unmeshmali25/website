@@ -21,7 +21,7 @@ theme = "hugo-bearblog"
     url = "/posts/essays"
     weight = 1
 [[menu.main]]
-    name = "Weekly Blogs"
+    name = "WeeklyBlogs"
     url = "/posts/weekly/"
     weight = 1
   [[menu.main]]
