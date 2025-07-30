@@ -1,4 +1,5 @@
 /* General Body Styles */
+
 body {
     font-family: monospace;
     color: #333;
@@ -55,3 +56,26 @@ body {
     text-decoration: none;
     color: #007bff;
 } 
+@media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #121212; /* Darker background */
+      --heading-color: #ffffff;    /* White headings */
+      --text-color: #e0e0e0;      /* Light text */
+      --link-color: #bb86fc;      /* Accent color for links */
+    }
+  
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+  
+    .site-title a,
+    .site-nav a,
+    .post-item a {
+      color: var(--link-color);
+    }
+  
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--heading-color);
+    }
+  }
