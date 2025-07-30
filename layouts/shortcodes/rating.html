@@ -1,0 +1,7 @@
+{{ $rating := .Get 0 | int }}
+{{ range seq $rating }}
+<span>★</span>
+{{ end }}
+{{ range seq (sub 5 $rating) }}
+<span>☆</span>
+{{ end }}
