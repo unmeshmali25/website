@@ -1,5 +1,9 @@
 /* General Body Styles */
 
+:root {
+    --border-color: #e0e0e0; /* Subtle border for light mode */
+  }
+
 body {
     font-family: monospace;
     color: #333;
@@ -53,7 +57,7 @@ body {
 }
 
 .post-item a {
-    text-decoration: none;
+    text-decoration: none; 
     color: #007bff;
 } 
 @media (prefers-color-scheme: dark) {
@@ -78,4 +82,17 @@ body {
     h1, h2, h3, h4, h5, h6 {
       color: var(--heading-color);
     }
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .post-card {
+    /* border: none; */
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
   }

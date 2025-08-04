@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="posts-grid">
+  {{ range .Paginator.Pages }}
+    <div class="post-card">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </div>
+  {{ end }}
+</div>
+{{ end }}

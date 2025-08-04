@@ -4,7 +4,7 @@ title = 'Unmesh Mali'
 theme = "hugo-bearblog"
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 60
 
 [params]
   mainSections = ["posts"]
