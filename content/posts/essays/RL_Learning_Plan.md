@@ -17,9 +17,7 @@ My goal is to become capable of reading research papers and implementing them to
 - [x] **Set up environment**  
   - [] Install Python 3.10+ and create a virtual environment.  
   - [ ] Install core libraries:  
-    ```bash
-    pip install gymnasium[all] stable-baselines3 torch numpy matplotlib
-    ```
+    `pip install gymnasium[all] stable-baselines3 torch numpy matplotlib`
 - [ ] **Read/Watch:**  
   - [ ] [Sutton & Barto – Ch. 1 & 2](http://incompleteideas.net/book/RLbook2020.pdf)  
   - [ ] [David Silver’s RL Lecture 1](https://www.youtube.com/watch?v=2pWv7GOvuf0)
