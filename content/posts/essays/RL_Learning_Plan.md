@@ -170,7 +170,7 @@ My goal is to become capable of reading research papers and implementing them to
 ---
 
 **By the end of 12 months:**  
-- You’ll understand **classical and deep RL** methods.  
-- You’ll be able to **implement key algorithms from scratch**.  
-- You’ll be able to **use RLlib & stable-baselines3 for complex tasks**.  
-- You’ll have **applied RL to real business/engineering problems**.  
+- I'll understand **classical and deep RL** methods.  
+- I'll be able to **implement key algorithms from scratch**.  
+- I’ll be able to **use RLlib & stable-baselines3 for complex tasks**.  
+- I’ll have **applied RL to real business/engineering problems**.  
