@@ -1,68 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62139&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=63440&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Week 31, 2021 | Unmesh Mali</title>
-<meta name="title" content="Week 31, 2021" />
+<title>Week 31, 2021 : Deployed computer vision app for the Delhi government | Unmesh Mali</title>
+<meta name="title" content="Week 31, 2021 : Deployed computer vision app for the Delhi government" />
 <meta name="description" content="Week 31, 2021
-August 9, 2021
-Categories: Weekly Notes
-Work
-The last two weeks have been productive at ## work. Just usual stuff. Putting
+Work 
+
+★
+
+★
+
+★
+
+★
+
+
+☆
+
+The last two weeks have been productive at work. Just usual stuff. Putting
 out fires, making progress with ongoing ## projects and sprints, asset
 monitoring and management, and closely working with customers to answer
 questions with data and solve their issues if any. I have learned to be
 flexible at this company and I am not overly concerned about what I do day to
-day.
-Machine Learning Bootcamp
-Decent week at the Bootcamp. In the last 2 weeks, we focussed on GAN models –
-Generative Adversarial Networks and Time series and Sequence modeling. One
-application of cycleGAN that we explored in our live session assignment is
-Uber’s use of the model to generate nighttime and extreme weather event
-images to train their autonomous driving models. In Sequence modeling, we
-explored RNN modes to predict outcomes of online browsing sessions for
-Cosmetics company. Pretty cool stuff –
-https://github.com/unmeshmali25/Sequence-Modelling-Cosmetics-
-Dataset/blob/main/Sequence_Learning_on_Cosmetics_Data_4B_v1_Unmesh.ipynb
-CEEW – Sustainable Mobility Research Assistant
-I managed to solve the deployment problem with the web app to rank bus
-shelters in India using Computer Vision. The problem of deployment failure
-with PythonAnywhere, DigitalOcean, and AWS ElasticBeanstalk  was memory
-limit. The virtual environment containing the web app, required dependencies
-, and the trained ML model sat at 1.4GB  of space. Each of the above
-mentioned FREE third party hosting services allow for not more than 512MB .
-And, Heroku  no longer supports Python-3.7.6  which is required (strictly) to
-run the ImageAI  python package. That sucked.
-The solution I came up with is more of a hack than a scalable solution. I
-deployed the model on my local machine as a WSGI server  using the gunicorn
-python package and exposed my IP address over the internet using secure HTTPs
-URL. I used a third party tunneling service called gw.run . The last
-remaining task in this project is to transfer the app, model, and
-dependencies to a windows computer of my project supervisor. He has a good
-GPU on his laptop and we might be able to speed up the processing. Right now,
-our model takes about 5 seconds to process 1 image. I assume the city of
-Delhi has around 2000 bus shelters or more. That’s 3 hours to rank all the
-bus shelters in Delhi. Now Imagine that the state or central government
-install cameras on each of these bus shelters, those cameras will be feeding
-video and images of bus shelters all day long. With that kind of
-infrastructure, our model would be very inefficient.
-After completion of the project last week, I expressed my enthusiasm to ## work
-on other ingoing ## projects at CEEW and they sent me a list of ## projects to
-choose from. Next week, I will spend some time on preliminary research to
-choose a project. Enabling multi-modal freight logistics in India  sounds
-like an awesome project. Another interesting project is Addressing fuel tax
-revenue loss with high EV penetration . Exciting times ahead with CEEW." />
+day." />
 <meta name="keywords" content="weekly-update," />
 
 
-<meta property="og:url" content="http://localhost:62139/posts/weekly/week-31-2021/">
+<meta property="og:url" content="http://localhost:63440/posts/weekly/week-31-2021/">
   <meta property="og:site_name" content="Unmesh Mali">
-  <meta property="og:title" content="Week 31, 2021">
-  <meta property="og:description" content="Week 31, 2021 August 9, 2021 Categories: Weekly Notes
-Work The last two weeks have been productive at ## work. Just usual stuff. Putting out fires, making progress with ongoing ## projects and sprints, asset monitoring and management, and closely working with customers to answer questions with data and solve their issues if any. I have learned to be flexible at this company and I am not overly concerned about what I do day to day. Machine Learning Bootcamp Decent week at the Bootcamp. In the last 2 weeks, we focussed on GAN models – Generative Adversarial Networks and Time series and Sequence modeling. One application of cycleGAN that we explored in our live session assignment is Uber’s use of the model to generate nighttime and extreme weather event images to train their autonomous driving models. In Sequence modeling, we explored RNN modes to predict outcomes of online browsing sessions for Cosmetics company. Pretty cool stuff – https://github.com/unmeshmali25/Sequence-Modelling-Cosmetics- Dataset/blob/main/Sequence_Learning_on_Cosmetics_Data_4B_v1_Unmesh.ipynb CEEW – Sustainable Mobility Research Assistant I managed to solve the deployment problem with the web app to rank bus shelters in India using Computer Vision. The problem of deployment failure with PythonAnywhere, DigitalOcean, and AWS ElasticBeanstalk was memory limit. The virtual environment containing the web app, required dependencies , and the trained ML model sat at 1.4GB of space. Each of the above mentioned FREE third party hosting services allow for not more than 512MB . And, Heroku no longer supports Python-3.7.6 which is required (strictly) to run the ImageAI python package. That sucked. The solution I came up with is more of a hack than a scalable solution. I deployed the model on my local machine as a WSGI server using the gunicorn python package and exposed my IP address over the internet using secure HTTPs URL. I used a third party tunneling service called gw.run . The last remaining task in this project is to transfer the app, model, and dependencies to a windows computer of my project supervisor. He has a good GPU on his laptop and we might be able to speed up the processing. Right now, our model takes about 5 seconds to process 1 image. I assume the city of Delhi has around 2000 bus shelters or more. That’s 3 hours to rank all the bus shelters in Delhi. Now Imagine that the state or central government install cameras on each of these bus shelters, those cameras will be feeding video and images of bus shelters all day long. With that kind of infrastructure, our model would be very inefficient. After completion of the project last week, I expressed my enthusiasm to ## work on other ingoing ## projects at CEEW and they sent me a list of ## projects to choose from. Next week, I will spend some time on preliminary research to choose a project. Enabling multi-modal freight logistics in India sounds like an awesome project. Another interesting project is Addressing fuel tax revenue loss with high EV penetration . Exciting times ahead with CEEW.">
+  <meta property="og:title" content="Week 31, 2021 : Deployed computer vision app for the Delhi government">
+  <meta property="og:description" content="Week 31, 2021 Work ★ ★ ★ ★ ☆ The last two weeks have been productive at work. Just usual stuff. Putting out fires, making progress with ongoing ## projects and sprints, asset monitoring and management, and closely working with customers to answer questions with data and solve their issues if any. I have learned to be flexible at this company and I am not overly concerned about what I do day to day.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -74,19 +45,17 @@ Work The last two weeks have been productive at ## work. Just usual stuff. Putti
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Week 31, 2021">
-  <meta name="twitter:description" content="Week 31, 2021 August 9, 2021 Categories: Weekly Notes
-Work The last two weeks have been productive at ## work. Just usual stuff. Putting out fires, making progress with ongoing ## projects and sprints, asset monitoring and management, and closely working with customers to answer questions with data and solve their issues if any. I have learned to be flexible at this company and I am not overly concerned about what I do day to day. Machine Learning Bootcamp Decent week at the Bootcamp. In the last 2 weeks, we focussed on GAN models – Generative Adversarial Networks and Time series and Sequence modeling. One application of cycleGAN that we explored in our live session assignment is Uber’s use of the model to generate nighttime and extreme weather event images to train their autonomous driving models. In Sequence modeling, we explored RNN modes to predict outcomes of online browsing sessions for Cosmetics company. Pretty cool stuff – https://github.com/unmeshmali25/Sequence-Modelling-Cosmetics- Dataset/blob/main/Sequence_Learning_on_Cosmetics_Data_4B_v1_Unmesh.ipynb CEEW – Sustainable Mobility Research Assistant I managed to solve the deployment problem with the web app to rank bus shelters in India using Computer Vision. The problem of deployment failure with PythonAnywhere, DigitalOcean, and AWS ElasticBeanstalk was memory limit. The virtual environment containing the web app, required dependencies , and the trained ML model sat at 1.4GB of space. Each of the above mentioned FREE third party hosting services allow for not more than 512MB . And, Heroku no longer supports Python-3.7.6 which is required (strictly) to run the ImageAI python package. That sucked. The solution I came up with is more of a hack than a scalable solution. I deployed the model on my local machine as a WSGI server using the gunicorn python package and exposed my IP address over the internet using secure HTTPs URL. I used a third party tunneling service called gw.run . The last remaining task in this project is to transfer the app, model, and dependencies to a windows computer of my project supervisor. He has a good GPU on his laptop and we might be able to speed up the processing. Right now, our model takes about 5 seconds to process 1 image. I assume the city of Delhi has around 2000 bus shelters or more. That’s 3 hours to rank all the bus shelters in Delhi. Now Imagine that the state or central government install cameras on each of these bus shelters, those cameras will be feeding video and images of bus shelters all day long. With that kind of infrastructure, our model would be very inefficient. After completion of the project last week, I expressed my enthusiasm to ## work on other ingoing ## projects at CEEW and they sent me a list of ## projects to choose from. Next week, I will spend some time on preliminary research to choose a project. Enabling multi-modal freight logistics in India sounds like an awesome project. Another interesting project is Addressing fuel tax revenue loss with high EV penetration . Exciting times ahead with CEEW.">
+  <meta name="twitter:title" content="Week 31, 2021 : Deployed computer vision app for the Delhi government">
+  <meta name="twitter:description" content="Week 31, 2021 Work ★ ★ ★ ★ ☆ The last two weeks have been productive at work. Just usual stuff. Putting out fires, making progress with ongoing ## projects and sprints, asset monitoring and management, and closely working with customers to answer questions with data and solve their issues if any. I have learned to be flexible at this company and I am not overly concerned about what I do day to day.">
 
 
 
 
-  <meta itemprop="name" content="Week 31, 2021">
-  <meta itemprop="description" content="Week 31, 2021 August 9, 2021 Categories: Weekly Notes
-Work The last two weeks have been productive at ## work. Just usual stuff. Putting out fires, making progress with ongoing ## projects and sprints, asset monitoring and management, and closely working with customers to answer questions with data and solve their issues if any. I have learned to be flexible at this company and I am not overly concerned about what I do day to day. Machine Learning Bootcamp Decent week at the Bootcamp. In the last 2 weeks, we focussed on GAN models – Generative Adversarial Networks and Time series and Sequence modeling. One application of cycleGAN that we explored in our live session assignment is Uber’s use of the model to generate nighttime and extreme weather event images to train their autonomous driving models. In Sequence modeling, we explored RNN modes to predict outcomes of online browsing sessions for Cosmetics company. Pretty cool stuff – https://github.com/unmeshmali25/Sequence-Modelling-Cosmetics- Dataset/blob/main/Sequence_Learning_on_Cosmetics_Data_4B_v1_Unmesh.ipynb CEEW – Sustainable Mobility Research Assistant I managed to solve the deployment problem with the web app to rank bus shelters in India using Computer Vision. The problem of deployment failure with PythonAnywhere, DigitalOcean, and AWS ElasticBeanstalk was memory limit. The virtual environment containing the web app, required dependencies , and the trained ML model sat at 1.4GB of space. Each of the above mentioned FREE third party hosting services allow for not more than 512MB . And, Heroku no longer supports Python-3.7.6 which is required (strictly) to run the ImageAI python package. That sucked. The solution I came up with is more of a hack than a scalable solution. I deployed the model on my local machine as a WSGI server using the gunicorn python package and exposed my IP address over the internet using secure HTTPs URL. I used a third party tunneling service called gw.run . The last remaining task in this project is to transfer the app, model, and dependencies to a windows computer of my project supervisor. He has a good GPU on his laptop and we might be able to speed up the processing. Right now, our model takes about 5 seconds to process 1 image. I assume the city of Delhi has around 2000 bus shelters or more. That’s 3 hours to rank all the bus shelters in Delhi. Now Imagine that the state or central government install cameras on each of these bus shelters, those cameras will be feeding video and images of bus shelters all day long. With that kind of infrastructure, our model would be very inefficient. After completion of the project last week, I expressed my enthusiasm to ## work on other ingoing ## projects at CEEW and they sent me a list of ## projects to choose from. Next week, I will spend some time on preliminary research to choose a project. Enabling multi-modal freight logistics in India sounds like an awesome project. Another interesting project is Addressing fuel tax revenue loss with high EV penetration . Exciting times ahead with CEEW.">
+  <meta itemprop="name" content="Week 31, 2021 : Deployed computer vision app for the Delhi government">
+  <meta itemprop="description" content="Week 31, 2021 Work ★ ★ ★ ★ ☆ The last two weeks have been productive at work. Just usual stuff. Putting out fires, making progress with ongoing ## projects and sprints, asset monitoring and management, and closely working with customers to answer questions with data and solve their issues if any. I have learned to be flexible at this company and I am not overly concerned about what I do day to day.">
   <meta itemprop="datePublished" content="2021-08-02T00:00:00+00:00">
   <meta itemprop="dateModified" content="2021-08-02T00:00:00+00:00">
-  <meta itemprop="wordCount" content="816">
+  <meta itemprop="wordCount" content="825">
   <meta itemprop="keywords" content="Weekly-Update">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -253,42 +222,79 @@ Work The last two weeks have been productive at ## work. Just usual stuff. Putti
 
 </style>
 
-  <link rel="stylesheet" href="http://localhost:62139/css/custom.css">
+  <link rel="stylesheet" href="http://localhost:63440/css/custom.css">
  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxvA5nKcTVzoOs7bA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
 
 <body>
-  <header><header class="site-header">
-  <a href="http://localhost:62139/">
-    <h1 class="site-title">Unmesh Mali</h1>
-  </a>
-  <nav class="site-nav">
-    
-    <a href="/posts/essays">Essays</a>
-    
-    <a href="/posts/weekly/">WeeklyBlogs</a>
-    
-    <a href="/about">About</a>
-    
-    <a href="https://github.com/unmeshmali25">GitHub</a>
-    
-  </nav>
-</header> </header>
   <main>
+    
+    <div class="homepage-grid">
+      <div class="left-column">
+        <a href="http://localhost:63440/">
+          <img src="/images/Unmesh_Photo.jpeg" alt="Unmesh Mali" class="profile-photo">
+        </a>
+      </div>
+      <div class="right-column">
+        <div class="site-header-container">
+          <a href="http://localhost:63440/" class="title-link">
+            <h1 class="site-title">Unmesh Mali</h1>
+          </a>
+          <nav class="site-nav">
+            
+              <a href="/posts/essays">Essays</a>
+            
+              <a href="/posts/weekly/">WeeklyBlogs</a>
+            
+              <a href="/about">About</a>
+            
+              <a href="https://github.com/unmeshmali25">GitHub</a>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    
+    
 
 <content>
   <h1 id="week-31-2021">Week 31, 2021</h1>
-<p>August 9, 2021
-Categories: Weekly Notes</p>
-<h2 id="work">Work</h2>
-<p>The last two weeks have been productive at ## work. Just usual stuff. Putting
+<h3 id="work-hahahugoshortcode73s0hbhb">Work <span style="float: right;">
+
+<span>★</span>
+
+<span>★</span>
+
+<span>★</span>
+
+<span>★</span>
+
+
+<span>☆</span>
+</span></h3>
+<p>The last two weeks have been productive at work. Just usual stuff. Putting
 out fires, making progress with ongoing ## projects and sprints, asset
 monitoring and management, and closely working with customers to answer
 questions with data and solve their issues if any. I have learned to be
 flexible at this company and I am not overly concerned about what I do day to
-day.
-Machine Learning Bootcamp
-Decent week at the Bootcamp. In the last 2 weeks, we focussed on GAN models –
+day.</p>
+<h3 id="projects-hahahugoshortcode73s1hbhb">Projects <span style="float: right;">
+
+<span>★</span>
+
+<span>★</span>
+
+<span>★</span>
+
+<span>★</span>
+
+
+<span>☆</span>
+</span></h3>
+<h4 id="machine-learning-bootcamp"><span style="color: teal">Machine Learning Bootcamp</span></h4>
+<p>Decent week at the Bootcamp. In the last 2 weeks, we focussed on GAN models –
 Generative Adversarial Networks and Time series and Sequence modeling. One
 application of cycleGAN that we explored in our live session assignment is
 Uber’s use of the model to generate nighttime and extreme weather event
@@ -296,9 +302,9 @@ images to train their autonomous driving models. In Sequence modeling, we
 explored RNN modes to predict outcomes of online browsing sessions for
 Cosmetics company. Pretty cool stuff –
 <a href="https://github.com/unmeshmali25/Sequence-Modelling-Cosmetics-">https://github.com/unmeshmali25/Sequence-Modelling-Cosmetics-</a>
-Dataset/blob/main/Sequence_Learning_on_Cosmetics_Data_4B_v1_Unmesh.ipynb
-CEEW – Sustainable Mobility Research Assistant
-I managed to solve the deployment problem with the web app to rank bus
+Dataset/blob/main/Sequence_Learning_on_Cosmetics_Data_4B_v1_Unmesh.ipynb</p>
+<h4 id="ceew--sustainable-mobility-research-assistantp"><span style="color: teal">CEEW – Sustainable Mobility Research Assistantp</span></h4>
+<p>I managed to solve the deployment problem with the web app to rank bus
 shelters in India using Computer Vision. The problem of deployment failure
 with PythonAnywhere, DigitalOcean, and AWS ElasticBeanstalk  was memory
 limit. The virtual environment containing the web app, required dependencies
@@ -319,15 +325,27 @@ bus shelters in Delhi. Now Imagine that the state or central government
 install cameras on each of these bus shelters, those cameras will be feeding
 video and images of bus shelters all day long. With that kind of
 infrastructure, our model would be very inefficient.
-After completion of the project last week, I expressed my enthusiasm to ## work
-on other ingoing ## projects at CEEW and they sent me a list of ## projects to
+After completion of the project last week, I expressed my enthusiasm to work
+on other ingoing projects at CEEW and they sent me a list of projects to
 choose from. Next week, I will spend some time on preliminary research to
 choose a project. Enabling multi-modal freight logistics in India  sounds
 like an awesome project. Another interesting project is Addressing fuel tax
 revenue loss with high EV penetration . Exciting times ahead with CEEW.</p>
-<h2 id="books">Books</h2>
-<p>Genentech: The Beginnings of Biotech |  Sally Smith Hughes
-I finished this book over the weekend. What an amazing experience it was to
+<h3 id="books-hahahugoshortcode73s2hbhb">Books <span style="float: right;">
+
+<span>★</span>
+
+<span>★</span>
+
+<span>★</span>
+
+<span>★</span>
+
+<span>★</span>
+
+</span></h3>
+<h4 id="genentech-the-beginnings-of-biotechsally-smith-hughes"><span style="color: teal">Genentech: The Beginnings of Biotech |  Sally Smith Hughes</span></h4>
+<p>I finished this book over the weekend. What an amazing experience it was to
 live the story of Genetech and the rest of the Biotech industry. I vaguely
 remembered studying biology in school but I never understood what Biotech
 meant. Hell, I didn’t even know that it is a scientific field that one could
@@ -349,23 +367,34 @@ against UCSF (along with this little maneuver) cost Genetech $150 million in
 fines to UCSF and $50 million dollars towards a R&amp;D building at UCSF’s
 mission bay campus in San Francisco. This building is right across the street
 from where I have been going for Physiotherapy for close to a year now !!!</p>
-<h2 id="fitness">Fitness</h2>
-<p>Really bad weeks for ## fitness 🙁 Been to the gym maybe only 3 times. I have
+<h3 id="fitness-hahahugoshortcode73s3hbhb">Fitness <span style="float: right;">
+
+<span>★</span>
+
+<span>★</span>
+
+
+<span>☆</span>
+
+<span>☆</span>
+
+<span>☆</span>
+</span></h3>
+<p>Really bad weeks for fitness 🙁 Been to the gym maybe only 3 times. I have
 been biking, playing Frisbee and Volleyball though. Need to concentrate more
-on ## fitness going forward.</p>
+on fitness going forward.</p>
 
 </content>
 <p>
   
-  <a href="http://localhost:62139/tags/weekly-update/">#Weekly-Update</a>
+  <a href="http://localhost:63440/tags/weekly-update/">#Weekly-Update</a>
   
 </p>
 
+    
   </main>
   <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
 </footer>
-
-  
 </body>
 
 </html>

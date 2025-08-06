@@ -2,24 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unmesh Mali</title>
-    <link>http://localhost:62139/posts/essays/</link>
+    <link>http://localhost:63440/posts/essays/</link>
     <description>Recent content on Unmesh Mali</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jul 2025 23:16:49 -0400</lastBuildDate>
-    <atom:link href="http://localhost:62139/posts/essays/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Essay 2</title>
-      <link>http://localhost:62139/posts/essays/essay2/</link>
-      <pubDate>Mon, 28 Jul 2025 23:16:49 -0400</pubDate>
-      <guid>http://localhost:62139/posts/essays/essay2/</guid>
-      <description>&lt;h1 id=&#34;essay-2&#34;&gt;Essay 2&lt;/h1&gt;</description>
-    </item>
+    <lastBuildDate>Sat, 26 Jul 2025 23:16:49 -0400</lastBuildDate>
+    <atom:link href="http://localhost:63440/posts/essays/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2025 Reinforcement Learning Plan</title>
-      <link>http://localhost:62139/posts/essays/rl_learning_plan/</link>
+      <link>http://localhost:63440/posts/essays/rl_learning_plan/</link>
       <pubDate>Sat, 26 Jul 2025 23:16:49 -0400</pubDate>
-      <guid>http://localhost:62139/posts/essays/rl_learning_plan/</guid>
+      <guid>http://localhost:63440/posts/essays/rl_learning_plan/</guid>
       <description>&lt;p&gt;My goal is to become capable of reading research papers and implementing them to solve business/engineering problems using RL. I used the &amp;ldquo;Study and Learn&amp;rdquo; mode in ChatGPT to generate the below plan. It seems a decent structure to get me started. I am estimating 5-10 hours per week of work. However, I will push myself to get this done faster and complete it by end of 2025.&lt;/p&gt;&#xA;&lt;h1 id=&#34;reinforcement-learning-mastery-plan&#34;&gt;Reinforcement Learning Mastery Plan&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Time:&lt;/strong&gt; ~5–10 hrs/week&lt;/p&gt;</description>
     </item>
   </channel>

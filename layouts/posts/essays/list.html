@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>Essays</h1>
+<div class="essays-simple-list">
+  {{ range .Paginator.Pages }}
+    <div class="essay-simple-item">
+      <span class="essay-simple-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+      <span class="essay-simple-separator">—</span>
+      <a href="{{ .Permalink }}" class="essay-simple-title">{{ .Title }}</a>
+    </div>
+  {{ end }}
+</div>
+
+{{ template "_internal/pagination.html" . }}
+{{ end }}

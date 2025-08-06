@@ -1,4 +1,5 @@
 {{ define "main" }}
+<h1>Weekly Blogs</h1>
 <div class="posts-grid">
   {{ range .Paginator.Pages }}
     <div class="post-card">
@@ -6,4 +7,6 @@
     </div>
   {{ end }}
 </div>
+
+{{ template "_internal/pagination.html" . }}
 {{ end }}

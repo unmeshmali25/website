@@ -1,9 +1,9 @@
-{{/* Home page = About page */}}
+{{/* Homepage content only */}}
 {{ define "main" }}
-  {{ with .Site.GetPage "page" "about" }}   {{/* grabs content/about.md */}}
+  {{ with .Site.GetPage "page" "home-intro" }}   {{/* grabs content/home-intro.md */}}
     {{ .Content }}
   {{ else }}
-    <p>About page not found.</p>
+    <p>Home intro not found.</p>
   {{ end }}
 
   <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0;">
