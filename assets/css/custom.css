@@ -193,8 +193,8 @@ transform: translateY(-3px);
 box-shadow: 0 4px 15px rgba(0,0,0,0.12);
 }
 .education-logo {
-width: 100px;  /* Increased logo size */
-height: 100px;
+width: 80px;  /* Increased logo size */
+height: 80px;
 object-fit: contain;
 margin-right: 1rem;
 flex-shrink: 0;

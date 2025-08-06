@@ -82,7 +82,6 @@ For frequently updated content please check out my <a href="/posts/weekly/" role
     <img src="/images/usf-logo.png" alt="University of San Francisco" class="education-logo">
     <div class="education-content">
       <h4>University of San Francisco</h4>
-      <p>MS in Data Science</p>
     </div>
   </div>
   
@@ -97,7 +96,7 @@ For frequently updated content please check out my <a href="/posts/weekly/" role
   <div class="education-item">
     <img src="/images/simplilearn-logo.png" alt="Simplilearn" class="education-logo">
     <div class="education-content">
-      <h4>CalTech Cloud Computing</h4>
+      <h4>CalTech Cloud Computing BootCamp</h4>
       <p>Partnered with Simplilearn</p>
     </div>
   </div>
