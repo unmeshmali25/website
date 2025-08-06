@@ -1,39 +1,48 @@
-{{/* Homepage content only */}}
 {{ define "main" }}
-  {{ with .Site.GetPage "page" "home-intro" }}   {{/* grabs content/home-intro.md */}}
-    {{ .Content }}
-  {{ else }}
-    <p>Home intro not found.</p>
-  {{ end }}
-
-  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0;">
-  
-  {{/* Two column layout for recent posts */}}
-  <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+  <div class="homepage-content-wrapper">
     
-    {{/* Weekly Updates Column */}}
-    <div style="flex: 1; min-width: 300px;">
-      <h4>Recent Weekly Updates</h4>
-      {{ $weeklySection := .Site.GetPage "/posts/weekly" }}
-      <div class="posts-list">
-        {{ range first 4 $weeklySection.RegularPages }}
-        <div class="post-item">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </div>
-        {{ end }}
-      </div>
+    {{/* --- About Section --- */}}
+    <div class="about-section">
+      {{ with .Site.GetPage "page" "about" }}
+        {{ .Content }}
+      {{ else }}
+        <p>Home intro not found.</p>
+      {{ end }}
     </div>
 
-    {{/* Essays Column */}}
-    <div style="flex: 1; min-width: 300px;">
-      <h4>Recent Essays</h4>
-      {{ $essaysSection := .Site.GetPage "/posts/essays" }}
-      <div class="posts-list">
-        {{ range first 4 $essaysSection.RegularPages }}
-        <div class="post-item">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{/* --- Separator --- */}}
+    <hr class="section-separator">
+
+    {{/* --- Recent Posts Section --- */}}
+    <div class="recent-posts-section">
+      <div class="recent-posts-grid">
+        
+        {{/* Weekly Updates Column */}}
+        <div class="recent-posts-column">
+          <h4>Recent Weekly Updates</h4>
+          {{ $weeklySection := .Site.GetPage "/posts/weekly" }}
+          <div class="posts-list">
+            {{ range first 4 $weeklySection.RegularPages }}
+            <div class="post-item">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+          </div>
         </div>
-        {{ end }}
+
+        {{/* Essays Column */}}
+        <div class="recent-posts-column">
+          <h4>Recent Essays</h4>
+          {{ $essaysSection := .Site.GetPage "/posts/essays" }}
+          <div class="posts-list">
+            {{ range first 4 $essaysSection.RegularPages }}
+            <div class="post-item">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
       </div>
     </div>
 

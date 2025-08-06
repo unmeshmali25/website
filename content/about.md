@@ -77,11 +77,12 @@ For frequently updated content please check out my <a href="/posts/weekly/" role
 
 ### Education & Certifications
 
-<div class="education-scroll-container">
+<div class="education-grid">
   <div class="education-item">
     <img src="/images/usf-logo.png" alt="University of San Francisco" class="education-logo">
     <div class="education-content">
       <h4>University of San Francisco</h4>
+      <p>MS in Data Science</p>
     </div>
   </div>
   
@@ -89,38 +90,15 @@ For frequently updated content please check out my <a href="/posts/weekly/" role
     <img src="/images/ml-bootcamp-logo.png" alt="ML Bootcamp at FourthBrain" class="education-logo">
     <div class="education-content">
       <h4>ML Bootcamp at FourthBrain AI</h4>
-      <p>Funded and Curriculumed by Andrew Ng</p>
+      <p>Funded by Andrew Ng</p>
     </div>
   </div>
 
   <div class="education-item">
-    <img src="/images/simplilearn-logo.png" alt="AWS" class="education-logo">
+    <img src="/images/simplilearn-logo.png" alt="Simplilearn" class="education-logo">
     <div class="education-content">
-      <h4>CalTech partnered - Cloud Computing Bootcamp</h4>
+      <h4>CalTech Cloud Computing</h4>
+      <p>Partnered with Simplilearn</p>
     </div>
   </div>
-
-  <!-- <div class="education-item">
-    <img src="/images/google-logo.png" alt="Google Cloud" class="education-logo">
-    <div class="education-content">
-      <h4>Google Cloud</h4>
-      <p>Professional ML Engineer • 2023</p>
-    </div>
-  </div>
-
-  <div class="education-item">
-    <img src="/images/coursera-logo.png" alt="Coursera" class="education-logo">
-    <div class="education-content">
-      <h4>Deep Learning</h4>
-      <p>Specialization • 2022</p>
-    </div>
-  </div>
-
-  <div class="education-item">
-    <img src="/images/kaggle-logo.png" alt="Kaggle" class="education-logo">
-    <div class="education-content">
-      <h4>Kaggle Expert</h4>
-      <p>Competitions • 2021</p>
-    </div>
-  </div>
-</div> -->
+</div>
