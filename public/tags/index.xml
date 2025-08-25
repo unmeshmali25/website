@@ -2,24 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Unmesh Mali</title>
-    <link>http://localhost:53310/tags/</link>
+    <link>http://localhost:58472/tags/</link>
     <description>Recent content in Tags on Unmesh Mali</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Aug 2025 17:08:29 -0400</lastBuildDate>
-    <atom:link href="http://localhost:53310/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Aug 2025 17:08:29 -0400</lastBuildDate>
+    <atom:link href="http://localhost:58472/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Weekly-Update</title>
-      <link>http://localhost:53310/tags/weekly-update/</link>
-      <pubDate>Fri, 15 Aug 2025 17:08:29 -0400</pubDate>
-      <guid>http://localhost:53310/tags/weekly-update/</guid>
+      <title>Reinforcement-Learning</title>
+      <link>http://localhost:58472/tags/reinforcement-learning/</link>
+      <pubDate>Sat, 23 Aug 2025 17:08:29 -0400</pubDate>
+      <guid>http://localhost:58472/tags/reinforcement-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rl-Level1</title>
+      <link>http://localhost:58472/tags/rl-level1/</link>
+      <pubDate>Sat, 23 Aug 2025 17:08:29 -0400</pubDate>
+      <guid>http://localhost:58472/tags/rl-level1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Weekly-Updates</title>
+      <link>http://localhost:58472/tags/weekly-updates/</link>
+      <pubDate>Sat, 23 Aug 2025 17:08:29 -0400</pubDate>
+      <guid>http://localhost:58472/tags/weekly-updates/</guid>
       <description></description>
     </item>
     <item>
       <title>Essay</title>
-      <link>http://localhost:53310/tags/essay/</link>
+      <link>http://localhost:58472/tags/essay/</link>
       <pubDate>Sat, 26 Jul 2025 23:16:49 -0400</pubDate>
-      <guid>http://localhost:53310/tags/essay/</guid>
+      <guid>http://localhost:58472/tags/essay/</guid>
       <description></description>
     </item>
   </channel>

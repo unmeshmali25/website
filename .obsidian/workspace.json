@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "5d5b98634fa3b2c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "44350279cf6fb3ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7da14f1b9876bf62",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "2. WEEKLY.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "2. WEEKLY"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "736dcfc4defca617",
+    "type": "split",
+    "children": [
+      {
+        "id": "3422d3da66a98d24",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "98711afa75c3215b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "cf144b3e2333c0b3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f54f03b3f081666d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 285.5
+  },
+  "right": {
+    "id": "e54111f7203335f4",
+    "type": "split",
+    "children": [
+      {
+        "id": "3076339446d57374",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2f263e37a0e3909e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "REINFORCEMENT_LEARNING.base",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for REINFORCEMENT_LEARNING"
+            }
+          },
+          {
+            "id": "63b1204c1104839e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "REINFORCEMENT_LEARNING.base",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from REINFORCEMENT_LEARNING"
+            }
+          },
+          {
+            "id": "ff6bebc8739a3bf1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "07eaadc1df16f7c2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "REINFORCEMENT_LEARNING.base",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of REINFORCEMENT_LEARNING"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "7da14f1b9876bf62",
+  "lastOpenFiles": [
+    "1. REINFORCEMENT_LEARNING.base",
+    "2. WEEKLY.base",
+    "content/posts/weekly/week-34-2025.md",
+    "public/tags/weekly-updates/page/1/index.html",
+    "public/tags/weekly-updates/page/1",
+    "public/tags/weekly-updates/index.xml",
+    "public/tags/weekly-updates/page",
+    "public/tags/weekly-updates/index.html",
+    "public/tags/weekly-updates",
+    "public/tags/rl-level1/page/1/index.html",
+    "public/tags/rl-level1/page/1",
+    "public/tags/rl-level1/index.xml",
+    "Untitled.md",
+    "thinkDump/RL_Plan/Next.md",
+    "thinkDump/RL_Plan/Month1.md",
+    "content/posts/weekly/week-33-2025.md",
+    "content/posts/weekly/week-30-2025.md",
+    "content/posts/weekly/week-31-2025.md",
+    "content/posts/weekly/week-32-2025.md",
+    "content/posts/weekly/week-10-2021.md",
+    "content/posts/weekly/week-11-2021.md",
+    "content/posts/weekly/week-12-2021.md",
+    "content/posts/weekly/week-13-2021.md",
+    "content/posts/weekly/week-14-2021.md",
+    "content/posts/weekly/week-15-2021.md",
+    "content/posts/weekly/Week-15,2022.md",
+    "content/posts/weekly/week-16-2021.md",
+    "content/posts/weekly/week-17-2021.md",
+    "content/posts/weekly/week-18-2021.md",
+    "content/posts/weekly/week-19-2021.md",
+    "content/posts/weekly/week-20-2021.md",
+    "content/posts/weekly/week-21-2021.md",
+    "content/posts/weekly/week-22-2021.md",
+    "content/posts/weekly/week-24-2021.md",
+    "content/posts/weekly/week-29-2021.md",
+    "content/posts/weekly/week-31-2021.md"
+  ]
+}

@@ -409,3 +409,67 @@ min-width: 300px;
 .posts-list .post-item a:hover {
     text-decoration: underline;
 }
+
+/* --- Obsidian-Style Tags --- */
+.obsidian-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.obsidian-tag {
+  display: inline-block;
+  background: #9b8bb4; /* Obsidian purple */
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.obsidian-tag:hover {
+  background: #8a7ba3; /* Slightly darker purple on hover */
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(155, 139, 180, 0.3);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .obsidian-tag {
+    background: #9b8bb4; /* Keep the same purple in dark mode */
+    color: #ffffff;
+  }
+  
+  .obsidian-tag:hover {
+    background: #8a7ba3;
+    color: #ffffff;
+  }
+}
+/* Style existing theme tags to look like Obsidian */
+p a[href*="/tags/"] {
+  display: inline-block;
+  background: #9b8bb4 !important;
+  color: #ffffff !important;
+  padding: 4px 12px !important;
+  border-radius: 12px !important;
+  font-size: 0.85em !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  margin: 2px 4px 2px 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+p a[href*="/tags/"]:hover {
+  background: #8a7ba3 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(155, 139, 180, 0.3);
+}

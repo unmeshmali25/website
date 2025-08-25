@@ -1,0 +1,21 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.hasTag("reinforcement-learning")
+    order:
+      - file.mtime
+      - file.name
+      - file.tags
+    sort:
+      - property: file.ctime
+        direction: DESC
+    columnSize:
+      file.mtime: 227
+      file.name: 236
+    cardSize: 380
+    imageFit: ""
+    imageAspectRatio: 0.95
+  - type: table
+    name: View

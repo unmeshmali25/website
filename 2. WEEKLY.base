@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.hasTag("weekly-updates")
+    order:
+      - file.ctime
+      - file.name
+      - file.tags
+    sort:
+      - property: file.mtime
+        direction: DESC
+    columnSize:
+      file.ctime: 279
+      file.name: 339
