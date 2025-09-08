@@ -3,27 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/posts/weekly/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
+    <lastmod>2025-09-07T17:08:29-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
+    <lastmod>2025-09-07T17:08:29-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/reinforcement-learning/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
+    <lastmod>2025-09-07T17:08:29-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/rl-level1/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
+    <lastmod>2025-09-07T17:08:29-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
+    <lastmod>2025-09-07T17:08:29-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/weekly/week-35-2025/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
+    <loc>http://localhost:1313/posts/weekly/week-36-2025/</loc>
+    <lastmod>2025-09-07T17:08:29-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/weekly-updates/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
+    <lastmod>2025-09-07T17:08:29-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-09-07T17:08:29-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/weekly/week-35-2025/</loc>
     <lastmod>2025-08-31T17:08:29-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/weekly/week-34-2025/</loc>
