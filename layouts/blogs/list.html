@@ -1,0 +1,49 @@
+{{ define "main" }}
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  
+  <div class="blogs-sections">
+    <div class="blog-subsection">
+      <h2><a href="/posts/weekly/">Weekly Blogs</a></h2>
+      <p>Regular weekly updates and reflections</p>
+      {{ $weeklySection := .Site.GetPage "/posts/weekly" }}
+      {{ if $weeklySection }}
+        <div class="recent-posts-preview">
+          <h3>Recent Weekly Blogs</h3>
+          <div class="posts-list">
+            {{ range first 5 $weeklySection.RegularPages }}
+            <div class="post-item">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+          </div>
+          <a href="/posts/weekly/" class="view-all-link">View all weekly blogs →</a>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="blog-subsection">
+      <h2><a href="/posts/essays/">Micro-blogs</a></h2>
+      <p>Short essays and thoughts</p>
+      {{ $essaysSection := .Site.GetPage "/posts/essays" }}
+      {{ if $essaysSection }}
+        <div class="recent-posts-preview">
+          <h3>Recent Micro-blogs</h3>
+          <div class="posts-list">
+            {{ range first 5 $essaysSection.RegularPages }}
+            <div class="post-item">
+              <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+          </div>
+          <a href="/posts/essays/" class="view-all-link">View all micro-blogs →</a>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+
+  {{ .Content }}
+{{ end }}
+

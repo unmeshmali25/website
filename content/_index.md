@@ -7,6 +7,6 @@ title = "Welcome to My Blog"
 Welcome to my corner of the internet. Here I write about tech, travel, and life.
 
 <div class="buttons">
-  <a href="/posts/" role="button">Read my blog</a>
+  <a href="/blogs/" role="button">Blogs</a>
   <a href="/about/" role="button">About me</a>
 </div>
