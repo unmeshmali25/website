@@ -43,6 +43,19 @@
           </div>
         </div>
 
+        {{/* Micro-blogs Column */}}
+        <div class="recent-posts-column">
+          <h4>Recent Micro-blogs</h4>
+          {{ $microSection := .Site.GetPage "/posts/micro-blogs" }}
+          <div class="posts-list">
+            {{ range first 4 $microSection.RegularPages }}
+            <div class="post-item">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
       </div>
     </div>
 

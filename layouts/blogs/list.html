@@ -12,7 +12,7 @@
         <h2 class="blog-column-title">
           <a href="/posts/weekly/">Weekly Blogs</a>
         </h2>
-        <p class="blog-column-description">Regular weekly updates and reflections</p>
+        <p class="blog-column-description">Regular weekly updates</p>
         {{ $weeklySection := .Site.GetPage "/posts/weekly" }}
         {{ if $weeklySection }}
           <div class="blog-posts-list">
@@ -31,7 +31,7 @@
         <h2 class="blog-column-title">
           <a href="/posts/essays/">Essays</a>
         </h2>
-        <p class="blog-column-description">Short essays and thoughts</p>
+        <p class="blog-column-description">Long-form writing</p>
         {{ $essaysSection := .Site.GetPage "/posts/essays" }}
         {{ if $essaysSection }}
           <div class="blog-posts-list">
@@ -43,6 +43,26 @@
             {{ end }}
           </div>
           <a href="/posts/essays/" class="blog-view-all">View all →</a>
+        {{ end }}
+      </div>
+
+      {{/* Micro-blogs Column */}}
+      <div class="blog-column">
+        <h2 class="blog-column-title">
+          <a href="/posts/micro-blogs/">Micro-blogs</a>
+        </h2>
+        <p class="blog-column-description">Short thoughts & updates</p>
+        {{ $microSection := .Site.GetPage "/posts/micro-blogs" }}
+        {{ if $microSection }}
+          <div class="blog-posts-list">
+            {{ range first 5 $microSection.RegularPages }}
+            <div class="blog-post-item">
+              <span class="blog-post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+          </div>
+          <a href="/posts/micro-blogs/" class="blog-view-all">View all →</a>
         {{ end }}
       </div>
     </div>

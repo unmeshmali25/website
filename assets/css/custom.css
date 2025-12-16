@@ -489,8 +489,8 @@ p a[href*="/tags/"]:hover {
 
 .blogs-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   margin: 2rem 0;
 }
 
