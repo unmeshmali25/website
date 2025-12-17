@@ -265,13 +265,16 @@ border-top: 1px solid #e0e0e0;
 margin: 1rem 0;
 }
 .recent-posts-grid {
-display: flex;
-gap: 2rem;
-flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 .recent-posts-column {
-flex: 1;
-min-width: 300px;
+  min-width: 0;
+}
+.post-item {
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
 }
 .posts-list .post-item a {
   text-decoration: none; 
@@ -363,6 +366,9 @@ min-width: 300px;
 
 /* --- Consolidated Mobile Responsive Styles --- */
 @media (max-width: 768px) {
+  .recent-posts-grid {
+    grid-template-columns: 1fr;
+  }
   .homepage-grid {
     grid-template-columns: 1fr;
     text-align: center;
