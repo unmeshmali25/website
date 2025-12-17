@@ -281,6 +281,14 @@ margin: 1rem 0;
   color: #007bff;
 }
 
+/* --- Single Post Styles --- */
+.post-title {
+  color: #9b8bb4; /* Obsidian purple */
+  font-size: 1em; /* Same size as body text */
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
 /* --- Consolidated Dark Mode Styles --- */
 @media (prefers-color-scheme: dark) {
   body {
