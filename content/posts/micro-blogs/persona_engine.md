@@ -4,20 +4,18 @@ date: 2025-12-25T00:00:00+05:30
 draft: false
 ---
 
-**Title:** 300+ Realistic Shopping Personas at $0 Cost
+### 300+ Realistic Shopping Personas at $0 Cost
 
-I needed realistic personas for a CVS Health retail simulation. The challenge? Generate diverse, believable shoppers at scale without breaking the bank.
+I have built a retail shopping app to gain hands-on experience in full-stack development. I built and deployed the app and "convinced" 7 friends to sign up for it and play with it. I realized finding users, convincing them to use your app, and get them to play with it for data collection is a hard problem. 
+Enter AI. 
+I used the hallucinating properties of LLMs (along with temperature control, and prompt engineering techniques) to generate 300+ diverse, believable shopper personas. Since this is just a micro-blog on how I generated personas - stay tuned for the next ones where I actually put these 300+ agents to use/interact with the app and give me copius amounts of data to play with (albeit synthetic) AND more importantly it gives me the much needed experience of playing and building with AI Agents (primarily Langgraph). Stay tuned! 
 
 ---
 Section 1: The Big Design Questions
 Q: How on earth do you generate realistic shopping personas?
-A: Great question. I explored four approaches: full LLM generation, template + LLM variation, pure randomization, and a hybrid approach. 
-Here's what I found:
-- Full LLM: Most realistic but would cost $50-500 for 1000 agents (yikes!)
-- Template + variation: Good structure but still expensive
-- Pure randomization: Free but feels fake
-- My choice: Hybrid approach - Use LLM once to generate diverse archetypes, then randomly vary parameters for each agent
-This gave me the best of both worlds: rich, believable personalities without the recurring cost.
+A: I evaluated four options: full LLM (too pricey at $50-500/1000), templates (still costly), pure random (unrealistic), and hybrid winner—LLM for archetypes once. 
+I tested with free-tier LLMs on OpenRouter. It was Christmas of 2025 and many models were avaialble for free. I leveraged the Minimax M2.1 - recently released open source model (for free) to generate all these personas. I made sure to use LLMs from diverse research labs, and different time releases to even out any biases. 
+And ofcouse a detailed prompt to make the API call. 
 
 ---
 Section 2: What Makes a Persona "Real"?
@@ -41,6 +39,7 @@ For category preferences, I went with demographic-based rules plus an 80/20 powe
 - 55+ shoppers prioritize healthcare, wellness
 Then I apply the 80/20 rule: 20% of shoppers are category enthusiasts (5+ interests), while 80% have focused preferences (1-3 categories).
 This reflects reality - most people know what they like, while a few are browsing everything.
+I am hoping that using 20+ attributes, randomizing with context (gender, age etc.) and LLMs bias and hallucinations will get me personas as closers to real-life as possible. 
 
 ---
 Section 4: The Technical Magic
