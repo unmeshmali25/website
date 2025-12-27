@@ -11,8 +11,6 @@ Implemented a complete simulation engine for testing offer management workflows 
 
 ## Architecture Overview (LangGraph + LangSmith)
 
-## Architecture Overview (LangGraph + LangSmith)
-
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                   SimulationOrchestrator (New)                   │
