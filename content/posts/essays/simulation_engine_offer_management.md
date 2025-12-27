@@ -9,6 +9,49 @@ draft: false
 
 Implemented a complete simulation engine for testing offer management workflows with persona-based shopping agents. The system enables accelerated time simulation (1 real hour = 1 week simulated time) to model long-term offer lifecycle effects.
 
+## Architecture Overview (LangGraph + LangSmith)
+
+## Architecture Overview (LangGraph + LangSmith)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                   SimulationOrchestrator (New)                   │
+│        Coordinates time advancement + runs LangGraph agents      │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+           ┌───────────────┼───────────────┐
+           │               │               │
+           ▼               ▼               ▼
+┌──────────────────┐ ┌────────────────────────────────────────┐
+│  OfferScheduler  │ │     LangGraph StateGraph (per agent)   │
+│   (Existing)     │ │                                        │
+│                  │ │ [decide_shop] ──▶ [browse_products]    │
+│ - Time advance   │ │       │                 │              │
+│ - Cycle mgmt     │ │    (skip)          [add_to_cart]       │
+│ - Offer refresh  │ │       │                 │              │
+└──────────────────┘ │       │          [view_coupons]        │
+                     │       │                 │              │
+                     │       │         [decide_checkout]      │
+                     │       │           /         \          │
+                     │       │    [complete]    [abandon]     │
+                     │       ▼           \         /          │
+                     │     [END] ◀───────────────             │
+                     └────────────────────────────────────────┘
+                           │
+                           ▼
+              ┌───────────────────────────┐
+              │   LangSmith Tracing       │
+              │   (Automatic per node)    │
+              └───────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                     PostgreSQL Database                          │
+│   agents | users | shopping_sessions | shopping_session_events   │
+│   user_coupons | offer_cycles | simulation_state                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
 ## Core Components
 
 ### 1. Offer Engine (Simulation-Only)
@@ -95,3 +138,188 @@ MAX_WALLET_CAPACITY=32
 FRONTSTORE_PER_CYCLE=2
 CATEGORY_BRAND_PER_CYCLE=30
 ```
+
+<details style="max-height: 800px; overflow: auto;">
+<summary>Simulation Test QA, Assumptions, Blindspots, Checklist & Priority Order</summary>
+
+### Q1: What constitutes "agent behavior" for the initial 6-hour test?
+
+**Context**: The offer engine handles coupon assignment/expiration, but agents need to "do something" (shop, browse, redeem coupons) for meaningful data generation.
+
+| Option | Description | Recommendation |
+|--------|-------------|----------------|
+| **A. Minimal: Offer cycling only** | Agents exist, offers get assigned/expire on schedule | Easy to test, validates offer engine |
+| **B. Basic shopping: Random product browsing** | Agents browse products, add to cart based on persona traits | Moderate complexity, generates shopping_session_events |
+| **C. Full shopping: Complete checkout flow** | Agents browse, add to cart, apply coupons, checkout | Most realistic but complex |
+
+**Recommended**: Option B for initial 6-hour test. This validates both offer engine AND generates meaningful shopping data without the complexity of checkout/payment flows.
+
+---
+
+### Q2: What does "watch agent behaviors via LangSmith" mean specifically?
+
+**Context**: LangSmith is designed for tracing LLM calls. Current offer engine uses NO LLM calls (pure rules-based).
+
+| Option | Description | Recommendation |
+|--------|-------------|----------------|
+| **A. LangSmith for LLM persona decisions** | Add LLM calls for 10% of shopping decisions, trace them | Adds cost, complexity |
+| **B. Custom logging + dashboard** | Rich terminal dashboard showing real-time stats | No external dependency |
+| **C. Database + Supabase dashboard** | Store events in DB, view via Supabase or custom UI | Persistent, queryable |
+| **D. LangSmith for future LangGraph rewrite** | Skip for v1, plan for v2 | Pragmatic approach |
+
+**Recommended**: Option C (Database events) + Option B (Rich dashboard) for v1. Reserve LangSmith for v2 LangGraph integration.
+
+---
+
+### Q3: What time scale should the 6-hour test use?
+
+**Context**: Original plan uses 168x compression (1 real hour = 1 simulated week). For a 6-hour test:
+- 168x: 6 hours = 6 weeks simulated = ~42 offer cycles
+- Lower scale allows finer observation
+
+| Option | Description | Recommendation |
+|--------|-------------|----------------|
+| **A. Full 168x compression** | 6 hours = 6 weeks = 42 daily shopping opportunities per agent | Tests full speed |
+| **B. 24x compression** | 6 hours = 6 days = ~6 shopping opportunities per agent | More observable |
+| **C. Real-time (1x)** | 6 hours = 6 hours = likely 0-1 shopping events | Too slow |
+| **D. Configurable** | Allow adjustment during test | Most flexible |
+
+**Recommended**: Option D (Configurable), starting with 24x for the first test run to observe behaviors clearly, then scaling up.
+
+---
+
+### Q4: What database should agents interact with?
+
+**Context**: Simulation data needs to be isolated from production.
+
+| Option | Description | Recommendation |
+|--------|-------------|----------------|
+| **A. Same DB with is_simulated flags** | Use existing schema with filtering | Already implemented in migration |
+| **B. Separate simulation database** | Completely isolated | Extra setup |
+| **C. In-memory/SQLite for testing** | Fast, disposable | Not persistent |
+
+**Recommended**: Option A - already implemented. `is_simulated=true` flags exist on users, orders, user_coupons.
+
+---
+
+### Q5: How should agent shopping behavior be determined?
+
+**Context**: The Rules Engine is NOT implemented. Need to decide complexity level.
+
+| Option | Description | Recommendation |
+|--------|-------------|----------------|
+| **A. Random with persona weights** | Simple probability based on shopping_frequency, price_sensitivity | Fast to implement |
+| **B. Full rules engine** | Complete implementation of should_shop_today(), time_patterns, etc. | More realistic but longer |
+| **C. Hybrid: Core rules only** | Implement shopping_frequency and time_of_day only | Balanced approach |
+
+**Recommended**: Option C - implement core rules (shopping frequency, time preferences) for v1 test. Add full churn model, seasonal modifiers later.
+
+---
+
+## Implicit Assumptions
+
+### A1: Agents are already seeded in the database
+**Assumption**: The `agents` table has at least 2 agents with valid `user_id` references.
+**Risk**: If not seeded, simulation will fail immediately.
+**Validation**: Run `SELECT COUNT(*) FROM agents WHERE is_active = true` before starting.
+
+### A2: Coupons pool is populated
+**Assumption**: `coupons` table has at least 50 frontstore + 150 category/brand coupons.
+**Risk**: Offer assignment will fail or assign nothing.
+**Validation**: Run coupon counts query before starting.
+
+### A3: Products table has sufficient data
+**Assumption**: `products` table has products across multiple categories for agents to "shop".
+**Risk**: Shopping behavior will have no items to select.
+**Validation**: Check products count and category distribution.
+
+### A4: Database migrations are applied
+**Assumption**: Migration 007 (offer_engine.sql) has been run.
+**Risk**: Missing tables will cause immediate failures.
+**Validation**: Check for offer_cycles, user_offer_cycles, simulation_state tables.
+
+### A5: SIMULATION_MODE environment variable
+**Assumption**: `SIMULATION_MODE=true` will be set before running.
+**Risk**: All offer engine endpoints return "simulation_mode_disabled".
+**Validation**: Environment check at startup.
+
+---
+
+## Potential Blindspots
+
+### B1: Offer Engine Never Tested
+**Issue**: The entire offer engine has been implemented but never run against real database.
+**Risk**: Unknown bugs in cycle creation, offer assignment, expiration handling.
+**Mitigation**: Create a test script that exercises each component before full simulation.
+
+### B2: No Agent Execution Loop
+**Issue**: There's no code that actually "runs" agents. OfferScheduler handles offers, but nothing makes agents shop.
+**Risk**: Simulation will only rotate offers, not generate shopping data.
+**Mitigation**: Need to implement `AgentRunner` or `SimulationLoop` that:
+1. Gets all active agents
+2. For each simulated day, decides who shops
+3. Executes shopping behavior for each agent
+
+### B3: No Checkpointing/Resume
+**Issue**: 6-hour run can fail. No checkpoint mechanism exists.
+**Risk**: Lose all progress on crash.
+**Mitigation**: Implement checkpoint every N minutes to `simulation_state` table.
+
+### B4: No Shopping Session Events
+**Issue**: Agents need to create `shopping_session_events` records for ML training data.
+**Risk**: Even if offers rotate, no user behavior data is generated.
+**Mitigation**: Implement minimal action executor that creates:
+- `shopping_sessions` records
+- `shopping_session_events` (view_product, cart_add_item, etc.)
+
+### B5: Time Service Persistence
+**Issue**: `TimeService.save_state()` exists but unclear if called regularly.
+**Risk**: On crash, simulation time resets to beginning.
+**Mitigation**: Verify state is saved after each time advance.
+
+### B6: No Error Handling for Agent Failures
+**Issue**: If one agent fails, unclear if others continue.
+**Risk**: Single agent error could halt entire simulation.
+**Mitigation**: Wrap agent execution in try/catch, log errors, continue.
+
+### B7: Database Connection Pool Exhaustion
+**Issue**: Running 300 agents with concurrent DB operations.
+**Risk**: Connection pool (size=5) exhausted.
+**Mitigation**: For 2-agent test, fine. For 300 agents, need async connection pooling or batched operations.
+
+### B8: Metrics/Observability Gap
+**Issue**: No way to see what's happening during the 6-hour run.
+**Risk**: "Black box" execution, only see results at end.
+**Mitigation**: Implement real-time statistics endpoint or dashboard.
+
+---
+
+## Pre-flight Checklist
+
+Before running the 6-hour simulation:
+
+1. [ ] Verify at least 2 agents exist in `agents` table
+2. [ ] Verify agents have valid `user_id` references in `users` table
+3. [ ] Verify coupons table has 50+ frontstore and 150+ category/brand coupons
+4. [ ] Verify products table has products across categories
+5. [ ] Verify migration 007 applied (check for offer_cycles table)
+6. [ ] Set `SIMULATION_MODE=true` in environment
+7. [ ] Test offer engine endpoints manually (start, advance, status)
+8. [ ] Run offer assignment for 1 agent manually
+9. [ ] Verify logging is working
+10. [ ] Set up monitoring dashboard or logging output
+
+---
+
+## Recommended Priority Order
+
+1. **Test offer engine** - Verify existing code works
+2. **Implement minimal agent runner** - Loop that advances time and makes agents "shop"
+3. **Add basic shopping behavior** - Random product browsing based on persona
+4. **Add observability** - Rich dashboard or DB stats queries
+5. **Run 6-hour test** - 2 agents at 24x time scale
+6. **Review data** - Query shopping_session_events, user_coupons, orders
+7. **Fix issues** - Based on data review
+8. **Scale up** - Increase time scale, add more agents
+
+</details>
