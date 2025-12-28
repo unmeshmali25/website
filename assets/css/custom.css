@@ -646,3 +646,107 @@ p a[href*="/tags/"]:hover {
     font-size: 1.5em;
   }
 }
+
+/* --- Custom Collapse (Dropdown) Styles --- */
+.custom-collapse {
+  margin: 1.5rem 0;
+  padding: 0;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.collapse-summary {
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #f6f8fa;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #24292e;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.custom-collapse[open] .collapse-summary {
+  border-bottom-color: #e1e4e8;
+}
+
+.collapse-summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapse-summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+  font-size: 0.8em;
+}
+
+.custom-collapse[open] .collapse-summary::before {
+  transform: rotate(90deg);
+}
+
+.collapse-content {
+  padding: 16px;
+  overflow-y: auto;
+  font-size: 0.9em; /* Smaller font for content */
+}
+
+.collapse-content table {
+  font-size: 0.9em; /* Even smaller for tables if needed */
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Dark mode for collapse */
+@media (prefers-color-scheme: dark) {
+  .custom-collapse {
+    border-color: #30363d;
+    background-color: #1e1e1e;
+  }
+  .collapse-summary {
+    background-color: #2d333b;
+    color: #adbac7;
+  }
+  .custom-collapse[open] .collapse-summary {
+    border-bottom-color: #30363d;
+  }
+}
+
+/* --- Code Block Styles for ASCII Art and Diagrams --- */
+pre, .highlight pre {
+  background: #f6f8fa !important;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #24292e !important;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+/* Ensure text inside code blocks is visible */
+pre code, pre span {
+  color: inherit;
+}
+
+/* Dark mode overrides for code blocks */
+@media (prefers-color-scheme: dark) {
+  pre, .highlight pre {
+    background-color: #161b22 !important;
+    border-color: #30363d;
+    color: #c9d1d9 !important;
+  }
+}

@@ -2,121 +2,140 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:61812/posts/weekly/</loc>
-    <lastmod>2025-09-21T17:08:29-04:00</lastmod>
+    <loc>http://localhost:1313/posts/essays/</loc>
+    <lastmod>2025-12-27T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/</loc>
-    <lastmod>2025-09-21T17:08:29-04:00</lastmod>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-12-27T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:61812/</loc>
-    <lastmod>2025-09-21T17:08:29-04:00</lastmod>
+    <loc>http://localhost:1313/posts/essays/simulation_engine_offer_management/</loc>
+    <lastmod>2025-12-27T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:61812/tags/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-12-27T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/essays/persona_engine/</loc>
+    <lastmod>2025-12-25T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/weekly/</loc>
+    <lastmod>2025-09-20T17:08:29-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/reinforcement-learning/</loc>
+    <lastmod>2025-09-20T17:08:29-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rl-level1/</loc>
+    <lastmod>2025-09-20T17:08:29-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-09-20T17:08:29-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/weekly/week-38-2025/</loc>
+    <lastmod>2025-09-20T17:08:29-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/weekly-updates/</loc>
+    <lastmod>2025-09-20T17:08:29-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/weekly/week-37-2025/</loc>
     <lastmod>2025-09-14T17:08:29-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-37-2025/</loc>
-    <lastmod>2025-09-14T17:08:29-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:61812/tags/weekly-updates/</loc>
-    <lastmod>2025-09-14T17:08:29-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-36-2025/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-36-2025/</loc>
     <lastmod>2025-09-07T17:08:29-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/tags/reinforcement-learning/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-35-2025/</loc>
     <lastmod>2025-08-31T17:08:29-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/tags/rl-level1/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-35-2025/</loc>
-    <lastmod>2025-08-31T17:08:29-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-34-2025/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-34-2025/</loc>
     <lastmod>2025-08-23T17:08:29-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-33-2025/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-33-2025/</loc>
     <lastmod>2025-08-15T17:08:29-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-32-2025/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-32-2025/</loc>
     <lastmod>2025-08-08T17:08:29-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-30-2025/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-30-2025/</loc>
     <lastmod>2025-08-04T16:22:59-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-31-2025/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-31-2025/</loc>
     <lastmod>2025-08-04T16:22:59-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/essays/</loc>
+    <loc>http://localhost:1313/posts/essays/rl_learning_plan/</loc>
     <lastmod>2025-07-26T23:16:49-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/essays/rl_learning_plan/</loc>
+    <loc>http://localhost:1313/tags/essay/</loc>
     <lastmod>2025-07-26T23:16:49-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/tags/essay/</loc>
-    <lastmod>2025-07-26T23:16:49-04:00</lastmod>
+    <loc>http://localhost:1313/posts/micro-blogs/</loc>
+    <lastmod>2025-01-27T00:00:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-152022/</loc>
+    <loc>http://localhost:1313/posts/micro-blogs/standing_dopamine/</loc>
+    <lastmod>2025-01-27T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/weekly/week-152022/</loc>
     <lastmod>2022-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-47-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-47-2021/</loc>
     <lastmod>2021-11-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-33-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-33-2021/</loc>
     <lastmod>2021-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-31-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-31-2021/</loc>
     <lastmod>2021-08-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-29-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-29-2021/</loc>
     <lastmod>2021-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-24-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-24-2021/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-22-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-22-2021/</loc>
     <lastmod>2021-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-21-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-21-2021/</loc>
     <lastmod>2021-05-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-20-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-20-2021/</loc>
     <lastmod>2021-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-19-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-19-2021/</loc>
     <lastmod>2021-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-18-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-18-2021/</loc>
     <lastmod>2021-05-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-17-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-17-2021/</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-16-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-16-2021/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-15-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-15-2021/</loc>
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-14-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-14-2021/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-13-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-13-2021/</loc>
     <lastmod>2021-03-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-12-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-12-2021/</loc>
     <lastmod>2021-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-11-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-11-2021/</loc>
     <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/posts/weekly/week-10-2021/</loc>
+    <loc>http://localhost:1313/posts/weekly/week-10-2021/</loc>
     <lastmod>2021-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:61812/about/</loc>
+    <loc>http://localhost:1313/posts/essays/my_adeventure_in_full_stack/</loc>
   </url><url>
-    <loc>http://localhost:61812/categories/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>http://localhost:61812/home-intro/</loc>
+    <loc>http://localhost:1313/blogs/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/home-intro/</loc>
   </url>
 </urlset>

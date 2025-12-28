@@ -50,230 +50,255 @@ Implemented a complete simulation engine for testing offer management workflows 
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## Detailed Architecture Overview
-Architecture Overview
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                          SIMULATION ENGINE & OFFER MANAGEMENT              │
-│                          (claude-simulation-work branch)                   │
-└─────────────────────────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  LAYER 1: APPLICATION & API                                                │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌──────────────────────────────────────────────────────────────────────┐ │
-│  │  FastAPI Application (app/main.py)                                   │ │
-│  │                                                                       │ │
-│  │  ┌──────────────────┐      ┌──────────────────────────────────┐     │ │
-│  │  │ Auth Verification │─────▶│  SIMULATION MODE BYPASS          │     │ │
-│  │  │ (Supabase JWT)   │      │  Bearer dev:<agent_id>           │     │ │
-│  │  └──────────────────┘      └──────────────────────────────────┘     │ │
-│  │           │                              │                           │ │
-│  │           ▼                              ▼                           │ │
-│  │  ┌──────────────────┐      ┌──────────────────────────────────┐     │ │
-│  │  │ Production Paths │      │  Simulation Paths                 │     │ │
-│  │  └──────────────────┘      └──────────────────────────────────┘     │ │
-│  │           │                              │                           │ │
-│  │           ▼                              ▼                           │ │
-│  │  ┌──────────────────┐      ┌──────────────────────────────────┐     │ │
-│  │  │ Routes:          │      │  Offer Engine Routes              │     │ │
-│  │  │  • cart          │      │  • /cycles (GET/POST)             │     │ │
-│  │  │  • orders        │      │  • /cycles/{id}                    │     │ │
-│  │  │  • stores        │      │  • /refresh/user/{user_id}        │     │ │
-│  │  └──────────────────┘      │  • /time/advance                   │     │ │
-│  │                             └──────────────────────────────────┘     │ │
-│  └──────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  LAYER 2: SIMULATION ORCHESTRATOR                                           │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌──────────────────────────────────────────────────────────────────────┐ │
-│  │  SimulationOrchestrator (app/simulation/orchestrator.py)              │ │
-│  │                                                                       │ │
-│  │  ┌────────────────────────────────────────────────────────────────┐  │ │
-│  │  │  Rich Dashboard (Terminal UI)                                   │  │ │
-│  │  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐                │  │ │
-│  │  │  │ Statistics  │ │ Agent List  │ │ Event Log  │                │  │ │
-│  │  │  │ • Cycles    │ │ • Status    │ │ • Actions  │                │  │ │
-│  │  │  │ • Checkouts │ │ • Store     │ │ • Errors   │                │  │ │
-│  │  │  │ • Offers    │ │ • Cart      │ │             │                │  │ │
-│  │  │  └─────────────┘ └─────────────┘ └─────────────┘                │  │ │
-│  │  └────────────────────────────────────────────────────────────────┘  │ │
-│  │                                                                       │ │
-│  │  ┌────────────────────────────────────────────────────────────────┐  │ │
-│  │  │  Time Service                                                   │  │ │
-│  │  │  • Real Time ───────────────────┐                               │  │ │
-│  │  │  • Simulated Time ────────▶ 1 hour = 168 hours (1 week)        │  │ │
-│  │  │  • Coordinate Conversion     │                               │  │ │
-│  │  └────────────────────────────────┼───────────────────────────────┘  │ │
-│  │                                   │                                   │ │
-│  │  ┌────────────────────────────────▼────────────────────────────────┐  │ │
-│  │  │  Offer Engine Scheduler                                          │  │ │
-│  │  │  ┌──────────────────┐  ┌──────────────────┐  ┌───────────────┐  │  │ │
-│  │  │  │ Cycle Manager    │  │ Expiration      │  │ Offer Assigner│  │  │ │
-│  │  │  │ • Create cycles  │──▶│ Handler         │──▶│ • Distribute  │  │  │ │
-│  │  │  │ • Track windows │  │ • Mark expired  │  │   to wallets  │  │  │ │
-│  │  │  └──────────────────┘  └──────────────────┘  └───────────────┘  │  │ │
-│  │  └────────────────────────────────────────────────────────────────┘  │ │
-│  └──────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        │ Coordinates
-                                        ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  LAYER 3: AGENT SIMULATION                                                   │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌──────────────────────────────────────────────────────────────────────┐ │
-│  │  Agent Pool (Multiple Persona-Based Agents)                          │ │
-│  │                                                                       │ │
-│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐              │ │
-│  │  │ Agent 1  │  │ Agent 2  │  │ Agent 3  │  │ Agent N  │              │ │
-│  │  │ (Excel   │  │ (Excel   │  │ (Excel   │  │ (Excel   │              │ │
-│  │  │  Persona)│  │  Persona)│  │  Persona)│  │  Persona)│              │ │
-│  │  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘              │ │
-│  │       │             │             │             │                    │ │
-│  │       ▼             ▼             ▼             ▼                    │ │
-│  │  ┌────────────────────────────────────────────────────────────────┐  │ │
-│  │  │  Agent State (28 Persona Attributes)                            │  │ │
-│  │  │  • Demographics: age, income, location                        │  │ │
-│  │  │  • Shopping: frequency, basket_size, impulsivity               │  │ │
-│  │  │  • Preferences: categories, brands, days_of_week                │  │ │
-│  │  │  • Psychology: discount_sensitivity, price_consciousness       │  │ │
-│  │  └────────────────────────────────────────────────────────────────┘  │ │
-│  │       │             │             │             │                    │ │
-│  │       └─────────────┴─────────────┴─────────────┘                    │ │
-│  │                       │                                             │ │
-│  │                       ▼                                             │ │
-│  │  ┌────────────────────────────────────────────────────────────────┐  │ │
-│  │  │  LangGraph Shopping Graph (Decision Workflow)                   │  │ │
-│  │  │                                                                 │  │ │
-│  │  │  ┌──────────┐    ┌─────────────┐    ┌──────────────┐            │  │ │
-│  │  │  │ Start    │───▶│ decide_shop │───▶│ browse_      │───┐        │  │ │
-│  │  │  └──────────┘    └─────────────┘    │ products      │   │        │  │ │
-│  │  │                     │ No             └──────────────┘   │        │  │ │
-│  │  │                     ▼                                  ▼        │  │ │
-│  │  │                  ┌────────┐                    ┌─────────────┐  │        │  │ │
-│  │  │                  │  END   │                    │ add_to_cart │  │        │  │ │
-│  │  │                  └────────┘                    └─────────────┘  │        │  │ │
-│  │  │                       │                              │        │        │  │ │
-│  │  │                       │                              ▼        │        │  │ │
-│  │  │                       │                     ┌─────────────┐  │        │  │ │
-│  │  │                       │                     │ view_coupons │  │        │  │ │
-│  │  │                       │                     └─────────────┘  │        │  │ │
-│  │  │                       │                              │        │        │  │ │
-│  │  │                       │                              ▼        │        │  │ │
-│  │  │                       │                     ┌─────────────┐  │        │  │ │
-│  │  │                       │                     │ decide_     │  │        │  │ │
-│  │  │                       │                     │ checkout    │───┼───────▶ │  │ │
-│  │  │                       │                     └─────────────┘  │        │  │ │
-│  │  │                       │         Yes      │       No      │        │  │ │
-│  │  │                       │    ┌─────────────┴──────┐ ┌────────┐ │        │  │ │
-│  │  │                       │    ▼                  ▼ ▼   END   │ │        │  │ │
-│  │  │                       │ ┌───────────┐    ┌──────────┐└─────────┘  │        │  │ │
-│  │  │                       │ │ complete_ │    │ abandon_ │               │        │  │ │
-│  │  │                       │ │ checkout  │    │ session  │               │        │  │ │
-│  │  │                       │ └───────────┘    └──────────┘               │        │  │ │
-│  │  │                       │                      │                        │        │  │ │
-│  │  │                       └──────────────────────┴────────────────────────┘        │  │ │
-│  │  │                                                                 │  │ │
-│  │  └────────────────────────────────────────────────────────────────┘  │ │
-│  │                           │                                            │ │
-│  │                           ▼                                            │ │
-│  │  ┌────────────────────────────────────────────────────────────────┐  │ │
-│  │  │  Shopping Actions (Database Operations)                          │  │ │
-│  │  │  • create_session()      • browse_products()                      │  │ │
-│  │  │  • add_to_cart()         • apply_coupon()                         │  │ │
-│  │  │  • view_coupon()         • complete_checkout()                     │  │ │
-│  │  │  • abandon_session()     • create_event() (ML training data)     │  │ │
-│  │  └────────────────────────────────────────────────────────────────┘  │ │
-│  └──────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  LAYER 4: DATABASE (PostgreSQL)                                             │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌──────────────────────────────────────────────────────────────────────┐ │
-│  │  NEW TABLES (007_migration)                                           │ │
-│  │  ┌─────────────────────┐  ┌─────────────────────┐                     │ │
-│  │  │ offer_cycles        │  │ user_offer_cycles   │                     │ │
-│  │  │ • id                │  │ • user_id           │                     │ │
-│  │  │ • cycle_number      │  │ • current_cycle_id  │                     │ │
-│  │  │ • started_at        │  │ • next_refresh_at   │                     │ │
-│  │  │ • ends_at           │  │ • is_simulation     │                     │ │
-│  │  │ • simulated_dates   │  └─────────────────────┘                     │ │
-│  │  └─────────────────────┘                                                │ │
-│  │                                                                          │ │
-│  │  ┌─────────────────────┐                                                │ │
-│  │  │ simulation_state    │                                                │ │
-│  │  │ • simulated_date    │                                                │ │
-│  │  │ • real_start_time   │                                                │ │
-│  │  │ • cycle_number      │                                                │ │
-│  │  └─────────────────────┘                                                │ │
-│  └──────────────────────────────────────────────────────────────────────┘ │
-│                                                                             │
-│  ┌──────────────────────────────────────────────────────────────────────┐ │
-│  │  MODIFIED TABLES                                                      │ │
-│  │  ┌─────────────────────────────┐    ┌───────────────────────────────┐ │ │
-│  │  │ user_coupons                 │    │ orders                        │ │ │
-│  │  │ + status (active/expired/)   │    │ + is_simulated                │ │ │
-│  │  │ + offer_cycle_id             │    │ + simulated_at                │ │ │
-│  │  │ + is_simulation              │    │                               │ │ │
-│  │  └─────────────────────────────┘    └───────────────────────────────┘ │ │
-│  └──────────────────────────────────────────────────────────────────────┘ │
-│                                                                             │
-│  ┌──────────────────────────────────────────────────────────────────────┐ │
-│  │  EXISTING TABLES (Used by Simulation)                                 │ │
-│  │  users, agents, products, shopping_sessions,                          │ │
-│  │  shopping_session_events, cart_items, coupons                         │ │
-│  └──────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  LAYER 5: TOOLING & UTILITIES                                              │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌────────────────────────────────────┐  ┌──────────────────────────────┐  │
-│  │ seed_simulation_agents.py           │  │ check_db.py                  │  │
-│  │ • Load Excel personas              │  │ • List tables & row counts   │  │
-│  │ • Create users & agents            │  │ • Inspect sample data        │  │
-│  │ • --test flag for quick testing    │  │ • Validate schema            │  │
-│  └────────────────────────────────────┘  └──────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  DATA FLOWS                                                                 │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  1. TIME ADVANCEMENT:                                                       │
-│     Orchestrator ──▶ TimeService ──▶ SimulationState (DB)                   │
-│     (1 real hour = 1 week simulated)                                        │
-│                                                                             │
-│  2. OFFER CYCLE:                                                            │
-│     Scheduler ──▶ CycleManager ──▶ OfferAssigner ──▶ user_coupons           │
-│     (frontstore: 2/cycle, category-brand: 30/cycle)                       │
-│                                                                             │
-│  3. AGENT EXECUTION:                                                        │
-│     Orchestrator ──▶ ShoppingGraph ──▶ Actions ──▶ shopping_sessions       │
-│                   ──▶ Events (ML training data)                            │
-│                                                                             │
-│  4. AUTHENTICATION:                                                         │
-│     Request ──▶ verify_token() ──┬─▶ Supabase JWT (production)             │
-│                                   └─▶ dev:<agent_id> (simulation)          │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  KEY FEATURES                                                               │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  ✓ Non-intrusive: Only activates with SIMULATION_MODE=true                 │
-│  ✓ Accelerated time: 168x default (configurable)                           │
-│  ✓ Persona-driven: 28 attributes per agent from Excel                      │
-│  ✓ Rich monitoring: Live terminal dashboard                                │
-│  ✓ LangGraph integration: Traced decision paths                            │
-│  ✓ ML-ready: All events recorded for training                              │
-└─────────────────────────────────────────────────────────────────────────────┘
+# Simulation Layer-Specific Architecture Overview
+
+## Layer 1: Application & API
+
+```
+FastAPI Application (app/main.py)
+
+  ┌──────────────────┐      ┌──────────────────────────────────┐
+  │ Auth Verification │─────▶│  SIMULATION MODE BYPASS          │
+  │ (Supabase JWT)   │      │  Bearer dev:<agent_id>           │
+  └──────────────────┘      └──────────────────────────────────┘
+           │                              │
+           ▼                              ▼
+  ┌──────────────────┐      ┌──────────────────────────────────┐
+  │ Production Paths │      │  Simulation Paths                 │
+  └──────────────────┘      └──────────────────────────────────┘
+           │                              │
+           ▼                              ▼
+  ┌──────────────────┐      ┌──────────────────────────────────┐
+  │ Routes:          │      │  Offer Engine Routes              │
+  │  • cart          │      │  • /cycles (GET/POST)             │
+  │  • orders        │      │  • /cycles/{id}                    │
+  │  • stores        │      │  • /refresh/user/{user_id}        │
+  └──────────────────┘      │  • /time/advance                   │
+                           └──────────────────────────────────┘
+```
+
+---
+
+## Layer 2: Simulation Orchestrator
+
+```
+SimulationOrchestrator (app/simulation/orchestrator.py)
+
+  ┌────────────────────────────────────────────────────────────────┐
+  │  Rich Dashboard (Terminal UI)                                   │
+  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐                │
+  │  │ Statistics  │ │ Agent List  │ │ Event Log  │                │
+  │  │ • Cycles    │ │ • Status    │ │ • Actions  │                │
+  │  │ • Checkouts │ │ • Store     │ │ • Errors   │                │
+  │  │ • Offers    │ │ • Cart      │ │             │                │
+  │  └─────────────┘ └─────────────┘ └─────────────┘                │
+  └────────────────────────────────────────────────────────────────┘
+
+  ┌────────────────────────────────────────────────────────────────┐
+  │  Time Service                                                   │
+  │  • Real Time ───────────────────┐                               │
+  │  • Simulated Time ────────▶ 1 hour = 168 hours (1 week)        │
+  │  • Coordinate Conversion     │                               │
+  └────────────────────────────────┼───────────────────────────────┘
+                                    │
+  ┌────────────────────────────────▼────────────────────────────────┐
+  │  Offer Engine Scheduler                                          │
+  │  ┌──────────────────┐  ┌──────────────────┐  ┌───────────────┐  │
+  │  │ Cycle Manager    │  │ Expiration      │  │ Offer Assigner│  │
+  │  │ • Create cycles  │──▶│ Handler         │──▶│ • Distribute  │  │
+  │  │ • Track windows │  │ • Mark expired  │  │   to wallets  │  │
+  │  └──────────────────┘  └──────────────────┘  └───────────────┘  │
+  └────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Layer 3: Agent Simulation
+
+```
+Agent Pool (Multiple Persona-Based Agents)
+
+  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
+  │ Agent 1  │  │ Agent 2  │  │ Agent 3  │  │ Agent N  │
+  │ (Excel   │  │ (Excel   │  │ (Excel   │  │ (Excel   │
+  │  Persona)│  │  Persona)│  │  Persona)│  │  Persona)│
+  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘
+       │             │             │             │
+       ▼             ▼             ▼             ▼
+
+  ┌────────────────────────────────────────────────────────────────┐
+  │  Agent State (28 Persona Attributes)                            │
+  │  • Demographics: age, income, location                        │
+  │  • Shopping: frequency, basket_size, impulsivity               │
+  │  • Preferences: categories, brands, days_of_week                │
+  │  • Psychology: discount_sensitivity, price_consciousness       │
+  └────────────────────────────────────────────────────────────────┘
+       │             │             │             │
+       └─────────────┴─────────────┴─────────────┘
+                     │
+                     ▼
+
+  ┌────────────────────────────────────────────────────────────────┐
+  │  LangGraph Shopping Graph (Decision Workflow)                   │
+  │                                                                 │
+  │                      ┌──────────┐                                │
+  │                      │  Start   │                                │
+  │                      └────┬─────┘                                │
+  │                           │                                       │
+  │                           ▼                                       │
+  │                    ┌─────────────┐                               │
+  │                    │decide_shop │                               │
+  │                    └─────┬───────┘                               │
+  │                    Yes│      │No                                │
+  │                       ▼      ▼                                   │
+  │              ┌────────────┐  ┌────┐                              │
+  │              │browse_    │  │END │                              │
+  │              │products   │  └────┘                              │
+  │              └─────┬──────┘                                       │
+  │                   │                                             │
+  │                   ▼                                             │
+  │           ┌───────────────┐                                     │
+  │           │  add_to_cart  │                                     │
+  │           └───────┬───────┘                                     │
+  │                   │                                             │
+  │                   ▼                                             │
+  │           ┌───────────────┐                                     │
+  │           │ view_coupons  │                                     │
+  │           └───────┬───────┘                                     │
+  │                   │                                             │
+  │                   ▼                                             │
+  │         ┌─────────────────┐                                     │
+  │         │  decide_checkout│                                     │
+  │         └────┬───────┬───┘                                     │
+  │              │       │                                         │
+  │         Yes  │       │  No                                      │
+  │              ▼       ▼                                         │
+  │     ┌────────────┐  ┌────┐                                    │
+  │     │complete_   │  │END │                                    │
+  │     │checkout    │  └────┘                                    │
+  │     └────────────┘                                            │
+  │                                                                 │
+  └────────────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+
+  ┌────────────────────────────────────────────────────────────────┐
+  │  Shopping Actions (Database Operations)                          │
+  │  • create_session()      • browse_products()                      │
+  │  • add_to_cart()         • apply_coupon()                         │
+  │  • view_coupon()         • complete_checkout()                     │
+  │  • abandon_session()     • create_event() (ML training data)     │
+  └────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Layer 4: Database Schema
+
+```
+NEW TABLES (Migration 007)
+
+┌─────────────────────┐  ┌─────────────────────┐
+│ offer_cycles        │  │ user_offer_cycles   │
+├─────────────────────┤  ├─────────────────────┤
+│ id                  │  │ user_id → users(id) │
+│ cycle_number        │  │ current_cycle_id    │
+│ started_at          │  │ last_refresh_at     │
+│ ends_at             │  │ next_refresh_at     │
+│ simulated_start_date│  │ is_simulation       │
+│ simulated_end_date  │  └─────────────────────┘
+│ is_simulation       │
+└─────────────────────┘
+
+┌─────────────────────┐
+│ simulation_state    │
+├─────────────────────┤
+│ simulated_date      │
+│ real_start_time     │
+│ cycle_number        │
+└─────────────────────┘
+
+
+MODIFIED TABLES
+
+┌─────────────────────────────┐    ┌───────────────────────────────┐
+│ user_coupons                 │    │ orders                        │
+├─────────────────────────────┤    ├───────────────────────────────┤
+│ + status (active/expired/)   │    │ + is_simulated                │
+│ + offer_cycle_id             │    │ + simulated_at                │
+│ + is_simulation              │    │                               │
+└─────────────────────────────┘    └───────────────────────────────┘
+
+
+EXISTING TABLES (Used by Simulation)
+
+users, agents, products, shopping_sessions,
+shopping_session_events, cart_items, coupons
+```
+
+---
+
+## Layer 5: Tooling & Utilities
+
+```
+┌────────────────────────────────────┐  ┌──────────────────────────────┐
+│ seed_simulation_agents.py           │  │ check_db.py                  │
+│ • Load Excel personas              │  │ • List tables & row counts   │
+│ • Create users & agents            │  │ • Inspect sample data        │
+│ • --test flag for quick testing    │  │ • Validate schema            │
+└────────────────────────────────────┘  └──────────────────────────────┘
+```
+
+---
+
+## Data Flows
+
+```
+1. TIME ADVANCEMENT
+   Orchestrator ──▶ TimeService ──▶ SimulationState (DB)
+                          │
+                          └──▶ Coordinate Conversion
+                              Real Time ↔ Simulated Time
+                              (1 hour = 168 hours = 1 week)
+
+2. OFFER CYCLE MANAGEMENT
+   Scheduler ──▶ CycleManager ──▶ OfferAssigner ──▶ user_coupons
+                │                │
+                │                └─▶ Distribute to wallets
+                │                   • frontstore: 2/cycle
+                │                   • category-brand: 30/cycle
+                └─▶ ExpirationHandler
+                    └─▶ Mark expired offers
+
+3. AGENT EXECUTION
+   Orchestrator ──▶ ShoppingGraph (LangGraph)
+                  │
+                  ├─▶ decide_shop
+                  ├─▶ browse_products
+                  ├─▶ add_to_cart
+                  ├─▶ view_coupons
+                  ├─▶ decide_checkout
+                  └─▶ complete_checkout / abandon_session
+                         │
+                         ▼
+                  Actions ──▶ Database
+                         │
+                         ├─▶ shopping_sessions
+                         └─▶ shopping_session_events (ML training data)
+
+4. AUTHENTICATION FLOW
+   HTTP Request ──▶ verify_token()
+                      │
+         ┌────────────┴────────────┐
+         ▼                         ▼
+    Production                 Simulation
+    (Supabase JWT)              (dev:<agent_id>)
+         │                         │
+         └───────────┬─────────────┘
+                     ▼
+               User Context
+               (user_id, email)
+```
 
 ## Core Components
 
@@ -362,8 +387,7 @@ FRONTSTORE_PER_CYCLE=2
 CATEGORY_BRAND_PER_CYCLE=30
 ```
 
-<details style="max-height: 800px; overflow: auto;">
-<summary>Simulation Test QA, Assumptions, Blindspots, Checklist & Priority Order</summary>
+{{< collapse maxHeight="800" title="Simulation Test QA, Assumptions, Blindspots, Checklist & Priority Order" >}}
 
 ### Q1: What constitutes "agent behavior" for the initial 6-hour test?
 
@@ -545,4 +569,4 @@ Before running the 6-hour simulation:
 7. **Fix issues** - Based on data review
 8. **Scale up** - Increase time scale, add more agents
 
-</details>
+{{< /collapse >}}

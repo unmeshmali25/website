@@ -265,17 +265,28 @@ border-top: 1px solid #e0e0e0;
 margin: 1rem 0;
 }
 .recent-posts-grid {
-display: flex;
-gap: 2rem;
-flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 .recent-posts-column {
-flex: 1;
-min-width: 300px;
+  min-width: 0;
+}
+.post-item {
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
 }
 .posts-list .post-item a {
   text-decoration: none; 
   color: #007bff;
+}
+
+/* --- Single Post Styles --- */
+.post-title {
+  color: #9b8bb4; /* Obsidian purple */
+  font-size: 1em; /* Same size as body text */
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
 }
 
 /* --- Consolidated Dark Mode Styles --- */
@@ -363,6 +374,9 @@ min-width: 300px;
 
 /* --- Consolidated Mobile Responsive Styles --- */
 @media (max-width: 768px) {
+  .recent-posts-grid {
+    grid-template-columns: 1fr;
+  }
   .homepage-grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -472,4 +486,267 @@ p a[href*="/tags/"]:hover {
   text-decoration: none !important;
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(155, 139, 180, 0.3);
+}
+
+/* --- Blogs Page Styles --- */
+.blogs-page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blogs-intro {
+  margin-bottom: 3rem;
+  color: #6c757d;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.blog-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-column-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.blog-column-title a {
+  color: #212529;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-column-title a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.blog-column-description {
+  color: #6c757d;
+  margin: 0 0 2rem 0;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.blog-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.blog-post-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.blog-post-date {
+  color: #6c757d;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.blog-post-item a {
+  color: #212529;
+  text-decoration: none;
+  font-size: 1em;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.blog-post-item a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.blog-view-all {
+  display: inline-block;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95em;
+  margin-top: auto;
+  padding-top: 1rem;
+  transition: color 0.2s ease;
+}
+
+.blog-view-all:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Dark mode support for blogs page */
+@media (prefers-color-scheme: dark) {
+  .blogs-intro {
+    color: var(--text-secondary-dark);
+  }
+  
+  .blog-column-title a {
+    color: var(--text-main-dark);
+  }
+  
+  .blog-column-title a:hover {
+    color: var(--accent-grey-dark);
+  }
+  
+  .blog-column-description {
+    color: var(--text-secondary-dark);
+  }
+  
+  .blog-post-item {
+    border-bottom-color: #4a5568;
+  }
+  
+  .blog-post-date {
+    color: var(--text-secondary-dark);
+  }
+  
+  .blog-post-item a {
+    color: var(--text-main-dark);
+  }
+  
+  .blog-post-item a:hover {
+    color: var(--accent-grey-dark);
+  }
+  
+  .blog-view-all {
+    color: var(--accent-grey-dark);
+  }
+  
+  .blog-view-all:hover {
+    color: var(--text-main-dark);
+  }
+}
+
+/* Mobile responsive for blogs page */
+@media (max-width: 768px) {
+  .blogs-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .blog-column-title {
+    font-size: 1.5em;
+  }
+}
+
+/* --- Custom Collapse (Dropdown) Styles --- */
+.custom-collapse {
+  margin: 1.5rem 0;
+  padding: 0;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.collapse-summary {
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #f6f8fa;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #24292e;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.custom-collapse[open] .collapse-summary {
+  border-bottom-color: #e1e4e8;
+}
+
+.collapse-summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapse-summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+  font-size: 0.8em;
+}
+
+.custom-collapse[open] .collapse-summary::before {
+  transform: rotate(90deg);
+}
+
+.collapse-content {
+  padding: 16px;
+  overflow-y: auto;
+  font-size: 0.9em; /* Smaller font for content */
+}
+
+.collapse-content table {
+  font-size: 0.9em; /* Even smaller for tables if needed */
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Dark mode for collapse */
+@media (prefers-color-scheme: dark) {
+  .custom-collapse {
+    border-color: #30363d;
+    background-color: #1e1e1e;
+  }
+  .collapse-summary {
+    background-color: #2d333b;
+    color: #adbac7;
+  }
+  .custom-collapse[open] .collapse-summary {
+    border-bottom-color: #30363d;
+  }
+}
+
+/* --- Code Block Styles for ASCII Art and Diagrams --- */
+pre, .highlight pre {
+  background: #f6f8fa !important;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #24292e !important;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+/* Ensure text inside code blocks is visible */
+pre code, pre span {
+  color: inherit;
+}
+
+/* Dark mode overrides for code blocks */
+@media (prefers-color-scheme: dark) {
+  pre, .highlight pre {
+    background-color: #161b22 !important;
+    border-color: #30363d;
+    color: #c9d1d9 !important;
+  }
 }

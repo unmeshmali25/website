@@ -1,4 +1,6 @@
-<details style="max-height: {{ .Get "maxHeight" }}px; overflow: auto;">
-    <summary>Expand</summary>
-    {{ .Inner | markdownify }}
-    </details>
+<details class="custom-collapse">
+    <summary class="collapse-summary">{{ .Get "title" | default "Expand" }}</summary>
+    <div class="collapse-content" {{ with .Get "maxHeight" }}style="max-height: {{ . }}px;"{{ end }}>
+        {{ .Inner | markdownify }}
+    </div>
+</details>
