@@ -1,208 +1,371 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Unmesh Mali</title>
-    <link>http://localhost:1313/posts/weekly/</link>
-    <description>Recent content on Unmesh Mali</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 20 Sep 2025 17:08:29 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/weekly/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Week 38, 2025 : Meditation</title>
-      <link>http://localhost:1313/posts/weekly/week-38-2025/</link>
-      <pubDate>Sat, 20 Sep 2025 17:08:29 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-38-2025/</guid>
-      <description>&lt;h2 id=&#34;week-38-2025&#34;&gt;Week 38, 2025&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #d73a49&#34;&gt;&amp;ldquo;bas hujum-e-na-umidi (feeling of despair) Khak mein mil jaegi&amp;hellip;&lt;br&gt;&#xA;ye jo ek lazzat (pleasure) hamari sai-e-be-hasil mein hai – Mirza Ghalib&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Having spent the last 2 weeks recovering from the joy, I decided I need to do something different to get on track. That&amp;rsquo;s why I started meditating this week. I have always had a tumultous relationship with meditation. Even though I am always convinced of its powers to streamline my life, I, for some reason, never do it consistently. I wished to change that starting this week. I meditated almost everyday.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 37, 2025 : Social Commitments</title>
-      <link>http://localhost:1313/posts/weekly/week-37-2025/</link>
-      <pubDate>Sun, 14 Sep 2025 17:08:29 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-37-2025/</guid>
-      <description>&lt;h2 id=&#34;week-37-2025&#34;&gt;Week 37, 2025&lt;/h2&gt;&#xA;&lt;p&gt;I spent a majority of this week in social commitments. We went to a couple dinner invitations and hosted our neighbors from India for 4 days. The week was super busy and I could not take time out for any productive tasks besides work.&#xA;Nothing worth writing about!&lt;/p&gt;&#xA;&lt;hr&gt;</description>
-    </item>
-    <item>
-      <title>Week 36, 2025 : Mission Accomplished (While I Cheered from the Sidelines)</title>
-      <link>http://localhost:1313/posts/weekly/week-36-2025/</link>
-      <pubDate>Sun, 07 Sep 2025 17:08:29 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-36-2025/</guid>
-      <description>&lt;h2 id=&#34;week-36-2025&#34;&gt;Week 36, 2025&lt;/h2&gt;&#xA;&lt;p&gt;A milestone week. The mission that me and Kiran set out for, starting January 2023, was accomplished this week. 33 months of dedicated efforts to it. Every single choice we made, every priority, every minute we spent were towards this goal. The mission was for Kiran to get her master&amp;rsquo;s degree and start working full-time in the US.&lt;/p&gt;&#xA;&lt;p&gt;In the past 33 months, we moved between 2 states, 3 cities, 4 houses, 5 entrance exams, half a dozen university applications, a master&amp;rsquo;s degree in under 12 months, countless courses - all in service of this mission.&#xA;This week, Kiran got a full-time job as an AI engineer/business professional. It was a lot tougher than we expected. It speaks volumes to her hard-work, patience, and optimism.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 35, 2025 : Multi-Arm Bandit Blues</title>
-      <link>http://localhost:1313/posts/weekly/week-35-2025/</link>
-      <pubDate>Sun, 31 Aug 2025 17:08:29 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-35-2025/</guid>
-      <description>&lt;h2 id=&#34;week-35-2025&#34;&gt;Week 35, 2025&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #d73a49&#34;&gt;&amp;ldquo;Yun toh humne kya kiya lekin &amp;hellip;&lt;br&gt;&#xA;ye kiya hai ke din guzaare hai – Jaun Elia&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;This week hasn&amp;rsquo;t been very productive but not wasterful either. All my priority work items below got distracted attention from me. I guess this is just part of the process between start and end when it&amp;rsquo;s all ungratifying but you keep moving on.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;work-hahahugoshortcode37s0hbhb&#34;&gt;Work &lt;span style=&#34;float: right;&#34;&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/h3&gt;&#xA;&lt;p&gt;I went into the Manhattan office once this week. It was a very productive Monday. That gave me the necessary momentum to keep going for the next few days. I also started gathering data to pitch the Reinforcement Learning project to my manager. It seems promising. I have seen a lot of &amp;ldquo;exploitation&amp;rdquo; (RL term) of knowledge of offer and customer behaviors and less &amp;ldquo;exploration&amp;rdquo;. As soon as I saw these results, I got yippy, I almost sent an email to my manager but held back. I want to further strengthen my case with a possible PRD (Product Requirments Document). I have some hopes that this may just work.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 34, 2025 : Nashville Hot Chicken Sandwich</title>
-      <link>http://localhost:1313/posts/weekly/week-34-2025/</link>
-      <pubDate>Sat, 23 Aug 2025 17:08:29 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-34-2025/</guid>
-      <description>&lt;h2 id=&#34;week-34-2025&#34;&gt;Week 34, 2025&lt;/h2&gt;&#xA;&lt;p&gt;The highlight this week was definitely the Nashville-style hot chicken sandwich. I hadn&amp;rsquo;t been eating any meat for over 50 days (practising the month of Shraavan). This Friday the Shraavan month ended and I immediately went for my favority type of chicken - Nashiville hot fried chicken sandwich.&#xA;For the whole week, I had been exercising great restraint in eating and putting in disciplined workouts. Hence, the one Friday dinner with fried chicken was delicious and guilt-free - making it more enjoyable even in memories.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 33, 2025 : Fighting FIFA addiction &amp; RL Recommender insights</title>
-      <link>http://localhost:1313/posts/weekly/week-33-2025/</link>
-      <pubDate>Fri, 15 Aug 2025 17:08:29 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-33-2025/</guid>
-      <description>&lt;h2 id=&#34;week-33-2025&#34;&gt;Week 33, 2025&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;This is a blog of complaints. Complaints against myself. Complaints of not taking control of the things I do. Complaints of letting myself drift through life out of focus.&lt;/em&gt;&#xA;&lt;em&gt;I didn&amp;rsquo;t get a single workout this week. Many social commitments and my &lt;em&gt;addition to FIFA&lt;/em&gt;. I don&amp;rsquo;t even know how many hours I spent playing the game. It must be a lot. Even though I blame social commitments for my lack of progress throughout the week, I know the reason to be the time spent on &lt;em&gt;FIFA&lt;/em&gt; and &lt;em&gt;social media&lt;/em&gt;. Need to fight these addictions.&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 32, 2025 : Hosting Friends in NYC</title>
-      <link>http://localhost:1313/posts/weekly/week-32-2025/</link>
-      <pubDate>Fri, 08 Aug 2025 17:08:29 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-32-2025/</guid>
-      <description>&lt;h2 id=&#34;week-32-2025&#34;&gt;Week 32, 2025&lt;/h2&gt;&#xA;&lt;p&gt;The weekdays were good but I couldn&amp;rsquo;t make progress on any of my priority items below.&#xA;I had a ball of a time over the weekend though. Bhushan and his wife were visiting. We selectively toured NYC and NJ with them over the weekend. It was Kiran&amp;rsquo;s birthday weekend and the expectations weighed heavy on me (but just a bouqet of flowers lifted a lot of that weight - easier than I thought).&lt;br&gt;&#xA;I played Cricket in New Jersey (won man of the match for the first game), ate at a really good Marathi restaurant, went to Brooklyn waterfront one evening, watched the sunset over the Brooklyn Bridge and the World Trade Center and then saw the night lights and night life come on in Manhattan, ate Falafel wrap at a food truck in Dumbo. Kiran also got a lot of good pictures which made her birthday more complete. Couldn&amp;rsquo;t complain (but you know I will down below lol).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 30, 2025 : Started RL learning journey</title>
-      <link>http://localhost:1313/posts/weekly/week-30-2025/</link>
-      <pubDate>Mon, 04 Aug 2025 16:22:59 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-30-2025/</guid>
-      <description>&lt;h2 id=&#34;week-30-2025&#34;&gt;Week 30, 2025&lt;/h2&gt;&#xA;&lt;p&gt;I started learning Reinforcement Learnig this week. Inspiration? - It&amp;rsquo;s uses in formatting LLM answers. I remember Deepseek&amp;rsquo;s responses to be visually appealing than any other LLMs at the time and I knew they used RL (RLHF) to format the answers. Also, the rise and proliferation of Robotics and Visual Intelligence will necessitate that skillset.&#xA;Fun fact:  I spent 18 months in Amherst, Massachusetts. That town was the birthplace of RL (UMass).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 31, 2025 : Great week for fitness</title>
-      <link>http://localhost:1313/posts/weekly/week-31-2025/</link>
-      <pubDate>Mon, 04 Aug 2025 16:22:59 -0400</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-31-2025/</guid>
-      <description>&lt;h2 id=&#34;week-31-2025&#34;&gt;Week 31, 2025&lt;/h2&gt;&#xA;&lt;p&gt;I played Cricket after a break of over 2.5 years (ever since I left the west coast). I had a great time and I hope this becomes a regular thing now.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;work-hahahugoshortcode30s0hbhb&#34;&gt;Work &lt;span style=&#34;float: right;&#34;&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/h3&gt;&#xA;&lt;!-- &lt;details style=&#34;max-height: 100px; overflow: auto;&#34;&gt;&#xA;    &lt;summary&gt;Expand&lt;/summary&gt;&#xA;    &#xA;    &lt;/details&gt; --&gt;&#xA;&lt;p&gt;Work was slow. Gave me a lot of time to organize and attend business meetings. Spent some time in eliminating a models re-training bottleneck. Now our model retrainings are fast and devoid of any technical dependencies.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 15, 2022 : First blog after I started working at Rivian</title>
-      <link>http://localhost:1313/posts/weekly/week-152022/</link>
-      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-152022/</guid>
-      <description>&lt;h2 id=&#34;week-15-2022&#34;&gt;Week 15, 2022&lt;/h2&gt;&#xA;&lt;p&gt;I came across an article written by the author of “Four Thousand Weeks : Time Management for Mortals” and the author talks about looking at your life as a series of 4000 weeks. This perspective makes me realize that life has an expiry date and all life decisions must be viewed through this lens. I thought it was a powerful thought experiment and I’ll try to inculcate this thinking.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 47, 2021 : I hate writing, I love having written</title>
-      <link>http://localhost:1313/posts/weekly/week-47-2021/</link>
-      <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-47-2021/</guid>
-      <description>&lt;h2 id=&#34;week-47-2021&#34;&gt;Week 47, 2021&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #d73a49&#34;&gt;I hate writing, I love having written – Dorothy Parker&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;I am writing a weekly blog after a very long break. 14 weeks long. Many&#xA;things happened and this blog would be paraphrasing the last 14 weeks. &lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;work&#34;&gt;Work &lt;/h3&gt;&#xA;&lt;p&gt;Work has been moving slow. Since September, we have had 2 software releases&#xA;of our product. I have been involved in developing algorithms for some of the&#xA;features. One example is an algorithm for operating a group of battery&#xA;systems (with or without solar) as a virtual power plant through openADR. I&#xA;can’t be transparent about the rest of the ## work on this blog. My work mostly&#xA;involves identifying and fixing bugs using data, communicating results with&#xA;clients or answering their questions and concerns with eloquent&#xA;visualizations. &lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 33, 2021 : I borrowed Sarvesh&#39;s bike to commute</title>
-      <link>http://localhost:1313/posts/weekly/week-33-2021/</link>
-      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-33-2021/</guid>
-      <description>&lt;h1 id=&#34;week-33-2021&#34;&gt;Week 33, 2021&lt;/h1&gt;&#xA;&lt;p&gt;Thanks to SF&amp;rsquo;s homelessness problems (shattered glass everywhere), I am needing to fix flat tires on my bike almost every week. I didn&amp;rsquo;t have time to fix my bike&amp;rsquo;s flat tire so I borrowed Sarvesh&amp;rsquo;s bike to commute this week.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;work-hahahugoshortcode32s0hbhb&#34;&gt;Work &lt;span style=&#34;float: right;&#34;&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/h3&gt;&#xA;&lt;p&gt;This was a slow week at Sunverge Energy. I was working from home on Wednesday&#xA;and Friday. Well, not exactly home. I was in San Rafael supporting a medical&#xA;treatment of my roommate. Working from San Rafael was a pleasant experience.&#xA;I got to take calls and do work from the clinic’s waiting room half the time&#xA;and from a Starbucks for the other half. Latte, Almond croissant, and data&#xA;analysis.&#xA;For the next week, I need to complete a task related to openADR. And I am&#xA;also going to make a case to my boss to allow me to contribute to software&#xA;development. The probability of me getting to work with software development&#xA;is low but it is worth a try.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 31, 2021 : Deployed computer vision app for the Delhi government think tank</title>
-      <link>http://localhost:1313/posts/weekly/week-31-2021/</link>
-      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-31-2021/</guid>
-      <description>&lt;h1 id=&#34;week-31-2021&#34;&gt;Week 31, 2021&lt;/h1&gt;&#xA;&lt;p&gt;I demo&amp;rsquo;ed the Bus Shelter Assessment app to the team. Ask me how? - I exposed my personal laptop over the internet. Read more below. I went against the warnings of one of cybersecurity-expert friend - Aditya  Shinde and deployed it anyway. Things I do for low-budget proof of concepts!&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;work-hahahugoshortcode29s0hbhb&#34;&gt;Work &lt;span style=&#34;float: right;&#34;&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/h3&gt;&#xA;&lt;p&gt;The last two weeks have been productive at work. Just usual stuff. Putting&#xA;out fires, making progress with ongoing ## projects and sprints, asset&#xA;monitoring and management, and closely working with customers to answer&#xA;questions with data and solve their issues if any. I have learned to be&#xA;flexible at this company and I am not overly concerned about what I do day to&#xA;day.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 29, 2021 : A man can be destroyed but not defeated</title>
-      <link>http://localhost:1313/posts/weekly/week-29-2021/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-29-2021/</guid>
-      <description>&lt;h1 id=&#34;week-29-2021&#34;&gt;Week 29, 2021&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #d73a49&#34;&gt;“But man is not made for defeat,” he said. “A man can be destroyed but not defeated.– Ernest Hemingway&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;The last three to four weeks have been defeating. Sorry to start this blog on&#xA;a sad note but it’s true. I have bitten off more that I can chew but I have&#xA;to finish all the things that I have started.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;work-hahahugoshortcode27s0hbhb&#34;&gt;Work &lt;span style=&#34;float: right;&#34;&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Sunverge opened its office a while ago. I have to go into the office everyday and I choose to bike to work. The commute is 15 miles round trip. It a lot of fun to bike to work but I am too tired at the end of the day for any&#xA;productive hours. A lot of interesting things happening at work most of which I obviously can’t share here. One thing I can talk about is that we hired another employee to help with business side of things. Last week I was tasked&#xA;with helping him through everything. It was a new experience for me.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 24, 2021 : Missed punches : failed projects</title>
-      <link>http://localhost:1313/posts/weekly/week-24-2021/</link>
-      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-24-2021/</guid>
-      <description>&lt;h1 id=&#34;week-24-2021&#34;&gt;Week 24, 2021&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #d73a49&#34;&gt;The punches you miss are the ones that wear you out. - Boxing trainer Angelo Dundee&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;I quit the Fire Progression Prediction project this week :( I wasn’t making&#xA;any progress on it. Since I wasn&amp;rsquo;t actively working on it, I never mentioned it in the weekly logs. The last update I have on it is from&#xA;Week 16. I was carrying that burden in my head without any action on it. It&#xA;became an energy sink. Quitting that project meant letting go of a lot of&#xA;future possibilities, burning bridges with professors, etc. It was a hard&#xA;decision to make. But now that I have done it, it is time to focus my energy&#xA;on the task at hand. Enough time to cry at night eh?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 22, 2021 : Those who do not know how to fight worry die young</title>
-      <link>http://localhost:1313/posts/weekly/week-22-2021/</link>
-      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-22-2021/</guid>
-      <description>&lt;h1 id=&#34;week-22-2021&#34;&gt;Week 22, 2021&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #d73a49&#34;&gt;Those who do not know how to fight worry die young - Dale Carnegie&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;The staggering amount of workload that I have signed up for is starting to weigh on me. Thanks to my biking commutes to keep my body and mind in shape and my young age, I have been able to manage it all. I wonder for how long I can keep this up.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 21, 2021 : YOLO Model to the rescue</title>
-      <link>http://localhost:1313/posts/weekly/week-21-2021/</link>
-      <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-21-2021/</guid>
-      <description>&lt;h1 id=&#34;week-21-2021&#34;&gt;Week 21, 2021&lt;/h1&gt;&#xA;&lt;p&gt;The highlight this week was that CEEW and I decided to use google&amp;rsquo;s YOLO model to use in the bus shelter assesment project.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;work-hahahugoshortcode35s0hbhb&#34;&gt;Work &lt;span style=&#34;float: right;&#34;&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/h3&gt;&#xA;&lt;p&gt;I spent around 40% of the time in troubleshooting a bug in production.&#xA;Another 30% in project management for the new contract. The remaining time&#xA;was spent in creating database metrics mapping to clients internal&#xA;measurement points. This task was challenging in that it required me to look&#xA;at tiny details and make my way through incomplete and incoherent documents.&#xA;No analytics or optimization at all this week.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 20, 2021 : Biking San Francisco hills against winds at 35 miles/hour</title>
-      <link>http://localhost:1313/posts/weekly/week-20-2021/</link>
-      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-20-2021/</guid>
-      <description>&lt;h1 id=&#34;week-20-2021&#34;&gt;Week 20, 2021&lt;/h1&gt;&#xA;&lt;p&gt;The highlight this week was definitely my bike commute while returning from work. It&amp;rsquo;s a 7.5 miles commute with challenging elevation gain. I am used to it except SF experienced unusually high winds and I tried to go against it. But gave up and put my bike on a bus and returned home.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;work-hahahugoshortcode23s0hbhb&#34;&gt;Work &lt;span style=&#34;float: right;&#34;&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&lt;span&gt;★&lt;/span&gt;&#xA;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&#xA;&lt;span&gt;☆&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Work was slow this week. I worked on and finished only one analytical&#xA;project. Rest of the tasks were reading, working with others with&#xA;troubleshooting, and brainstorming a control logic to minimize green house&#xA;gas emissions for a group of houses. I wish I was doing more analytically&#xA;technical tasks but it is what it is.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 19, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-19-2021/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-19-2021/</guid>
-      <description>&lt;h1 id=&#34;week-19-2021&#34;&gt;Week 19, 2021&lt;/h1&gt;&#xA;&lt;p&gt;May 20, 2021&#xA;Categories: Weekly Notes&lt;/p&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;Worked with OpenADR implementation and the problems associated with it.&#xA;Worked with QA engineers to recreate and solve some of these problems. A lot&#xA;of collaboration this week. I enjoyed it. Also, we commissioned a new client,&#xA;so fulfilling all data requests and building dashboards on Tableau to view&#xA;day-to-day operations. These dashboards also help us troubleshoot in near&#xA;real time. Attending meetings with the client to answer their questions and&#xA;note their concerns. A fun week ## work. Now that most of our employees are&#xA;coming to office, a lot of interesting conversations keep me entertained&#xA;throughout the ## work day.&#xA;Machine Learning Bootcamp&#xA;Began this bootcamp with a 6 hour live online session on Saturday. Many&#xA;interesting people are part of this bootcamp. Learning/coding together is a&#xA;lot more engaging and rewarding. I missed that. We have started out the&#xA;course with univariate and multivariate regressions. Mostly working on COVID-&#xA;19 data around the world. The new thing I learned this week was Variance&#xA;Inflation Factor (VIF) that is used to find co-linearity between features.&#xA;Cool stuff. Check this out: &lt;a href=&#34;https://github.com/unmeshmali25/COVID19-&#34;&gt;https://github.com/unmeshmali25/COVID19-&lt;/a&gt;&#xA;Prediction-Chicago-Hands-on-Regression&#xA;CEEW – Sustainable Mobility Research Assistant&#xA;Just went through the HR induction. Also got an overview of some of the&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 18, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-18-2021/</link>
-      <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-18-2021/</guid>
-      <description>&lt;h1 id=&#34;week-18-2021&#34;&gt;Week 18, 2021&lt;/h1&gt;&#xA;&lt;p&gt;May 16, 2021&#xA;Categories: Weekly Notes&#xA;Came down with the flu this week. Couldn’t get a lot of ## work/reading/exercise&#xA;done. I don’t know why I am even writing this blog with nothing to show for&#xA;the week.&#xA;Be-dili kya yunhi din guzar jayenge&#xA;Sirf zinda rahe hum to mar jaenge&#xA;Jaun Eliya&#xA;Apart from the unproductive week, I have two major news to share. I have been&#xA;selected for the Research intern position at Council on Energy, Environment,&#xA;and Water which is going to be remote. And I am starting my Machine Learning&#xA;Bootcamp at FourthBrain next week. I fear that I might have taken up too much&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 17, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-17-2021/</link>
-      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-17-2021/</guid>
-      <description>&lt;h1 id=&#34;week-17-2021&#34;&gt;Week 17, 2021&lt;/h1&gt;&#xA;&lt;p&gt;May 3, 2021&#xA;Categories: Weekly Notes&lt;/p&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;This week was off to a great start. I was given a documentation assignment.&#xA;While completing the assignment, I learned all I can about a Smart Home&#xA;management protocol called Echonet Lite. It was fun to read about it. Got&#xA;involved in a couple more interesting ## projects in the company.&lt;/p&gt;&#xA;&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;&#xA;&lt;p&gt;Practical Programming for Strength Training | Mark Rippertoe and Andy Baker&#xA;I finished this book over this week. Read close to 200 pages. The book mostly&#xA;talks about different training methods adopted by different trainers all over&#xA;the world in the last century. These include the Texas Method, Dynamic Effort&#xA;Method, The Split Routine among others. I don’t know which one I’ll end up&#xA;adopting in my training routine. I like the Texas method the best so far.&#xA;Splitting the week between 3 training days. One day is high intensity day,&#xA;next is high volume day, and the last is light day with low volume and low&#xA;intensity. I’ll use this technique for the next few months.&#xA;Deep Learning with PyTorch | Eli Stevens, Luca Antiga, and Thomas Viehman&#xA;Read around 20 pages of this book. The book is now walking me through image&#xA;classification using deep learning. Interesting stuff.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 16, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-16-2021/</link>
-      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-16-2021/</guid>
-      <description>&lt;h1 id=&#34;week-16-2021&#34;&gt;Week 16, 2021&lt;/h1&gt;&#xA;&lt;p&gt;April 26, 2021&#xA;Categories: Weekly Notes&lt;/p&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;h2 id=&#34;work-was-decent-this-week-nothing-creative-i-provided-some-data-analysis-to&#34;&gt;Work was decent this week. Nothing creative. I provided some data analysis to&lt;/h2&gt;&#xA;&lt;p&gt;make/change certain decisions for our software. One good thing was that I am&#xA;getting involved in software project management. It is new to me and I’m&#xA;excited to learn all about it. Looking forward to a productive and creative&#xA;next week.&lt;/p&gt;&#xA;&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;&#xA;&lt;p&gt;Practical Programming for Strength Training | Mark Rippertoe and Andy Baker&#xA;Making super slow progress with this book. On Page 220 out of 400. This week&#xA;the book talked about the Texas Method where you start the week with high&#xA;intensity weight lifting, the next session is high volume with slightly lower&#xA;intensity, and the last workout session of the week is low intensity and low&#xA;volume. Good technique to know. I have also heard Joe Rogan talk about the&#xA;Texas method on his podcast. Would love to try it out. I just wish I would&#xA;have read a lot more of this book.&#xA;Deep Learning with PyTorch | Eli Stevens, Luca Antiga, and Thomas Viehman&#xA;I read only a few pages of this book this week. This week was busy with ## work&#xA;and side ## projects that were mentally taxing and this book just would have&#xA;been too much mental ## work.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 15, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-15-2021/</link>
-      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-15-2021/</guid>
-      <description>&lt;h2 id=&#34;week-15-2021&#34;&gt;Week 15, 2021&lt;/h2&gt;&#xA;&lt;h3 id=&#34;work&#34;&gt;Work&lt;/h3&gt;&#xA;&lt;p&gt;A wonderful week at ## work. I started working on a Demand Response project. The&#xA;US electric utilities use OpenADR protocol for Demand Response. Any company&#xA;offering grid services must follow the OpenADR standard. Getting good hands-&#xA;on experience with it. I have learned a lot this week which I can’t share&#xA;here. I also spent some time networking with people outside the company.&#xA;Attended the Clean Energy Leadership Institute’s (CELI) webinar and got a&#xA;chance to hear some cool people talk.&#xA;Side Project&#xA;Got a chance this week to ## work on the Fire Progression Prediction project. I&#xA;am still working on creating a pipeline for the fire data. At this point, we&#xA;have around 183 unique fires in the United States over the last 10 years. The&#xA;figure below shows the location of each of the fires. You might notice that&#xA;each fire is a box. That box is part of the pre-processing. To feed data into&#xA;the Neural Network, each input must be standardized. Each box in our project&#xA;has the same size such that even the largest fire is contained within that&#xA;box. Given that I am new to Google Earth Engine, this was a tough task to do&#xA;but Professors at USF helped immensely. Next week hoping to finish the pre-&#xA;processing completely and move on to working on the Neural Network.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 14, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-14-2021/</link>
-      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-14-2021/</guid>
-      <description>&lt;h1 id=&#34;week-14-2021&#34;&gt;Week 14, 2021&lt;/h1&gt;&#xA;&lt;p&gt;April 12, 2021&#xA;Categories: Weekly Notes&lt;/p&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;Sunverge is slowly and safely opening its SF office to employees. This week I&#xA;went into the office first 3 days of the week. I ended up getting more ## work&#xA;done but also more tired at the end of the day than when I am working from&#xA;home. I guess I got used to working from home. I hope I adapt fast to working&#xA;from office everyday. Spent some time of the week helping the customer&#xA;support team with troubleshooting. Other time I was either working with the&#xA;sales staff with proposals or revisiting already signed customer&#xA;deliverables.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 13, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-13-2021/</link>
-      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-13-2021/</guid>
-      <description>&lt;h1 id=&#34;week-13-2021&#34;&gt;Week 13, 2021&lt;/h1&gt;&#xA;&lt;p&gt;April 5, 2021&#xA;Categories: Weekly Notes&lt;/p&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;This week I learned that as a data analyst/scientist, it is better to be&#xA;doubtful and right than be confident and wrong. It saves a lot of time of&#xA;other teams/employees when you don’t submit confident and wrong assignments&#xA;forward. Performed some exploratory analysis along with asset monitoring and&#xA;providing research support for writing business proposals. A busy week at&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 12, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-12-2021/</link>
-      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-12-2021/</guid>
-      <description>&lt;h1 id=&#34;week-12-2021&#34;&gt;Week 12, 2021&lt;/h1&gt;&#xA;&lt;p&gt;March 29, 2021&#xA;Categories: Weekly Notes&#xA;This was a tough week. I felt a general lack of motivation in all aspects of&#xA;life. There was enormous mental friction in doing even the simplest of tasks&#xA;like laundry. I am not sure why. But just the realization that there is a&#xA;mental blockage reduced its potential and I was able to control some of it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;The week was all about troubleshooting with remote diagnostics, asset&#xA;monitoring and product documentation. Also spent time on delivering&#xA;performance and testing reports to customers. A week of less programming and&#xA;statistical analysis and more client-facing ## work.&#xA;I am a huge electric vehicle nerd and thus my YouTube feed is full of EV&#xA;news. Some EV range testers ran the Tesla Model 3, Mustang Mach-e, and the VW&#xA;ID.4 beyond their 0% State of Charge. They found that the Tesla drove 22&#xA;miles after reaching 0% whereas the Mach-e only did 6 miles. I just thought&#xA;that was super interesting. Battery pack manufacturers usually leave some&#xA;room at the bottom SOC to protect the batteries. SOC estimation is an&#xA;interesting problem. Some battery manufacturers map it to the cell voltage&#xA;(since there is a linear relationship between the battery voltage and its&#xA;SOC). I wonder what Tesla does.&#xA;Side Project&#xA;Virtually met with one of the professors to resolve a problem with my Google&#xA;Earth Engine code. Right now I am tasked at creating a pipeline to provide&#xA;the right type of data to the neural network that is also currently in the&#xA;works by another project mate. We got 180 fires and after a lot of pre-&#xA;processing we are very close to exporting rastors (images) of the fires from&#xA;Google Earth Engine.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 11, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-11-2021/</link>
-      <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-11-2021/</guid>
-      <description>&lt;h1 id=&#34;week-11-2021&#34;&gt;Week 11, 2021&lt;/h1&gt;&#xA;&lt;p&gt;March 22, 2021&#xA;Categories: Weekly Notes&lt;/p&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;“Faster along, further together” – The quote sums up this week at ## work.&#xA;Working with QA engineers to test the integration, configurations, and&#xA;algorithm for a project that was worked on by many developers at different&#xA;times, tested by different QA engineers and approved by another product&#xA;person. The software development process can’t get more complicated than that&#xA;now, can it? I can’t appreciate enough the tools in Atlasssian product suite.&#xA;Did you know that Atlasssian is an Australian company? One of the very few&#xA;tech companies in Australia that has had a major impact on the world&#xA;especially the silicon valley ecosystem. It’s a fascinating story (Listed to&#xA;the podcast if interested). Also spent some time on websites of electric&#xA;utilities to provide some market research support to the sales staff. A&#xA;decent week.&#xA;Side Project&#xA;I am volunteering with Professors from University of San Francisco (my Alma&#xA;Mater) to ## work on a project that involves predicting the progression&#xA;(direction and speed) of wild fires once they have been ignited. The project&#xA;is part of the MAGIX lab at USF where they ## work on solving complex societal&#xA;problems using Machine Learning and Deep Learning and publish papers. Our&#xA;project involves using deep learning to do the prediction. More details on&#xA;the project can be found in the ## projects section. Spent just over 3 hours&#xA;this week on the project mostly researching.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 10, 2021</title>
-      <link>http://localhost:1313/posts/weekly/week-10-2021/</link>
-      <pubDate>Mon, 08 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly/week-10-2021/</guid>
-      <description>&lt;h1 id=&#34;week-10-2021&#34;&gt;Week 10, 2021&lt;/h1&gt;&#xA;&lt;p&gt;March 11, 2021&#xA;Categories: Weekly Notes&lt;/p&gt;&#xA;&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;&#xA;&lt;p&gt;Working on multiple things like always. I have a couple technical ## projects in&#xA;hand that involve Python and Java programming. I also learned Docker to be&#xA;able to deploy those ## projects. On the client-facing side, delivered on some&#xA;data and Tableau dashboard requests. Spent a lot of time with the QA team to&#xA;test out new deliverables. Not the best but a fun week at ## work.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unmesh Mali</title><link>https://unmeshmali.com/posts/weekly/</link><description>Recent content on Unmesh Mali</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 20 Sep 2025 17:08:29 -0400</lastBuildDate><atom:link href="https://unmeshmali.com/posts/weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>Week 38, 2025 : Meditation</title><link>https://unmeshmali.com/posts/weekly/week-38-2025/</link><pubDate>Sat, 20 Sep 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-38-2025/</guid><description>&lt;h2 id="week-38-2025">Week 38, 2025&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #d73a49">&amp;ldquo;bas hujum-e-na-umidi (feeling of despair) Khak mein mil jaegi&amp;hellip;&lt;br>
+ye jo ek lazzat (pleasure) hamari sai-e-be-hasil mein hai – Mirza Ghalib&lt;/span>&lt;/p>&lt;/blockquote>
+&lt;p>Having spent the last 2 weeks recovering from the joy, I decided I need to do something different to get on track. That&amp;rsquo;s why I started meditating this week. I have always had a tumultous relationship with meditation. Even though I am always convinced of its powers to streamline my life, I, for some reason, never do it consistently. I wished to change that starting this week. I meditated almost everyday.&lt;/p></description></item><item><title>Week 37, 2025 : Social Commitments</title><link>https://unmeshmali.com/posts/weekly/week-37-2025/</link><pubDate>Sun, 14 Sep 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-37-2025/</guid><description>&lt;h2 id="week-37-2025">Week 37, 2025&lt;/h2>
+&lt;p>I spent a majority of this week in social commitments. We went to a couple dinner invitations and hosted our neighbors from India for 4 days. The week was super busy and I could not take time out for any productive tasks besides work.
+Nothing worth writing about!&lt;/p>
+&lt;hr></description></item><item><title>Week 36, 2025 : Mission Accomplished (While I Cheered from the Sidelines)</title><link>https://unmeshmali.com/posts/weekly/week-36-2025/</link><pubDate>Sun, 07 Sep 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-36-2025/</guid><description>&lt;h2 id="week-36-2025">Week 36, 2025&lt;/h2>
+&lt;p>A milestone week. The mission that me and Kiran set out for, starting January 2023, was accomplished this week. 33 months of dedicated efforts to it. Every single choice we made, every priority, every minute we spent were towards this goal. The mission was for Kiran to get her master&amp;rsquo;s degree and start working full-time in the US.&lt;/p>
+&lt;p>In the past 33 months, we moved between 2 states, 3 cities, 4 houses, 5 entrance exams, half a dozen university applications, a master&amp;rsquo;s degree in under 12 months, countless courses - all in service of this mission.
+This week, Kiran got a full-time job as an AI engineer/business professional. It was a lot tougher than we expected. It speaks volumes to her hard-work, patience, and optimism.&lt;/p></description></item><item><title>Week 35, 2025 : Multi-Arm Bandit Blues</title><link>https://unmeshmali.com/posts/weekly/week-35-2025/</link><pubDate>Sun, 31 Aug 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-35-2025/</guid><description>&lt;h2 id="week-35-2025">Week 35, 2025&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #d73a49">&amp;ldquo;Yun toh humne kya kiya lekin &amp;hellip;&lt;br>
+ye kiya hai ke din guzaare hai – Jaun Elia&lt;/span>&lt;/p>&lt;/blockquote>
+&lt;p>This week hasn&amp;rsquo;t been very productive but not wasterful either. All my priority work items below got distracted attention from me. I guess this is just part of the process between start and end when it&amp;rsquo;s all ungratifying but you keep moving on.&lt;/p>
+&lt;hr>
+&lt;h3 id="work-hahahugoshortcode35s0hbhb">Work &lt;span style="float: right;">
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+
+&lt;span>☆&lt;/span>
+&lt;/span>&lt;/h3>
+&lt;p>I went into the Manhattan office once this week. It was a very productive Monday. That gave me the necessary momentum to keep going for the next few days. I also started gathering data to pitch the Reinforcement Learning project to my manager. It seems promising. I have seen a lot of &amp;ldquo;exploitation&amp;rdquo; (RL term) of knowledge of offer and customer behaviors and less &amp;ldquo;exploration&amp;rdquo;. As soon as I saw these results, I got yippy, I almost sent an email to my manager but held back. I want to further strengthen my case with a possible PRD (Product Requirments Document). I have some hopes that this may just work.&lt;/p></description></item><item><title>Week 34, 2025 : Nashville Hot Chicken Sandwich</title><link>https://unmeshmali.com/posts/weekly/week-34-2025/</link><pubDate>Sat, 23 Aug 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-34-2025/</guid><description>&lt;h2 id="week-34-2025">Week 34, 2025&lt;/h2>
+&lt;p>The highlight this week was definitely the Nashville-style hot chicken sandwich. I hadn&amp;rsquo;t been eating any meat for over 50 days (practising the month of Shraavan). This Friday the Shraavan month ended and I immediately went for my favority type of chicken - Nashiville hot fried chicken sandwich.
+For the whole week, I had been exercising great restraint in eating and putting in disciplined workouts. Hence, the one Friday dinner with fried chicken was delicious and guilt-free - making it more enjoyable even in memories.&lt;/p></description></item><item><title>Week 33, 2025 : Fighting FIFA addiction &amp; RL Recommender insights</title><link>https://unmeshmali.com/posts/weekly/week-33-2025/</link><pubDate>Fri, 15 Aug 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-33-2025/</guid><description>&lt;h2 id="week-33-2025">Week 33, 2025&lt;/h2>
+&lt;p>&lt;em>This is a blog of complaints. Complaints against myself. Complaints of not taking control of the things I do. Complaints of letting myself drift through life out of focus.&lt;/em>
+&lt;em>I didn&amp;rsquo;t get a single workout this week. Many social commitments and my &lt;em>addition to FIFA&lt;/em>. I don&amp;rsquo;t even know how many hours I spent playing the game. It must be a lot. Even though I blame social commitments for my lack of progress throughout the week, I know the reason to be the time spent on &lt;em>FIFA&lt;/em> and &lt;em>social media&lt;/em>. Need to fight these addictions.&lt;/em>&lt;/p></description></item><item><title>Week 32, 2025 : Hosting Friends in NYC</title><link>https://unmeshmali.com/posts/weekly/week-32-2025/</link><pubDate>Fri, 08 Aug 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-32-2025/</guid><description>&lt;h2 id="week-32-2025">Week 32, 2025&lt;/h2>
+&lt;p>The weekdays were good but I couldn&amp;rsquo;t make progress on any of my priority items below.
+I had a ball of a time over the weekend though. Bhushan and his wife were visiting. We selectively toured NYC and NJ with them over the weekend. It was Kiran&amp;rsquo;s birthday weekend and the expectations weighed heavy on me (but just a bouqet of flowers lifted a lot of that weight - easier than I thought).&lt;br>
+I played Cricket in New Jersey (won man of the match for the first game), ate at a really good Marathi restaurant, went to Brooklyn waterfront one evening, watched the sunset over the Brooklyn Bridge and the World Trade Center and then saw the night lights and night life come on in Manhattan, ate Falafel wrap at a food truck in Dumbo. Kiran also got a lot of good pictures which made her birthday more complete. Couldn&amp;rsquo;t complain (but you know I will down below lol).&lt;/p></description></item><item><title>Week 30, 2025 : Started RL learning journey</title><link>https://unmeshmali.com/posts/weekly/week-30-2025/</link><pubDate>Mon, 04 Aug 2025 16:22:59 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-30-2025/</guid><description>&lt;h2 id="week-30-2025">Week 30, 2025&lt;/h2>
+&lt;p>I started learning Reinforcement Learnig this week. Inspiration? - It&amp;rsquo;s uses in formatting LLM answers. I remember Deepseek&amp;rsquo;s responses to be visually appealing than any other LLMs at the time and I knew they used RL (RLHF) to format the answers. Also, the rise and proliferation of Robotics and Visual Intelligence will necessitate that skillset.
+Fun fact: I spent 18 months in Amherst, Massachusetts. That town was the birthplace of RL (UMass).&lt;/p></description></item><item><title>Week 31, 2025 : Great week for fitness</title><link>https://unmeshmali.com/posts/weekly/week-31-2025/</link><pubDate>Mon, 04 Aug 2025 16:22:59 -0400</pubDate><guid>https://unmeshmali.com/posts/weekly/week-31-2025/</guid><description>&lt;h2 id="week-31-2025">Week 31, 2025&lt;/h2>
+&lt;p>I played Cricket after a break of over 2.5 years (ever since I left the west coast). I had a great time and I hope this becomes a regular thing now.&lt;/p>
+&lt;hr>
+&lt;h3 id="work-hahahugoshortcode40s0hbhb">Work &lt;span style="float: right;">
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+
+&lt;span>☆&lt;/span>
+
+&lt;span>☆&lt;/span>
+
+&lt;span>☆&lt;/span>
+&lt;/span>&lt;/h3>
+&lt;!-- &lt;details class="custom-collapse">
+ &lt;summary class="collapse-summary">Expand&lt;/summary>
+ &lt;div class="collapse-content" style="max-height: 100px;">
+ 
+ &lt;/div>
+&lt;/details>
+ -->
+&lt;p>Work was slow. Gave me a lot of time to organize and attend business meetings. Spent some time in eliminating a models re-training bottleneck. Now our model retrainings are fast and devoid of any technical dependencies.&lt;/p></description></item><item><title>Week 15, 2022 : First blog after I started working at Rivian</title><link>https://unmeshmali.com/posts/weekly/week-152022/</link><pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-152022/</guid><description>&lt;h2 id="week-15-2022">Week 15, 2022&lt;/h2>
+&lt;p>I came across an article written by the author of “Four Thousand Weeks : Time Management for Mortals” and the author talks about looking at your life as a series of 4000 weeks. This perspective makes me realize that life has an expiry date and all life decisions must be viewed through this lens. I thought it was a powerful thought experiment and I’ll try to inculcate this thinking.&lt;/p></description></item><item><title>Week 47, 2021 : I hate writing, I love having written</title><link>https://unmeshmali.com/posts/weekly/week-47-2021/</link><pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-47-2021/</guid><description>&lt;h2 id="week-47-2021">Week 47, 2021&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #d73a49">I hate writing, I love having written – Dorothy Parker&lt;/span>&lt;/p>&lt;/blockquote>
+&lt;p>I am writing a weekly blog after a very long break. 14 weeks long. Many
+things happened and this blog would be paraphrasing the last 14 weeks. &lt;/p>
+&lt;hr>
+&lt;h3 id="work">Work &lt;/h3>
+&lt;p>Work has been moving slow. Since September, we have had 2 software releases
+of our product. I have been involved in developing algorithms for some of the
+features. One example is an algorithm for operating a group of battery
+systems (with or without solar) as a virtual power plant through openADR. I
+can’t be transparent about the rest of the ## work on this blog. My work mostly
+involves identifying and fixing bugs using data, communicating results with
+clients or answering their questions and concerns with eloquent
+visualizations. &lt;/p></description></item><item><title>Week 33, 2021 : I borrowed Sarvesh's bike to commute</title><link>https://unmeshmali.com/posts/weekly/week-33-2021/</link><pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-33-2021/</guid><description>&lt;h1 id="week-33-2021">Week 33, 2021&lt;/h1>
+&lt;p>Thanks to SF&amp;rsquo;s homelessness problems (shattered glass everywhere), I am needing to fix flat tires on my bike almost every week. I didn&amp;rsquo;t have time to fix my bike&amp;rsquo;s flat tire so I borrowed Sarvesh&amp;rsquo;s bike to commute this week.&lt;/p>
+&lt;hr>
+&lt;h3 id="work-hahahugoshortcode31s0hbhb">Work &lt;span style="float: right;">
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+
+&lt;span>☆&lt;/span>
+
+&lt;span>☆&lt;/span>
+
+&lt;span>☆&lt;/span>
+&lt;/span>&lt;/h3>
+&lt;p>This was a slow week at Sunverge Energy. I was working from home on Wednesday
+and Friday. Well, not exactly home. I was in San Rafael supporting a medical
+treatment of my roommate. Working from San Rafael was a pleasant experience.
+I got to take calls and do work from the clinic’s waiting room half the time
+and from a Starbucks for the other half. Latte, Almond croissant, and data
+analysis.
+For the next week, I need to complete a task related to openADR. And I am
+also going to make a case to my boss to allow me to contribute to software
+development. The probability of me getting to work with software development
+is low but it is worth a try.&lt;/p></description></item><item><title>Week 31, 2021 : Deployed computer vision app for the Delhi government think tank</title><link>https://unmeshmali.com/posts/weekly/week-31-2021/</link><pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-31-2021/</guid><description>&lt;h1 id="week-31-2021">Week 31, 2021&lt;/h1>
+&lt;p>I demo&amp;rsquo;ed the Bus Shelter Assessment app to the team. Ask me how? - I exposed my personal laptop over the internet. Read more below. I went against the warnings of one of cybersecurity-expert friend - Aditya Shinde and deployed it anyway. Things I do for low-budget proof of concepts!&lt;/p>
+&lt;hr>
+&lt;h3 id="work-hahahugoshortcode30s0hbhb">Work &lt;span style="float: right;">
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+
+&lt;span>☆&lt;/span>
+&lt;/span>&lt;/h3>
+&lt;p>The last two weeks have been productive at work. Just usual stuff. Putting
+out fires, making progress with ongoing ## projects and sprints, asset
+monitoring and management, and closely working with customers to answer
+questions with data and solve their issues if any. I have learned to be
+flexible at this company and I am not overly concerned about what I do day to
+day.&lt;/p></description></item><item><title>Week 29, 2021 : A man can be destroyed but not defeated</title><link>https://unmeshmali.com/posts/weekly/week-29-2021/</link><pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-29-2021/</guid><description>&lt;h1 id="week-29-2021">Week 29, 2021&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #d73a49">“But man is not made for defeat,” he said. “A man can be destroyed but not defeated.– Ernest Hemingway&lt;/span>&lt;/p>&lt;/blockquote>
+&lt;p>The last three to four weeks have been defeating. Sorry to start this blog on
+a sad note but it’s true. I have bitten off more that I can chew but I have
+to finish all the things that I have started.&lt;/p>
+&lt;hr>
+&lt;h3 id="work-hahahugoshortcode28s0hbhb">Work &lt;span style="float: right;">
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+
+&lt;span>☆&lt;/span>
+
+&lt;span>☆&lt;/span>
+
+&lt;span>☆&lt;/span>
+&lt;/span>&lt;/h3>
+&lt;p>Sunverge opened its office a while ago. I have to go into the office everyday and I choose to bike to work. The commute is 15 miles round trip. It a lot of fun to bike to work but I am too tired at the end of the day for any
+productive hours. A lot of interesting things happening at work most of which I obviously can’t share here. One thing I can talk about is that we hired another employee to help with business side of things. Last week I was tasked
+with helping him through everything. It was a new experience for me.&lt;/p></description></item><item><title>Week 24, 2021 : Missed punches : failed projects</title><link>https://unmeshmali.com/posts/weekly/week-24-2021/</link><pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-24-2021/</guid><description>&lt;h1 id="week-24-2021">Week 24, 2021&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #d73a49">The punches you miss are the ones that wear you out. - Boxing trainer Angelo Dundee&lt;/span>&lt;/p>&lt;/blockquote>
+&lt;p>I quit the Fire Progression Prediction project this week :( I wasn’t making
+any progress on it. Since I wasn&amp;rsquo;t actively working on it, I never mentioned it in the weekly logs. The last update I have on it is from
+Week 16. I was carrying that burden in my head without any action on it. It
+became an energy sink. Quitting that project meant letting go of a lot of
+future possibilities, burning bridges with professors, etc. It was a hard
+decision to make. But now that I have done it, it is time to focus my energy
+on the task at hand. Enough time to cry at night eh?&lt;/p></description></item><item><title>Week 22, 2021 : Those who do not know how to fight worry die young</title><link>https://unmeshmali.com/posts/weekly/week-22-2021/</link><pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-22-2021/</guid><description>&lt;h1 id="week-22-2021">Week 22, 2021&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #d73a49">Those who do not know how to fight worry die young - Dale Carnegie&lt;/span>&lt;/p>&lt;/blockquote>
+&lt;p>The staggering amount of workload that I have signed up for is starting to weigh on me. Thanks to my biking commutes to keep my body and mind in shape and my young age, I have been able to manage it all. I wonder for how long I can keep this up.&lt;/p></description></item><item><title>Week 21, 2021 : YOLO Model to the rescue</title><link>https://unmeshmali.com/posts/weekly/week-21-2021/</link><pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-21-2021/</guid><description>&lt;h1 id="week-21-2021">Week 21, 2021&lt;/h1>
+&lt;p>The highlight this week was that CEEW and I decided to use google&amp;rsquo;s YOLO model to use in the bus shelter assesment project.&lt;/p>
+&lt;hr>
+&lt;h3 id="work-hahahugoshortcode25s0hbhb">Work &lt;span style="float: right;">
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+
+&lt;span>☆&lt;/span>
+
+&lt;span>☆&lt;/span>
+&lt;/span>&lt;/h3>
+&lt;p>I spent around 40% of the time in troubleshooting a bug in production.
+Another 30% in project management for the new contract. The remaining time
+was spent in creating database metrics mapping to clients internal
+measurement points. This task was challenging in that it required me to look
+at tiny details and make my way through incomplete and incoherent documents.
+No analytics or optimization at all this week.&lt;/p></description></item><item><title>Week 20, 2021 : Biking San Francisco hills against winds at 35 miles/hour</title><link>https://unmeshmali.com/posts/weekly/week-20-2021/</link><pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-20-2021/</guid><description>&lt;h1 id="week-20-2021">Week 20, 2021&lt;/h1>
+&lt;p>The highlight this week was definitely my bike commute while returning from work. It&amp;rsquo;s a 7.5 miles commute with challenging elevation gain. I am used to it except SF experienced unusually high winds and I tried to go against it. But gave up and put my bike on a bus and returned home.&lt;/p>
+&lt;hr>
+&lt;h3 id="work-hahahugoshortcode24s0hbhb">Work &lt;span style="float: right;">
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+&lt;span>★&lt;/span>
+
+
+&lt;span>☆&lt;/span>
+
+&lt;span>☆&lt;/span>
+&lt;/span>&lt;/h3>
+&lt;p>Work was slow this week. I worked on and finished only one analytical
+project. Rest of the tasks were reading, working with others with
+troubleshooting, and brainstorming a control logic to minimize green house
+gas emissions for a group of houses. I wish I was doing more analytically
+technical tasks but it is what it is.&lt;/p></description></item><item><title>Week 19, 2021</title><link>https://unmeshmali.com/posts/weekly/week-19-2021/</link><pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-19-2021/</guid><description>&lt;h1 id="week-19-2021">Week 19, 2021&lt;/h1>
+&lt;p>May 20, 2021
+Categories: Weekly Notes&lt;/p>
+&lt;h2 id="work">Work&lt;/h2>
+&lt;p>Worked with OpenADR implementation and the problems associated with it.
+Worked with QA engineers to recreate and solve some of these problems. A lot
+of collaboration this week. I enjoyed it. Also, we commissioned a new client,
+so fulfilling all data requests and building dashboards on Tableau to view
+day-to-day operations. These dashboards also help us troubleshoot in near
+real time. Attending meetings with the client to answer their questions and
+note their concerns. A fun week ## work. Now that most of our employees are
+coming to office, a lot of interesting conversations keep me entertained
+throughout the ## work day.
+Machine Learning Bootcamp
+Began this bootcamp with a 6 hour live online session on Saturday. Many
+interesting people are part of this bootcamp. Learning/coding together is a
+lot more engaging and rewarding. I missed that. We have started out the
+course with univariate and multivariate regressions. Mostly working on COVID-
+19 data around the world. The new thing I learned this week was Variance
+Inflation Factor (VIF) that is used to find co-linearity between features.
+Cool stuff. Check this out: &lt;a href="https://github.com/unmeshmali25/COVID19-">https://github.com/unmeshmali25/COVID19-&lt;/a>
+Prediction-Chicago-Hands-on-Regression
+CEEW – Sustainable Mobility Research Assistant
+Just went through the HR induction. Also got an overview of some of the&lt;/p></description></item><item><title>Week 18, 2021</title><link>https://unmeshmali.com/posts/weekly/week-18-2021/</link><pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-18-2021/</guid><description>&lt;h1 id="week-18-2021">Week 18, 2021&lt;/h1>
+&lt;p>May 16, 2021
+Categories: Weekly Notes
+Came down with the flu this week. Couldn’t get a lot of ## work/reading/exercise
+done. I don’t know why I am even writing this blog with nothing to show for
+the week.
+Be-dili kya yunhi din guzar jayenge
+Sirf zinda rahe hum to mar jaenge
+Jaun Eliya
+Apart from the unproductive week, I have two major news to share. I have been
+selected for the Research intern position at Council on Energy, Environment,
+and Water which is going to be remote. And I am starting my Machine Learning
+Bootcamp at FourthBrain next week. I fear that I might have taken up too much&lt;/p></description></item><item><title>Week 17, 2021</title><link>https://unmeshmali.com/posts/weekly/week-17-2021/</link><pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-17-2021/</guid><description>&lt;h1 id="week-17-2021">Week 17, 2021&lt;/h1>
+&lt;p>May 3, 2021
+Categories: Weekly Notes&lt;/p>
+&lt;h2 id="work">Work&lt;/h2>
+&lt;p>This week was off to a great start. I was given a documentation assignment.
+While completing the assignment, I learned all I can about a Smart Home
+management protocol called Echonet Lite. It was fun to read about it. Got
+involved in a couple more interesting ## projects in the company.&lt;/p>
+&lt;h2 id="books">Books&lt;/h2>
+&lt;p>Practical Programming for Strength Training | Mark Rippertoe and Andy Baker
+I finished this book over this week. Read close to 200 pages. The book mostly
+talks about different training methods adopted by different trainers all over
+the world in the last century. These include the Texas Method, Dynamic Effort
+Method, The Split Routine among others. I don’t know which one I’ll end up
+adopting in my training routine. I like the Texas method the best so far.
+Splitting the week between 3 training days. One day is high intensity day,
+next is high volume day, and the last is light day with low volume and low
+intensity. I’ll use this technique for the next few months.
+Deep Learning with PyTorch | Eli Stevens, Luca Antiga, and Thomas Viehman
+Read around 20 pages of this book. The book is now walking me through image
+classification using deep learning. Interesting stuff.&lt;/p></description></item><item><title>Week 16, 2021</title><link>https://unmeshmali.com/posts/weekly/week-16-2021/</link><pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-16-2021/</guid><description>&lt;h1 id="week-16-2021">Week 16, 2021&lt;/h1>
+&lt;p>April 26, 2021
+Categories: Weekly Notes&lt;/p>
+&lt;h2 id="work">Work&lt;/h2>
+&lt;h2 id="work-was-decent-this-week-nothing-creative-i-provided-some-data-analysis-to">Work was decent this week. Nothing creative. I provided some data analysis to&lt;/h2>
+&lt;p>make/change certain decisions for our software. One good thing was that I am
+getting involved in software project management. It is new to me and I’m
+excited to learn all about it. Looking forward to a productive and creative
+next week.&lt;/p>
+&lt;h2 id="books">Books&lt;/h2>
+&lt;p>Practical Programming for Strength Training | Mark Rippertoe and Andy Baker
+Making super slow progress with this book. On Page 220 out of 400. This week
+the book talked about the Texas Method where you start the week with high
+intensity weight lifting, the next session is high volume with slightly lower
+intensity, and the last workout session of the week is low intensity and low
+volume. Good technique to know. I have also heard Joe Rogan talk about the
+Texas method on his podcast. Would love to try it out. I just wish I would
+have read a lot more of this book.
+Deep Learning with PyTorch | Eli Stevens, Luca Antiga, and Thomas Viehman
+I read only a few pages of this book this week. This week was busy with ## work
+and side ## projects that were mentally taxing and this book just would have
+been too much mental ## work.&lt;/p></description></item><item><title>Week 15, 2021</title><link>https://unmeshmali.com/posts/weekly/week-15-2021/</link><pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-15-2021/</guid><description>&lt;h2 id="week-15-2021">Week 15, 2021&lt;/h2>
+&lt;h3 id="work">Work&lt;/h3>
+&lt;p>A wonderful week at ## work. I started working on a Demand Response project. The
+US electric utilities use OpenADR protocol for Demand Response. Any company
+offering grid services must follow the OpenADR standard. Getting good hands-
+on experience with it. I have learned a lot this week which I can’t share
+here. I also spent some time networking with people outside the company.
+Attended the Clean Energy Leadership Institute’s (CELI) webinar and got a
+chance to hear some cool people talk.
+Side Project
+Got a chance this week to ## work on the Fire Progression Prediction project. I
+am still working on creating a pipeline for the fire data. At this point, we
+have around 183 unique fires in the United States over the last 10 years. The
+figure below shows the location of each of the fires. You might notice that
+each fire is a box. That box is part of the pre-processing. To feed data into
+the Neural Network, each input must be standardized. Each box in our project
+has the same size such that even the largest fire is contained within that
+box. Given that I am new to Google Earth Engine, this was a tough task to do
+but Professors at USF helped immensely. Next week hoping to finish the pre-
+processing completely and move on to working on the Neural Network.&lt;/p></description></item><item><title>Week 14, 2021</title><link>https://unmeshmali.com/posts/weekly/week-14-2021/</link><pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-14-2021/</guid><description>&lt;h1 id="week-14-2021">Week 14, 2021&lt;/h1>
+&lt;p>April 12, 2021
+Categories: Weekly Notes&lt;/p>
+&lt;h2 id="work">Work&lt;/h2>
+&lt;p>Sunverge is slowly and safely opening its SF office to employees. This week I
+went into the office first 3 days of the week. I ended up getting more ## work
+done but also more tired at the end of the day than when I am working from
+home. I guess I got used to working from home. I hope I adapt fast to working
+from office everyday. Spent some time of the week helping the customer
+support team with troubleshooting. Other time I was either working with the
+sales staff with proposals or revisiting already signed customer
+deliverables.&lt;/p></description></item><item><title>Week 13, 2021</title><link>https://unmeshmali.com/posts/weekly/week-13-2021/</link><pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-13-2021/</guid><description>&lt;h1 id="week-13-2021">Week 13, 2021&lt;/h1>
+&lt;p>April 5, 2021
+Categories: Weekly Notes&lt;/p>
+&lt;h2 id="work">Work&lt;/h2>
+&lt;p>This week I learned that as a data analyst/scientist, it is better to be
+doubtful and right than be confident and wrong. It saves a lot of time of
+other teams/employees when you don’t submit confident and wrong assignments
+forward. Performed some exploratory analysis along with asset monitoring and
+providing research support for writing business proposals. A busy week at&lt;/p></description></item><item><title>Week 12, 2021</title><link>https://unmeshmali.com/posts/weekly/week-12-2021/</link><pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-12-2021/</guid><description>&lt;h1 id="week-12-2021">Week 12, 2021&lt;/h1>
+&lt;p>March 29, 2021
+Categories: Weekly Notes
+This was a tough week. I felt a general lack of motivation in all aspects of
+life. There was enormous mental friction in doing even the simplest of tasks
+like laundry. I am not sure why. But just the realization that there is a
+mental blockage reduced its potential and I was able to control some of it.&lt;/p>
+&lt;h2 id="work">Work&lt;/h2>
+&lt;p>The week was all about troubleshooting with remote diagnostics, asset
+monitoring and product documentation. Also spent time on delivering
+performance and testing reports to customers. A week of less programming and
+statistical analysis and more client-facing ## work.
+I am a huge electric vehicle nerd and thus my YouTube feed is full of EV
+news. Some EV range testers ran the Tesla Model 3, Mustang Mach-e, and the VW
+ID.4 beyond their 0% State of Charge. They found that the Tesla drove 22
+miles after reaching 0% whereas the Mach-e only did 6 miles. I just thought
+that was super interesting. Battery pack manufacturers usually leave some
+room at the bottom SOC to protect the batteries. SOC estimation is an
+interesting problem. Some battery manufacturers map it to the cell voltage
+(since there is a linear relationship between the battery voltage and its
+SOC). I wonder what Tesla does.
+Side Project
+Virtually met with one of the professors to resolve a problem with my Google
+Earth Engine code. Right now I am tasked at creating a pipeline to provide
+the right type of data to the neural network that is also currently in the
+works by another project mate. We got 180 fires and after a lot of pre-
+processing we are very close to exporting rastors (images) of the fires from
+Google Earth Engine.&lt;/p></description></item><item><title>Week 11, 2021</title><link>https://unmeshmali.com/posts/weekly/week-11-2021/</link><pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-11-2021/</guid><description>&lt;h1 id="week-11-2021">Week 11, 2021&lt;/h1>
+&lt;p>March 22, 2021
+Categories: Weekly Notes&lt;/p>
+&lt;h2 id="work">Work&lt;/h2>
+&lt;p>“Faster along, further together” – The quote sums up this week at ## work.
+Working with QA engineers to test the integration, configurations, and
+algorithm for a project that was worked on by many developers at different
+times, tested by different QA engineers and approved by another product
+person. The software development process can’t get more complicated than that
+now, can it? I can’t appreciate enough the tools in Atlasssian product suite.
+Did you know that Atlasssian is an Australian company? One of the very few
+tech companies in Australia that has had a major impact on the world
+especially the silicon valley ecosystem. It’s a fascinating story (Listed to
+the podcast if interested). Also spent some time on websites of electric
+utilities to provide some market research support to the sales staff. A
+decent week.
+Side Project
+I am volunteering with Professors from University of San Francisco (my Alma
+Mater) to ## work on a project that involves predicting the progression
+(direction and speed) of wild fires once they have been ignited. The project
+is part of the MAGIX lab at USF where they ## work on solving complex societal
+problems using Machine Learning and Deep Learning and publish papers. Our
+project involves using deep learning to do the prediction. More details on
+the project can be found in the ## projects section. Spent just over 3 hours
+this week on the project mostly researching.&lt;/p></description></item><item><title>Week 10, 2021</title><link>https://unmeshmali.com/posts/weekly/week-10-2021/</link><pubDate>Mon, 08 Mar 2021 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/weekly/week-10-2021/</guid><description>&lt;h1 id="week-10-2021">Week 10, 2021&lt;/h1>
+&lt;p>March 11, 2021
+Categories: Weekly Notes&lt;/p>
+&lt;h2 id="work">Work&lt;/h2>
+&lt;p>Working on multiple things like always. I have a couple technical ## projects in
+hand that involve Python and Java programming. I also learned Docker to be
+able to deploy those ## projects. On the client-facing side, delivered on some
+data and Tableau dashboard requests. Spent a lot of time with the QA team to
+test out new deliverables. Not the best but a fun week at ## work.&lt;/p></description></item></channel></rss>
