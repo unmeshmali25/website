@@ -1,268 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unmesh Mali</title><link>https://unmeshmali.com/posts/essays/</link><description>Recent content on Unmesh Mali</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 27 Dec 2025 00:00:00 +0530</lastBuildDate><atom:link href="https://unmeshmali.com/posts/essays/index.xml" rel="self" type="application/rss+xml"/><item><title>Simulation Engine &amp; Offer Management System</title><link>https://unmeshmali.com/posts/essays/simulation_engine_offer_management/</link><pubDate>Sat, 27 Dec 2025 00:00:00 +0530</pubDate><guid>https://unmeshmali.com/posts/essays/simulation_engine_offer_management/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Implemented a complete simulation engine for testing offer management workflows with persona-based shopping agents. The system enables accelerated time simulation (1 real hour = 1 week simulated time) to model long-term offer lifecycle effects.&lt;/p>
-&lt;h2 id="high-level-architecture-overview-langgraph--langsmith">High-Level Architecture Overview (LangGraph + LangSmith)&lt;/h2>
-&lt;pre tabindex="0">&lt;code>┌─────────────────────────────────────────────────────────────────┐
-│ SimulationOrchestrator (New) │
-│ Coordinates time advancement + runs LangGraph agents │
-└──────────────────────────┬──────────────────────────────────────┘
- │
- ┌───────────────┼───────────────┐
- │ │ │
- ▼ ▼ ▼
-┌──────────────────┐ ┌────────────────────────────────────────┐
-│ OfferScheduler │ │ LangGraph StateGraph (per agent) │
-│ (Existing) │ │ │
-│ │ │ [decide_shop] ──▶ [browse_products] │
-│ - Time advance │ │ │ │ │
-│ - Cycle mgmt │ │ (skip) [add_to_cart] │
-│ - Offer refresh │ │ │ │ │
-└──────────────────┘ │ │ [view_coupons] │
- │ │ │ │
- │ │ [decide_checkout] │
- │ │ / \ │
- │ │ [complete] [abandon] │
- │ ▼ \ / │
- │ [END] ◀─────────────── │
- └────────────────────────────────────────┘
- │
- ▼
- ┌───────────────────────────┐
- │ LangSmith Tracing │
- │ (Automatic per node) │
- └───────────────────────────┘
- │
- ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ PostgreSQL Database │
-│ agents | users | shopping_sessions | shopping_session_events │
-│ user_coupons | offer_cycles | simulation_state │
-└─────────────────────────────────────────────────────────────────┘
-&lt;/code>&lt;/pre>&lt;h1 id="simulation-layer-specific-architecture-overview">Simulation Layer-Specific Architecture Overview&lt;/h1>
-&lt;h2 id="layer-1-application--api">Layer 1: Application &amp;amp; API&lt;/h2>
-&lt;pre tabindex="0">&lt;code>FastAPI Application (app/main.py)
-
- ┌──────────────────┐ ┌──────────────────────────────────┐
- │ Auth Verification │─────▶│ SIMULATION MODE BYPASS │
- │ (Supabase JWT) │ │ Bearer dev:&amp;lt;agent_id&amp;gt; │
- └──────────────────┘ └──────────────────────────────────┘
- │ │
- ▼ ▼
- ┌──────────────────┐ ┌──────────────────────────────────┐
- │ Production Paths │ │ Simulation Paths │
- └──────────────────┘ └──────────────────────────────────┘
- │ │
- ▼ ▼
- ┌──────────────────┐ ┌──────────────────────────────────┐
- │ Routes: │ │ Offer Engine Routes │
- │ • cart │ │ • /cycles (GET/POST) │
- │ • orders │ │ • /cycles/{id} │
- │ • stores │ │ • /refresh/user/{user_id} │
- └──────────────────┘ │ • /time/advance │
- └──────────────────────────────────┘
-&lt;/code>&lt;/pre>&lt;hr>
-&lt;h2 id="layer-2-simulation-orchestrator">Layer 2: Simulation Orchestrator&lt;/h2>
-&lt;pre tabindex="0">&lt;code>SimulationOrchestrator (app/simulation/orchestrator.py)
-
- ┌────────────────────────────────────────────────────────────────┐
- │ Rich Dashboard (Terminal UI) │
- │ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ │
- │ │ Statistics │ │ Agent List │ │ Event Log │ │
- │ │ • Cycles │ │ • Status │ │ • Actions │ │
- │ │ • Checkouts │ │ • Store │ │ • Errors │ │
- │ │ • Offers │ │ • Cart │ │ │ │
- │ └─────────────┘ └─────────────┘ └─────────────┘ │
- └────────────────────────────────────────────────────────────────┘
-
- ┌────────────────────────────────────────────────────────────────┐
- │ Time Service │
- │ • Real Time ───────────────────┐ │
- │ • Simulated Time ────────▶ 1 hour = 168 hours (1 week) │
- │ • Coordinate Conversion │ │
- └────────────────────────────────┼───────────────────────────────┘
- │
- ┌────────────────────────────────▼────────────────────────────────┐
- │ Offer Engine Scheduler │
- │ ┌──────────────────┐ ┌──────────────────┐ ┌───────────────┐ │
- │ │ Cycle Manager │ │ Expiration │ │ Offer Assigner│ │
- │ │ • Create cycles │──▶│ Handler │──▶│ • Distribute │ │
- │ │ • Track windows │ │ • Mark expired │ │ to wallets │ │
- │ └──────────────────┘ └──────────────────┘ └───────────────┘ │
- └────────────────────────────────────────────────────────────────┘
-&lt;/code>&lt;/pre>&lt;hr>
-&lt;h2 id="layer-3-agent-simulation">Layer 3: Agent Simulation&lt;/h2>
-&lt;pre tabindex="0">&lt;code>Agent Pool (Multiple Persona-Based Agents)
-
- ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐
- │ Agent 1 │ │ Agent 2 │ │ Agent 3 │ │ Agent N │
- │ (Excel │ │ (Excel │ │ (Excel │ │ (Excel │
- │ Persona)│ │ Persona)│ │ Persona)│ │ Persona)│
- └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘
- │ │ │ │
- ▼ ▼ ▼ ▼
-
- ┌────────────────────────────────────────────────────────────────┐
- │ Agent State (28 Persona Attributes) │
- │ • Demographics: age, income, location │
- │ • Shopping: frequency, basket_size, impulsivity │
- │ • Preferences: categories, brands, days_of_week │
- │ • Psychology: discount_sensitivity, price_consciousness │
- └────────────────────────────────────────────────────────────────┘
- │ │ │ │
- └─────────────┴─────────────┴─────────────┘
- │
- ▼
-
- ┌────────────────────────────────────────────────────────────────┐
- │ LangGraph Shopping Graph (Decision Workflow) │
- │ │
- │ ┌──────────┐ │
- │ │ Start │ │
- │ └────┬─────┘ │
- │ │ │
- │ ▼ │
- │ ┌─────────────┐ │
- │ │decide_shop │ │
- │ └─────┬───────┘ │
- │ Yes│ │No │
- │ ▼ ▼ │
- │ ┌────────────┐ ┌────┐ │
- │ │browse_ │ │END │ │
- │ │products │ └────┘ │
- │ └─────┬──────┘ │
- │ │ │
- │ ▼ │
- │ ┌───────────────┐ │
- │ │ add_to_cart │ │
- │ └───────┬───────┘ │
- │ │ │
- │ ▼ │
- │ ┌───────────────┐ │
- │ │ view_coupons │ │
- │ └───────┬───────┘ │
- │ │ │
- │ ▼ │
- │ ┌─────────────────┐ │
- │ │ decide_checkout│ │
- │ └────┬───────┬───┘ │
- │ │ │ │
- │ Yes │ │ No │
- │ ▼ ▼ │
- │ ┌────────────┐ ┌────┐ │
- │ │complete_ │ │END │ │
- │ │checkout │ └────┘ │
- │ └────────────┘ │
- │ │
- └────────────────────────────────────────────────────────────────┘
- │
- ▼
-
- ┌────────────────────────────────────────────────────────────────┐
- │ Shopping Actions (Database Operations) │
- │ • create_session() • browse_products() │
- │ • add_to_cart() • apply_coupon() │
- │ • view_coupon() • complete_checkout() │
- │ • abandon_session() • create_event() (ML training data) │
- └────────────────────────────────────────────────────────────────┘
-&lt;/code>&lt;/pre>&lt;hr>
-&lt;h2 id="layer-4-database-schema">Layer 4: Database Schema&lt;/h2>
-&lt;pre tabindex="0">&lt;code>NEW TABLES (Migration 007)
-
-┌─────────────────────┐ ┌─────────────────────┐
-│ offer_cycles │ │ user_offer_cycles │
-├─────────────────────┤ ├─────────────────────┤
-│ id │ │ user_id → users(id) │
-│ cycle_number │ │ current_cycle_id │
-│ started_at │ │ last_refresh_at │
-│ ends_at │ │ next_refresh_at │
-│ simulated_start_date│ │ is_simulation │
-│ simulated_end_date │ └─────────────────────┘
-│ is_simulation │
-└─────────────────────┘
-
-┌─────────────────────┐
-│ simulation_state │
-├─────────────────────┤
-│ simulated_date │
-│ real_start_time │
-│ cycle_number │
-└─────────────────────┘
-
-
-MODIFIED TABLES
-
-┌─────────────────────────────┐ ┌───────────────────────────────┐
-│ user_coupons │ │ orders │
-├─────────────────────────────┤ ├───────────────────────────────┤
-│ + status (active/expired/) │ │ + is_simulated │
-│ + offer_cycle_id │ │ + simulated_at │
-│ + is_simulation │ │ │
-└─────────────────────────────┘ └───────────────────────────────┘
-
-
-EXISTING TABLES (Used by Simulation)
-
-users, agents, products, shopping_sessions,
-shopping_session_events, cart_items, coupons
-&lt;/code>&lt;/pre>&lt;hr>
-&lt;h2 id="layer-5-tooling--utilities">Layer 5: Tooling &amp;amp; Utilities&lt;/h2>
-&lt;pre tabindex="0">&lt;code>┌────────────────────────────────────┐ ┌──────────────────────────────┐
-│ seed_simulation_agents.py │ │ check_db.py │
-│ • Load Excel personas │ │ • List tables &amp;amp; row counts │
-│ • Create users &amp;amp; agents │ │ • Inspect sample data │
-│ • --test flag for quick testing │ │ • Validate schema │
-└────────────────────────────────────┘ └──────────────────────────────┘
-&lt;/code>&lt;/pre>&lt;hr>
-&lt;h2 id="data-flows">Data Flows&lt;/h2>
-&lt;pre tabindex="0">&lt;code>1. TIME ADVANCEMENT
- Orchestrator ──▶ TimeService ──▶ SimulationState (DB)
- │
- └──▶ Coordinate Conversion
- Real Time ↔ Simulated Time
- (1 hour = 168 hours = 1 week)
-
-2. OFFER CYCLE MANAGEMENT
- Scheduler ──▶ CycleManager ──▶ OfferAssigner ──▶ user_coupons
- │ │
- │ └─▶ Distribute to wallets
- │ • frontstore: 2/cycle
- │ • category-brand: 30/cycle
- └─▶ ExpirationHandler
- └─▶ Mark expired offers
-
-3. AGENT EXECUTION
- Orchestrator ──▶ ShoppingGraph (LangGraph)
- │
- ├─▶ decide_shop
- ├─▶ browse_products
- ├─▶ add_to_cart
- ├─▶ view_coupons
- ├─▶ decide_checkout
- └─▶ complete_checkout / abandon_session
- │
- ▼
- Actions ──▶ Database
- │
- ├─▶ shopping_sessions
- └─▶ shopping_session_events (ML training data)
-
-4. AUTHENTICATION FLOW
- HTTP Request ──▶ verify_token()
- │
- ┌────────────┴────────────┐
- ▼ ▼
- Production Simulation
- (Supabase JWT) (dev:&amp;lt;agent_id&amp;gt;)
- │ │
- └───────────┬─────────────┘
- ▼
- User Context
- (user_id, email)
-&lt;/code>&lt;/pre>&lt;h2 id="core-components">Core Components&lt;/h2>
-&lt;h3 id="1-offer-engine-simulation-only">1. Offer Engine (Simulation-Only)&lt;/h3>
-&lt;p>&lt;strong>Location:&lt;/strong> &lt;a href="app/offer_engine/">&lt;code>app/offer_engine/&lt;/code>&lt;/a>&lt;/p></description></item><item><title>Persona Engine</title><link>https://unmeshmali.com/posts/essays/persona_engine/</link><pubDate>Thu, 25 Dec 2025 00:00:00 +0530</pubDate><guid>https://unmeshmali.com/posts/essays/persona_engine/</guid><description>&lt;h3 id="300-realistic-shopping-personas-at-0-cost">300+ Realistic Shopping Personas at $0 Cost&lt;/h3>
-&lt;p>I have built a retail shopping app to gain hands-on experience in full-stack development. I built and deployed the app and &amp;ldquo;convinced&amp;rdquo; 7 friends to sign up for it and play with it. I realized finding users, convincing them to use your app, and get them to play with it for data collection is a hard problem.
-Enter AI.
-I used the hallucinating properties of LLMs (along with temperature control, and prompt engineering techniques) to generate 300+ diverse, believable shopper personas. Since this is just a micro-blog on how I generated personas - stay tuned for the next ones where I actually put these 300+ agents to use/interact with the app and give me copius amounts of data to play with (albeit synthetic) AND more importantly it gives me the much needed experience of playing and building with AI Agents (primarily Langgraph). Stay tuned!&lt;/p></description></item><item><title>2025 Reinforcement Learning Plan</title><link>https://unmeshmali.com/posts/essays/rl_learning_plan/</link><pubDate>Sat, 26 Jul 2025 23:16:49 -0400</pubDate><guid>https://unmeshmali.com/posts/essays/rl_learning_plan/</guid><description>&lt;p>My goal is to become capable of reading research papers and implementing them to solve business/engineering problems using RL. I used the &amp;ldquo;Study and Learn&amp;rdquo; mode in ChatGPT to generate the below plan. It seems a decent structure to get me started. I am estimating 5-10 hours per week of work. However, I will push myself to get this done faster and complete it by end of 2025.&lt;/p>
-&lt;h1 id="reinforcement-learning-mastery-plan">Reinforcement Learning Mastery Plan&lt;/h1>
-&lt;p>&lt;strong>Time:&lt;/strong> ~5–10 hrs/week&lt;/p></description></item><item><title/><link>https://unmeshmali.com/posts/essays/my_adeventure_in_full_stack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unmeshmali.com/posts/essays/my_adeventure_in_full_stack/</guid><description>&lt;h1 id="my-adventure-in-full-stack-ai-powered-application">My Adventure in Full-Stack AI-Powered Application&lt;/h1>
-&lt;p>Ever since I read &amp;ldquo;Losing My Virginity: How I Survived, Had Fun..&amp;rdquo; book by Richard Branson, I have always dreamed of entrepreneurship. Building a product and converting it into a business. Until before LLMs came to town, the first step of entrepreneurship - building a product seemed the first and unsurmountable challenge while maintaining a full-time job. Times have changed. But my desire has not. Equipped with AI assist coding tools, I had no doubts about tackling full-stack development, Postgres design, and aim for real users. That is exactly what I did.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unmesh Mali</title>
+    <link>http://localhost:1313/posts/essays/</link>
+    <description>Recent content on Unmesh Mali</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Dec 2025 00:00:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/essays/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simulation Engine &amp; Offer Management System</title>
+      <link>http://localhost:1313/posts/essays/simulation_engine_offer_management/</link>
+      <pubDate>Sat, 27 Dec 2025 00:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/essays/simulation_engine_offer_management/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Implemented a complete simulation engine for testing offer management workflows with persona-based shopping agents. The system enables accelerated time simulation (1 real hour = 1 week simulated time) to model long-term offer lifecycle effects.&lt;/p&gt;&#xA;&lt;h2 id=&#34;high-level-architecture-overview-langgraph--langsmith&#34;&gt;High-Level Architecture Overview (LangGraph + LangSmith)&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────────┐&#xA;│                   SimulationOrchestrator (New)                   │&#xA;│        Coordinates time advancement + runs LangGraph agents      │&#xA;└──────────────────────────┬──────────────────────────────────────┘&#xA;                           │&#xA;           ┌───────────────┼───────────────┐&#xA;           │               │               │&#xA;           ▼               ▼               ▼&#xA;┌──────────────────┐ ┌────────────────────────────────────────┐&#xA;│  OfferScheduler  │ │     LangGraph StateGraph (per agent)   │&#xA;│   (Existing)     │ │                                        │&#xA;│                  │ │ [decide_shop] ──▶ [browse_products]    │&#xA;│ - Time advance   │ │       │                 │              │&#xA;│ - Cycle mgmt     │ │    (skip)          [add_to_cart]       │&#xA;│ - Offer refresh  │ │       │                 │              │&#xA;└──────────────────┘ │       │          [view_coupons]        │&#xA;                     │       │                 │              │&#xA;                     │       │         [decide_checkout]      │&#xA;                     │       │           /         \          │&#xA;                     │       │    [complete]    [abandon]     │&#xA;                     │       ▼           \         /          │&#xA;                     │     [END] ◀───────────────             │&#xA;                     └────────────────────────────────────────┘&#xA;                           │&#xA;                           ▼&#xA;              ┌───────────────────────────┐&#xA;              │   LangSmith Tracing       │&#xA;              │   (Automatic per node)    │&#xA;              └───────────────────────────┘&#xA;                           │&#xA;                           ▼&#xA;┌─────────────────────────────────────────────────────────────────┐&#xA;│                     PostgreSQL Database                          │&#xA;│   agents | users | shopping_sessions | shopping_session_events   │&#xA;│   user_coupons | offer_cycles | simulation_state                 │&#xA;└─────────────────────────────────────────────────────────────────┘&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;simulation-layer-specific-architecture-overview&#34;&gt;Simulation Layer-Specific Architecture Overview&lt;/h1&gt;&#xA;&lt;h2 id=&#34;layer-1-application--api&#34;&gt;Layer 1: Application &amp;amp; API&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;FastAPI Application (app/main.py)&#xA;&#xA;  ┌──────────────────┐      ┌──────────────────────────────────┐&#xA;  │ Auth Verification │─────▶│  SIMULATION MODE BYPASS          │&#xA;  │ (Supabase JWT)   │      │  Bearer dev:&amp;lt;agent_id&amp;gt;           │&#xA;  └──────────────────┘      └──────────────────────────────────┘&#xA;           │                              │&#xA;           ▼                              ▼&#xA;  ┌──────────────────┐      ┌──────────────────────────────────┐&#xA;  │ Production Paths │      │  Simulation Paths                 │&#xA;  └──────────────────┘      └──────────────────────────────────┘&#xA;           │                              │&#xA;           ▼                              ▼&#xA;  ┌──────────────────┐      ┌──────────────────────────────────┐&#xA;  │ Routes:          │      │  Offer Engine Routes              │&#xA;  │  • cart          │      │  • /cycles (GET/POST)             │&#xA;  │  • orders        │      │  • /cycles/{id}                    │&#xA;  │  • stores        │      │  • /refresh/user/{user_id}        │&#xA;  └──────────────────┘      │  • /time/advance                   │&#xA;                           └──────────────────────────────────┘&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;layer-2-simulation-orchestrator&#34;&gt;Layer 2: Simulation Orchestrator&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SimulationOrchestrator (app/simulation/orchestrator.py)&#xA;&#xA;  ┌────────────────────────────────────────────────────────────────┐&#xA;  │  Rich Dashboard (Terminal UI)                                   │&#xA;  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐                │&#xA;  │  │ Statistics  │ │ Agent List  │ │ Event Log  │                │&#xA;  │  │ • Cycles    │ │ • Status    │ │ • Actions  │                │&#xA;  │  │ • Checkouts │ │ • Store     │ │ • Errors   │                │&#xA;  │  │ • Offers    │ │ • Cart      │ │             │                │&#xA;  │  └─────────────┘ └─────────────┘ └─────────────┘                │&#xA;  └────────────────────────────────────────────────────────────────┘&#xA;&#xA;  ┌────────────────────────────────────────────────────────────────┐&#xA;  │  Time Service                                                   │&#xA;  │  • Real Time ───────────────────┐                               │&#xA;  │  • Simulated Time ────────▶ 1 hour = 168 hours (1 week)        │&#xA;  │  • Coordinate Conversion     │                               │&#xA;  └────────────────────────────────┼───────────────────────────────┘&#xA;                                    │&#xA;  ┌────────────────────────────────▼────────────────────────────────┐&#xA;  │  Offer Engine Scheduler                                          │&#xA;  │  ┌──────────────────┐  ┌──────────────────┐  ┌───────────────┐  │&#xA;  │  │ Cycle Manager    │  │ Expiration      │  │ Offer Assigner│  │&#xA;  │  │ • Create cycles  │──▶│ Handler         │──▶│ • Distribute  │  │&#xA;  │  │ • Track windows │  │ • Mark expired  │  │   to wallets  │  │&#xA;  │  └──────────────────┘  └──────────────────┘  └───────────────┘  │&#xA;  └────────────────────────────────────────────────────────────────┘&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;layer-3-agent-simulation&#34;&gt;Layer 3: Agent Simulation&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Agent Pool (Multiple Persona-Based Agents)&#xA;&#xA;  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐&#xA;  │ Agent 1  │  │ Agent 2  │  │ Agent 3  │  │ Agent N  │&#xA;  │ (Excel   │  │ (Excel   │  │ (Excel   │  │ (Excel   │&#xA;  │  Persona)│  │  Persona)│  │  Persona)│  │  Persona)│&#xA;  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘&#xA;       │             │             │             │&#xA;       ▼             ▼             ▼             ▼&#xA;&#xA;  ┌────────────────────────────────────────────────────────────────┐&#xA;  │  Agent State (28 Persona Attributes)                            │&#xA;  │  • Demographics: age, income, location                        │&#xA;  │  • Shopping: frequency, basket_size, impulsivity               │&#xA;  │  • Preferences: categories, brands, days_of_week                │&#xA;  │  • Psychology: discount_sensitivity, price_consciousness       │&#xA;  └────────────────────────────────────────────────────────────────┘&#xA;       │             │             │             │&#xA;       └─────────────┴─────────────┴─────────────┘&#xA;                     │&#xA;                     ▼&#xA;&#xA;  ┌────────────────────────────────────────────────────────────────┐&#xA;  │  LangGraph Shopping Graph (Decision Workflow)                   │&#xA;  │                                                                 │&#xA;  │                      ┌──────────┐                                │&#xA;  │                      │  Start   │                                │&#xA;  │                      └────┬─────┘                                │&#xA;  │                           │                                       │&#xA;  │                           ▼                                       │&#xA;  │                    ┌─────────────┐                               │&#xA;  │                    │decide_shop │                               │&#xA;  │                    └─────┬───────┘                               │&#xA;  │                    Yes│      │No                                │&#xA;  │                       ▼      ▼                                   │&#xA;  │              ┌────────────┐  ┌────┐                              │&#xA;  │              │browse_    │  │END │                              │&#xA;  │              │products   │  └────┘                              │&#xA;  │              └─────┬──────┘                                       │&#xA;  │                   │                                             │&#xA;  │                   ▼                                             │&#xA;  │           ┌───────────────┐                                     │&#xA;  │           │  add_to_cart  │                                     │&#xA;  │           └───────┬───────┘                                     │&#xA;  │                   │                                             │&#xA;  │                   ▼                                             │&#xA;  │           ┌───────────────┐                                     │&#xA;  │           │ view_coupons  │                                     │&#xA;  │           └───────┬───────┘                                     │&#xA;  │                   │                                             │&#xA;  │                   ▼                                             │&#xA;  │         ┌─────────────────┐                                     │&#xA;  │         │  decide_checkout│                                     │&#xA;  │         └────┬───────┬───┘                                     │&#xA;  │              │       │                                         │&#xA;  │         Yes  │       │  No                                      │&#xA;  │              ▼       ▼                                         │&#xA;  │     ┌────────────┐  ┌────┐                                    │&#xA;  │     │complete_   │  │END │                                    │&#xA;  │     │checkout    │  └────┘                                    │&#xA;  │     └────────────┘                                            │&#xA;  │                                                                 │&#xA;  └────────────────────────────────────────────────────────────────┘&#xA;                           │&#xA;                           ▼&#xA;&#xA;  ┌────────────────────────────────────────────────────────────────┐&#xA;  │  Shopping Actions (Database Operations)                          │&#xA;  │  • create_session()      • browse_products()                      │&#xA;  │  • add_to_cart()         • apply_coupon()                         │&#xA;  │  • view_coupon()         • complete_checkout()                     │&#xA;  │  • abandon_session()     • create_event() (ML training data)     │&#xA;  └────────────────────────────────────────────────────────────────┘&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;layer-4-database-schema&#34;&gt;Layer 4: Database Schema&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NEW TABLES (Migration 007)&#xA;&#xA;┌─────────────────────┐  ┌─────────────────────┐&#xA;│ offer_cycles        │  │ user_offer_cycles   │&#xA;├─────────────────────┤  ├─────────────────────┤&#xA;│ id                  │  │ user_id → users(id) │&#xA;│ cycle_number        │  │ current_cycle_id    │&#xA;│ started_at          │  │ last_refresh_at     │&#xA;│ ends_at             │  │ next_refresh_at     │&#xA;│ simulated_start_date│  │ is_simulation       │&#xA;│ simulated_end_date  │  └─────────────────────┘&#xA;│ is_simulation       │&#xA;└─────────────────────┘&#xA;&#xA;┌─────────────────────┐&#xA;│ simulation_state    │&#xA;├─────────────────────┤&#xA;│ simulated_date      │&#xA;│ real_start_time     │&#xA;│ cycle_number        │&#xA;└─────────────────────┘&#xA;&#xA;&#xA;MODIFIED TABLES&#xA;&#xA;┌─────────────────────────────┐    ┌───────────────────────────────┐&#xA;│ user_coupons                 │    │ orders                        │&#xA;├─────────────────────────────┤    ├───────────────────────────────┤&#xA;│ + status (active/expired/)   │    │ + is_simulated                │&#xA;│ + offer_cycle_id             │    │ + simulated_at                │&#xA;│ + is_simulation              │    │                               │&#xA;└─────────────────────────────┘    └───────────────────────────────┘&#xA;&#xA;&#xA;EXISTING TABLES (Used by Simulation)&#xA;&#xA;users, agents, products, shopping_sessions,&#xA;shopping_session_events, cart_items, coupons&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;layer-5-tooling--utilities&#34;&gt;Layer 5: Tooling &amp;amp; Utilities&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌────────────────────────────────────┐  ┌──────────────────────────────┐&#xA;│ seed_simulation_agents.py           │  │ check_db.py                  │&#xA;│ • Load Excel personas              │  │ • List tables &amp;amp; row counts   │&#xA;│ • Create users &amp;amp; agents            │  │ • Inspect sample data        │&#xA;│ • --test flag for quick testing    │  │ • Validate schema            │&#xA;└────────────────────────────────────┘  └──────────────────────────────┘&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;data-flows&#34;&gt;Data Flows&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1. TIME ADVANCEMENT&#xA;   Orchestrator ──▶ TimeService ──▶ SimulationState (DB)&#xA;                          │&#xA;                          └──▶ Coordinate Conversion&#xA;                              Real Time ↔ Simulated Time&#xA;                              (1 hour = 168 hours = 1 week)&#xA;&#xA;2. OFFER CYCLE MANAGEMENT&#xA;   Scheduler ──▶ CycleManager ──▶ OfferAssigner ──▶ user_coupons&#xA;                │                │&#xA;                │                └─▶ Distribute to wallets&#xA;                │                   • frontstore: 2/cycle&#xA;                │                   • category-brand: 30/cycle&#xA;                └─▶ ExpirationHandler&#xA;                    └─▶ Mark expired offers&#xA;&#xA;3. AGENT EXECUTION&#xA;   Orchestrator ──▶ ShoppingGraph (LangGraph)&#xA;                  │&#xA;                  ├─▶ decide_shop&#xA;                  ├─▶ browse_products&#xA;                  ├─▶ add_to_cart&#xA;                  ├─▶ view_coupons&#xA;                  ├─▶ decide_checkout&#xA;                  └─▶ complete_checkout / abandon_session&#xA;                         │&#xA;                         ▼&#xA;                  Actions ──▶ Database&#xA;                         │&#xA;                         ├─▶ shopping_sessions&#xA;                         └─▶ shopping_session_events (ML training data)&#xA;&#xA;4. AUTHENTICATION FLOW&#xA;   HTTP Request ──▶ verify_token()&#xA;                      │&#xA;         ┌────────────┴────────────┐&#xA;         ▼                         ▼&#xA;    Production                 Simulation&#xA;    (Supabase JWT)              (dev:&amp;lt;agent_id&amp;gt;)&#xA;         │                         │&#xA;         └───────────┬─────────────┘&#xA;                     ▼&#xA;               User Context&#xA;               (user_id, email)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;core-components&#34;&gt;Core Components&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-offer-engine-simulation-only&#34;&gt;1. Offer Engine (Simulation-Only)&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; &lt;a href=&#34;app/offer_engine/&#34;&gt;&lt;code&gt;app/offer_engine/&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Persona Engine</title>
+      <link>http://localhost:1313/posts/essays/persona_engine/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/essays/persona_engine/</guid>
+      <description>&lt;h3 id=&#34;300-realistic-shopping-personas-at-0-cost&#34;&gt;300+ Realistic Shopping Personas at $0 Cost&lt;/h3&gt;&#xA;&lt;p&gt;I have built a retail shopping app to gain hands-on experience in full-stack development. I built and deployed the app and &amp;ldquo;convinced&amp;rdquo; 7 friends to sign up for it and play with it. I realized finding users, convincing them to use your app, and get them to play with it for data collection is a hard problem.&#xA;Enter AI.&#xA;I used the hallucinating properties of LLMs (along with temperature control, and prompt engineering techniques) to generate 300+ diverse, believable shopper personas. Since this is just a micro-blog on how I generated personas - stay tuned for the next ones where I actually put these 300+ agents to use/interact with the app and give me copius amounts of data to play with (albeit synthetic) AND more importantly it gives me the much needed experience of playing and building with AI Agents (primarily Langgraph). Stay tuned!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025 Reinforcement Learning Plan</title>
+      <link>http://localhost:1313/posts/essays/rl_learning_plan/</link>
+      <pubDate>Sat, 26 Jul 2025 23:16:49 -0400</pubDate>
+      <guid>http://localhost:1313/posts/essays/rl_learning_plan/</guid>
+      <description>&lt;p&gt;My goal is to become capable of reading research papers and implementing them to solve business/engineering problems using RL. I used the &amp;ldquo;Study and Learn&amp;rdquo; mode in ChatGPT to generate the below plan. It seems a decent structure to get me started. I am estimating 5-10 hours per week of work. However, I will push myself to get this done faster and complete it by end of 2025.&lt;/p&gt;&#xA;&lt;h1 id=&#34;reinforcement-learning-mastery-plan&#34;&gt;Reinforcement Learning Mastery Plan&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Time:&lt;/strong&gt; ~5–10 hrs/week&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/essays/my_adeventure_in_full_stack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/essays/my_adeventure_in_full_stack/</guid>
+      <description>&lt;h1 id=&#34;my-adventure-in-full-stack-ai-powered-application&#34;&gt;My Adventure in Full-Stack AI-Powered Application&lt;/h1&gt;&#xA;&lt;p&gt;Ever since I read &amp;ldquo;Losing My Virginity: How I Survived, Had Fun..&amp;rdquo; book by Richard Branson, I have always dreamed of entrepreneurship. Building a product and converting it into a business. Until before LLMs came to town, the first step of entrepreneurship - building a product seemed the first and unsurmountable challenge while maintaining a full-time job. Times have changed. But my desire has not. Equipped with AI assist coding tools, I had no doubts about tackling full-stack development, Postgres design, and aim for real users. That is exactly what I did.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

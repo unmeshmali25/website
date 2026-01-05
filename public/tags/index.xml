@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Unmesh Mali</title><link>https://unmeshmali.com/tags/</link><description>Recent content in Tags on Unmesh Mali</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 20 Sep 2025 17:08:29 -0400</lastBuildDate><atom:link href="https://unmeshmali.com/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Reinforcement-Learning</title><link>https://unmeshmali.com/tags/reinforcement-learning/</link><pubDate>Sat, 20 Sep 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/tags/reinforcement-learning/</guid><description/></item><item><title>Rl-Level1</title><link>https://unmeshmali.com/tags/rl-level1/</link><pubDate>Sat, 20 Sep 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/tags/rl-level1/</guid><description/></item><item><title>Weekly-Updates</title><link>https://unmeshmali.com/tags/weekly-updates/</link><pubDate>Sat, 20 Sep 2025 17:08:29 -0400</pubDate><guid>https://unmeshmali.com/tags/weekly-updates/</guid><description/></item><item><title>Essay</title><link>https://unmeshmali.com/tags/essay/</link><pubDate>Sat, 26 Jul 2025 23:16:49 -0400</pubDate><guid>https://unmeshmali.com/tags/essay/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Unmesh Mali</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Unmesh Mali</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Jan 2026 00:00:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Essay</title>
+      <link>http://localhost:1313/tags/essay/</link>
+      <pubDate>Sun, 04 Jan 2026 00:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/tags/essay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reinforcement-Learning</title>
+      <link>http://localhost:1313/tags/reinforcement-learning/</link>
+      <pubDate>Sat, 20 Sep 2025 17:08:29 -0400</pubDate>
+      <guid>http://localhost:1313/tags/reinforcement-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rl-Level1</title>
+      <link>http://localhost:1313/tags/rl-level1/</link>
+      <pubDate>Sat, 20 Sep 2025 17:08:29 -0400</pubDate>
+      <guid>http://localhost:1313/tags/rl-level1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Weekly-Updates</title>
+      <link>http://localhost:1313/tags/weekly-updates/</link>
+      <pubDate>Sat, 20 Sep 2025 17:08:29 -0400</pubDate>
+      <guid>http://localhost:1313/tags/weekly-updates/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
