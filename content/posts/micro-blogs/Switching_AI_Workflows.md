@@ -1,5 +1,5 @@
 +++
-title = "Rethinking my AI Coding Workflow "
+title = "Rethinking my AI Coding Workflow"
 date = 2026-01-07T00:00:00-05:00
 draft = false
 tags = ["essay"]
