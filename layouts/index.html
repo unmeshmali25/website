@@ -1,63 +1,24 @@
 {{ define "main" }}
-  <div class="homepage-content-wrapper">
-    
-    {{/* --- About Section --- */}}
-    <div class="about-section">
-      {{ with .Site.GetPage "page" "about" }}
-        {{ .Content }}
-      {{ else }}
-        <p>Home intro not found.</p>
-      {{ end }}
-    </div>
-
-    {{/* --- Separator --- */}}
-    <hr class="section-separator">
-
-    {{/* --- Recent Posts Section --- */}}
-    <div class="recent-posts-section">
-      <div class="recent-posts-grid">
-        
-        {{/* Weekly Updates Column */}}
-        <div class="recent-posts-column">
-          <h4>Recent Weekly Updates</h4>
-          {{ $weeklySection := .Site.GetPage "/posts/weekly" }}
-          <div class="posts-list">
-            {{ range first 4 $weeklySection.RegularPages }}
-            <div class="post-item">
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </div>
-            {{ end }}
-          </div>
-        </div>
-
-        {{/* Essays Column */}}
-        <div class="recent-posts-column">
-          <h4>Recent Essays</h4>
-          {{ $essaysSection := .Site.GetPage "/posts/essays" }}
-          <div class="posts-list">
-            {{ range first 4 $essaysSection.RegularPages }}
-            <div class="post-item">
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </div>
-            {{ end }}
-          </div>
-        </div>
-
-        {{/* Micro-blogs Column */}}
-        <div class="recent-posts-column">
-          <h4>Recent Micro-blogs</h4>
-          {{ $microSection := .Site.GetPage "/posts/micro-blogs" }}
-          <div class="posts-list">
-            {{ range first 4 $microSection.RegularPages }}
-            <div class="post-item">
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </div>
-            {{ end }}
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
+{{- $p := site.Data.profile -}}
+<div class="me">
+  <img src="{{ $p.photo | relURL }}" alt="{{ $p.name }}" width="112" height="112">
+  <p>{{ $p.tagline }}</p>
+</div>
+{{- range $p.intro }}
+<p>{{ . | strings.TrimSpace | markdownify }}</p>
+{{- end }}
+<p><a href="{{ $p.links.linkedin }}">Resume / LinkedIn</a> · <a href="{{ $p.links.github }}">GitHub</a> · <a href="mailto:{{ $p.email }}">{{ $p.email }}</a></p>
+{{- range $p.homepage_lists }}
+  {{- $n := .count | int -}}
+  {{- $heading := .heading -}}
+  {{- with site.GetPage .path }}
+<h2>{{ $heading }}</h2>
+<ul>
+    {{- range first $n .RegularPages.ByDate.Reverse }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end }}
+</ul>
+  {{- end }}
+{{- end }}
+<p><a href="{{ "/writing/" | relURL }}">All writing →</a></p>
 {{ end }}

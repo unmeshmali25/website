@@ -1,0 +1,19 @@
+{{- $p := site.Data.profile -}}
+{{- $alumni := slice -}}
+{{- range $p.education -}}
+  {{- $alumni = $alumni | append (dict "@type" "CollegeOrUniversity" "name" .institution) -}}
+{{- end -}}
+{{- $person := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" $p.name
+  "jobTitle" $p.job_title
+  "url" $p.url
+  "email" $p.email
+  "image" ($p.photo | absURL)
+  "worksFor" (dict "@type" "Organization" "name" $p.employer "url" $p.employer_url)
+  "alumniOf" $alumni
+  "sameAs" (slice $p.links.linkedin $p.links.github)
+  "knowsAbout" $p.knows_about
+-}}
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>

@@ -1,0 +1,12 @@
+{{- range site.Data.profile.writing_sections }}
+<h2>{{ .heading }}</h2>
+<p class="kicker">{{ .description }}</p>
+{{- with site.GetPage .path }}
+<ul>
+  {{- range .RegularPages.ByDate.Reverse }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if not .Date.IsZero }} <span class="when">{{ .Date.Format "Jan 2, 2006" }}</span>{{ end }}</li>
+  {{- end }}
+</ul>
+{{- end }}
+{{- end }}
+<p><a href="{{ "index.xml" | relURL }}">RSS</a></p>

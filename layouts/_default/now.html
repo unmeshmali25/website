@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{- $p := site.Data.profile -}}
+<h1>{{ .Title }}</h1>
+<p>Last updated <time datetime="{{ $p.updated }}">{{ $p.updated_display }}</time>.</p>
+<p>{{ $p.job_title }} at <a href="{{ $p.employer_url }}">{{ $p.employer }}</a>.</p>
+<p>Taking <a href="{{ $p.course.url }}">{{ $p.course.name }}</a> ({{ $p.course.provider }}, {{ $p.course.display }}).</p>
+<h2>Side projects</h2>
+<p>{{ $p.projects_disclaimer }}</p>
+<ul>
+{{- range $p.projects }}
+  {{- if .current }}
+  <li>{{ if .url }}<a href="{{ .url }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }} ({{ .label }}). {{ .summary }}{{ with .note }} {{ . }}{{ end }}</li>
+  {{- end }}
+{{- end }}
+</ul>
+<p><a href="{{ "/projects/" | relURL }}">All projects</a> · <a href="{{ "/about/" | relURL }}">About</a></p>
+{{ end }}

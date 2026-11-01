@@ -1,21 +1,14 @@
 {{ define "main" }}
-{{ if not .Params.menu }}
-<h1 class="post-title">{{ .Title }}</h1>
-<p>
-  <i>
-    <time datetime='{{ .Date.Format "2006-01-02" }}'>
-      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-    </time>
-  </i>
-</p>
-{{ end }}
-<content>
+<article>
+  <h1>{{ .Title }}</h1>
+  {{- if and (not .Date.IsZero) .File (hasPrefix .File.Path "posts/") }}
+  <p class="kicker"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+  {{- end }}
   {{ .Content }}
-</content>
-<p>
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-  {{ end }}
-</p>
+  {{- with .GetTerms "tags" }}
+  <p class="tags">
+    {{- range . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a> {{ end }}
+  </p>
+  {{- end }}
+</article>
 {{ end }}
-

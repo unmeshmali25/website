@@ -1,4 +1,6 @@
-# My Adventure in Full-Stack AI-Powered Application
++++
+title = "My Adventure in Full-Stack AI-Powered Application"
++++
 
 Ever since I read "Losing My Virginity: How I Survived, Had Fun.." book by Richard Branson, I have always dreamed of entrepreneurship. Building a product and converting it into a business. Until before LLMs came to town, the first step of entrepreneurship - building a product seemed the first and unsurmountable challenge while maintaining a full-time job. Times have changed. But my desire has not. Equipped with AI assist coding tools, I had no doubts about tackling full-stack development, Postgres design, and aim for real users. That is exactly what I did.
 

@@ -1,0 +1,46 @@
+{{- $p := site.Data.profile -}}
+{{- $work := slice -}}
+{{- range $p.work -}}
+  {{- $highlights := .highlights | default slice -}}
+  {{- $item := dict "name" .org "position" .position "startDate" .start -}}
+  {{- $summary := delimit $highlights " " -}}
+  {{- if $summary }}{{ $item = merge $item (dict "summary" $summary) }}{{ end -}}
+  {{- with index . "end" }}{{ $item = merge $item (dict "endDate" .) }}{{ end -}}
+  {{- with .url }}{{ $item = merge $item (dict "url" .) }}{{ end -}}
+  {{- if gt (len $highlights) 0 }}{{ $item = merge $item (dict "highlights" $highlights) }}{{ end -}}
+  {{- $work = $work | append $item -}}
+{{- end -}}
+{{- $education := slice -}}
+{{- range $p.education -}}
+  {{- $education = $education | append (dict "institution" .institution "area" .area "studyType" .study_type) -}}
+{{- end -}}
+{{- $projects := slice -}}
+{{- range $p.projects -}}
+  {{- $item := dict "name" .name "description" .summary "keywords" (slice .label) -}}
+  {{- with .url }}{{ $item = merge $item (dict "url" .) }}{{ end -}}
+  {{- with .note }}{{ $item = merge $item (dict "description" (printf "%s %s" (index $item "description") .)) }}{{ end -}}
+  {{- $projects = $projects | append $item -}}
+{{- end -}}
+{{- $profiles := slice
+  (dict "network" "LinkedIn" "username" $p.links.linkedin_username "url" $p.links.linkedin)
+  (dict "network" "GitHub" "username" $p.links.github_username "url" $p.links.github)
+-}}
+{{- $basics := dict
+  "name" $p.name
+  "label" $p.job_title
+  "image" ($p.photo | absURL)
+  "email" $p.email
+  "url" $p.url
+  "summary" $p.summary
+  "profiles" $profiles
+-}}
+{{- $skills := slice (dict "name" "Machine learning" "keywords" $p.knows_about) -}}
+{{- $resume := dict
+  "$schema" "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
+  "basics" $basics
+  "work" $work
+  "education" $education
+  "projects" $projects
+  "skills" $skills
+-}}
+{{- $resume | jsonify (dict "indent" "  ") -}}

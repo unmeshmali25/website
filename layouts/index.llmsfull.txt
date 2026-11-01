@@ -1,0 +1,65 @@
+{{- $p := site.Data.profile -}}
+# {{ $p.name }}
+
+> {{ $p.summary }}
+
+{{ $p.job_title }} at {{ $p.employer }}. {{ $p.experience }} of experience. Interests include {{ $p.interests_line }}.
+
+{{- range $p.intro }}
+
+{{ . | strings.TrimSpace }}
+{{- end }}
+
+## Work
+
+{{- range $p.work }}
+- {{ .position }}, {{ .org }} ({{ .display }}){{ with .highlights }} {{ delimit . " " }}{{ end }}
+{{- end }}
+
+## Education
+
+{{- range $p.education }}
+- {{ .credential }}, {{ .institution }}
+{{- end }}
+
+## Projects
+
+{{ $p.projects_disclaimer }}
+
+{{- range $p.projects }}
+- {{ .name }} ({{ .label }}){{ with .url }}: {{ . }}{{ end }}
+  {{ .summary }}{{ with .note }} {{ . }}{{ end }}
+{{- end }}
+
+## Links
+
+- Homepage: {{ $p.url }}
+- Writing: {{ "writing/" | absURL }}
+- About: {{ "about/" | absURL }}
+- Now: {{ "now/" | absURL }}
+- Projects: {{ "projects/" | absURL }}
+- Resume JSON: {{ "resume.json" | absURL }}
+- RSS: {{ "index.xml" | absURL }}
+- LinkedIn: {{ $p.links.linkedin }}
+- GitHub: {{ $p.links.github }}
+- Email: {{ $p.email }}
+
+{{- range $p.writing_sections }}
+{{- $label := .heading }}
+{{- with site.GetPage .path }}
+{{- range .RegularPages.ByDate.Reverse }}
+
+---
+
+# {{ .Title }}
+
+Section: {{ $label }}
+URL: {{ .Permalink }}
+{{- if not .Date.IsZero }}
+Date: {{ .Date.Format "2006-01-02" }}
+{{- end }}
+
+{{ .RawContent }}
+{{- end }}
+{{- end }}
+{{- end }}
