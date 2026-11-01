@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{- $p := site.Data.profile -}}
+<h1>{{ .Title }}</h1>
+<p>{{ $p.name }} is a {{ $p.job_title }} at <a href="{{ $p.employer_url }}">{{ $p.employer }}</a>, with {{ $p.experience }} of experience.</p>
+<h2>Work</h2>
+{{- range $p.work }}
+<p><strong>{{ .position }}, {{ .org }}</strong> ({{ .display }}){{ with .highlights }} {{ delimit . " " }}{{ end }}</p>
+{{- end }}
+<h2>Education</h2>
+{{- range $p.education }}
+<p>{{ .credential }}, {{ .institution }}</p>
+{{- end }}
+<p>Interests include {{ $p.interests_line }}.</p>
+<p><a href="{{ "/now/" | relURL }}">Now</a> · <a href="{{ "/projects/" | relURL }}">Projects</a> · <a href="{{ "/writing/" | relURL }}">Writing</a> · <a href="{{ $p.links.linkedin }}">Resume / LinkedIn</a> · <a href="{{ $p.links.github }}">GitHub</a> · <a href="mailto:{{ $p.email }}">{{ $p.email }}</a></p>
+{{ end }}

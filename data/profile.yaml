@@ -1,0 +1,159 @@
+name: Unmesh Mali
+site_title: Unmesh Mali, Senior Machine Learning Engineer
+job_title: Senior Machine Learning Engineer
+employer: CVS Health
+employer_url: https://www.cvshealth.com/
+url: https://unmeshm.com/
+email: unmeshmali@gmail.com
+photo: /images/photo.webp
+og_image: /images/og.jpg
+tagline: Senior Machine Learning Engineer at CVS Health
+description: Unmesh Mali, Senior Machine Learning Engineer at CVS Health.
+summary: >-
+  Unmesh Mali is a Senior Machine Learning Engineer at CVS Health with 7+
+  years of experience. He is on the team behind CVS's personalized offer
+  engines, which send 1B+ offers a week. He built the MLOps platform that
+  cut model deployment from 4 weeks to 2 days and co-developed the ML models
+  and optimization that decide which offers each customer gets.
+experience: 7+ years
+updated: 2026-11-01
+updated_display: November 1, 2026
+interests_line: MLOps and ML platforms, recommender systems, and evaluating LLM applications
+knows_about:
+  - MLOps
+  - ML platforms
+  - recommender systems
+  - evaluating LLM applications
+projects_disclaimer: These are personal projects and bootcamp exercises. None of them are production systems.
+
+links:
+  linkedin: https://www.linkedin.com/in/unmesh-mali
+  linkedin_username: unmesh-mali
+  github: https://github.com/unmeshmali25
+  github_username: unmeshmali25
+  evals: https://maven.com/parlance-labs/evals
+
+nav:
+  - name: Writing
+    url: /writing/
+  - name: About
+    url: /about/
+  - name: GitHub
+    url: https://github.com/unmeshmali25
+
+page_descriptions:
+  about: Work history and education of Unmesh Mali, Senior Machine Learning Engineer at CVS Health.
+  now: What Unmesh Mali is doing now at CVS Health, the AI Evals course, and current side projects.
+  projects: Personal projects and bootcamp exercises by Unmesh Mali. Not production systems.
+  writing: Technical essays, build log, and personal weekly posts by Unmesh Mali.
+
+intro:
+  - |
+    Hi! I'm Unmesh. I'm a Senior Machine Learning Engineer at [CVS Health](https://www.cvshealth.com/), on the team behind CVS's personalized offer engines, which send 1B+ offers a week. I built the MLOps platform that cut model deployment from 4 weeks to 2 days, and I co-developed the ML models and optimization that decide which offers each customer gets.
+  - |
+    Before that, I built time-series forecasting and optimization for behind-the-meter battery storage at Sunverge and Rivian. At Sunverge, smarter charge and discharge scheduling for batteries saved utilities across the US hundreds of thousands of dollars. I started out verifying Green-e renewable energy and working on commercial solar. My interests include MLOps and ML platforms, recommender systems, and evaluating LLM applications.
+  - |
+    Right now I'm taking [AI Evals for Engineers and PMs](https://maven.com/parlance-labs/evals). Outside work, I built [a retail app with a 372-persona shopping simulation](https://github.com/unmeshmali25/voice-stt-powered-application), [a retail ML platform](https://github.com/unmeshmali25/deepmlhub), and [a LoRA fine-tune of Qwen2.5-1.5B](https://github.com/unmeshmali25/deepmlhub/tree/main/projects/llm-retard-lab).
+
+homepage_lists:
+  - heading: Writing
+    path: /posts/essays
+    count: 3
+  - heading: Build log
+    path: /posts/micro-blogs
+    count: 2
+
+writing_sections:
+  - heading: Technical
+    description: Technical essays
+    path: /posts/essays
+  - heading: Build log
+    description: Micro-blogs
+    path: /posts/micro-blogs
+  - heading: Personal
+    description: Weekly posts
+    path: /posts/weekly
+
+course:
+  name: AI Evals for Engineers and PMs
+  provider: Parlance Labs
+  url: https://maven.com/parlance-labs/evals
+  display: Oct 10 – Nov 21, 2026
+
+work:
+  - position: Senior Machine Learning Engineer
+    org: CVS Health
+    url: https://www.cvshealth.com/
+    start: "2022-10"
+    display: Oct 2022–present
+    highlights:
+      - On the team behind the personalized offer engines, which send 1B+ offers a week.
+      - Built the MLOps platform that cut model deployment from 4 weeks to 2 days.
+      - Co-developed the ML models and optimization that decide which offers each customer gets.
+  - position: Senior Algorithms Engineer
+    org: Rivian
+    start: "2022-02"
+    end: "2022-09"
+    display: Feb–Sep 2022
+  - position: Data Analyst and Algorithms Engineer
+    org: Sunverge Energy
+    start: "2019-10"
+    end: "2022-02"
+    display: Oct 2019–Feb 2022
+    highlights:
+      - Time-series forecasting and optimization for behind-the-meter battery storage.
+      - Smarter charge and discharge scheduling for batteries saved utilities across the US hundreds of thousands of dollars.
+  - position: Project Assistant
+    org: Staten Solar
+    start: "2018-12"
+    end: "2019-07"
+    display: Dec 2018–Jul 2019
+  - position: Green-e Verification Associate
+    org: Center for Resource Solutions
+    start: "2018-06"
+    end: "2018-10"
+    display: Jun–Oct 2018
+    highlights:
+      - Verified 15M+ MWh of Green-e renewable energy.
+
+education:
+  - study_type: M.S.
+    area: Energy Systems Management
+    institution: University of San Francisco
+    credential: M.S. Energy Systems Management
+  - study_type: Bachelor of Engineering
+    area: Electronics and Telecommunications Engineering
+    institution: Fr. Conceicao Rodrigues College of Engineering
+    credential: Bachelor of Engineering, Electronics and Telecommunications Engineering
+
+projects:
+  - name: AI retail app and 372-persona shopping simulation
+    label: personal
+    current: true
+    url: https://github.com/unmeshmali25/voice-stt-powered-application
+    summary: A retail app plus a LangGraph simulation of 372 shopping personas. It generated 2.1M rows and 3+ years of simulated shopping data in 2 weeks.
+  - name: Retail ML platform
+    label: personal
+    current: true
+    url: https://github.com/unmeshmali25/deepmlhub
+    summary: A retail machine-learning platform using Supabase, dbt, Feast, DVC, MLflow, and Terraform.
+  - name: "LLM post-training: Qwen2.5-1.5B LoRA SFT"
+    label: personal
+    current: true
+    url: https://github.com/unmeshmali25/deepmlhub/tree/main/projects/llm-retard-lab
+    summary: LoRA supervised fine-tune of Qwen2.5-1.5B on synthetic retail customer-service data (496 train / 30 held-out). Three adapter iterations beat the prompted base model on a custom rubric. Only stage 1 of 5 of the planned pipeline is done.
+  - name: Support-agent evaluation pipeline
+    label: bootcamp
+    current: true
+    summary: Evaluation pipeline for a support agent, built with the OpenAI Agents SDK, an LLM-as-judge, Langfuse and OpenTelemetry tracing, and CI regression tests.
+    note: The repository is private until after November 21, 2026.
+  - name: Advanced RAG
+    label: personal
+    current: false
+    url: https://github.com/unmeshmali25/Building_and_Evaluating_Advanced_RAG
+    summary: Advanced RAG with LlamaIndex and TruLens evaluations.
+  - name: FourthBrain Ibotta fraud-detection capstone
+    label: bootcamp
+    current: false
+    url: https://github.com/tfranza/ibotta_fraud
+    summary: 2021 team capstone on Ibotta fraud detection. Best Project award.

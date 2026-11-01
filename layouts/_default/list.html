@@ -1,16 +1,16 @@
 {{ define "main" }}
-  <header class="page-header">
-    <h1>{{ .Title }}</h1>
-  </header>
-  <div class="posts-list">
-    {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
-    {{ range $paginator.Pages }}
-    <div class="post-item">
-      {{ if not (in .RelPermalink "/weekly/") }}
-      <span class="post-date">{{ .Date.Format "Jan 2 2006" }}</span>
-      {{ end }}
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </div>
-    {{ end }}
-  </div>
+<h1>{{ .Title }}</h1>
+{{ with .Content }}{{ . }}{{ end }}
+{{- $pages := .Pages -}}
+{{- if eq .Kind "section" -}}
+  {{- $nested := .RegularPagesRecursive -}}
+  {{- if gt (len $nested) 0 }}{{ $pages = $nested }}{{ end -}}
+{{- end -}}
+{{- $paginator := .Paginate ($pages.ByDate.Reverse) -}}
+<ul>
+  {{- range $paginator.Pages }}
+  <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ if and (not .Date.IsZero) (eq .Kind "page") }} <span class="when">{{ .Date.Format "Jan 2, 2006" }}</span>{{ end }}</li>
+  {{- end }}
+</ul>
+{{ template "_internal/pagination.html" . }}
 {{ end }}

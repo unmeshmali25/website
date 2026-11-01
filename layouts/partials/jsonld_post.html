@@ -1,0 +1,29 @@
+{{- $p := site.Data.profile -}}
+{{- $desc := .Plain | replaceRE `\s+` " " | strings.TrimSpace | truncate 300 -}}
+{{- $sectionName := "Writing" -}}
+{{- if in .RelPermalink "/essays/" }}{{ $sectionName = "Technical" }}{{ end -}}
+{{- if in .RelPermalink "/micro-blogs/" }}{{ $sectionName = "Build log" }}{{ end -}}
+{{- if in .RelPermalink "/weekly/" }}{{ $sectionName = "Personal" }}{{ end -}}
+{{- $post := dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "headline" .Title
+  "description" $desc
+  "url" .Permalink
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  "author" (dict "@type" "Person" "name" $p.name "url" $p.url)
+  "image" ($p.og_image | absURL)
+  "articleSection" $sectionName
+-}}
+{{- if not .Date.IsZero -}}
+  {{- $post = merge $post (dict "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- with .Lastmod -}}
+    {{- if not .IsZero -}}
+      {{- $post = merge $post (dict "dateModified" (.Format "2006-01-02T15:04:05Z07:00")) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- with .Params.tags -}}
+  {{- $post = merge $post (dict "keywords" .) -}}
+{{- end -}}
+<script type="application/ld+json">{{ $post | jsonify | safeJS }}</script>

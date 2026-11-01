@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{- $p := site.Data.profile -}}
+<h1>{{ .Title }}</h1>
+<p>{{ $p.projects_disclaimer }}</p>
+{{- range $p.projects }}
+<h2>{{ .name }} <span class="when">({{ .label }})</span></h2>
+<p>{{ .summary }}</p>
+{{- if .url }}
+<p><a href="{{ .url }}">GitHub</a></p>
+{{- else if .note }}
+<p>{{ .note }}</p>
+{{- end }}
+{{- end }}
+{{ end }}

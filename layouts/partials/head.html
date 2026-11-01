@@ -1,0 +1,54 @@
+{{- $p := site.Data.profile -}}
+{{- $title := printf "%s · %s" .Title $p.name -}}
+{{- if .IsHome }}{{ $title = $p.site_title }}{{ end -}}
+{{- $desc := $p.description -}}
+{{- if not .IsHome -}}
+  {{- $rel := .RelPermalink -}}
+  {{- if or (eq $rel "/about/") (eq $rel "/about") -}}
+    {{- $desc = $p.page_descriptions.about -}}
+  {{- else if or (eq $rel "/now/") (eq $rel "/now") -}}
+    {{- $desc = $p.page_descriptions.now -}}
+  {{- else if or (eq $rel "/projects/") (eq $rel "/projects") -}}
+    {{- $desc = $p.page_descriptions.projects -}}
+  {{- else if or (hasPrefix $rel "/writing") (hasPrefix $rel "/blogs") -}}
+    {{- $desc = $p.page_descriptions.writing -}}
+  {{- else if .Description -}}
+    {{- $desc = .Description -}}
+  {{- else if and .IsPage .File (hasPrefix .File.Path "posts/") -}}
+    {{- $plain := .Plain | replaceRE `\s+` " " | strings.TrimSpace -}}
+    {{- if gt (len $plain) 1 }}{{ $desc = $plain | truncate 160 }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $desc = $desc | replaceRE `\s+` " " | strings.TrimSpace -}}
+{{- $canon := .Permalink -}}
+{{- with .Params.canonical }}{{ $canon = . | absURL }}{{ end -}}
+{{- $og := $p.og_image | absURL -}}
+{{- $isPost := false -}}
+{{- if and .IsPage .File -}}
+  {{- if hasPrefix .File.Path "posts/" }}{{ $isPost = true }}{{ end -}}
+{{- end -}}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ $p.name }}">
+<link rel="canonical" href="{{ $canon }}">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ $canon }}">
+<meta property="og:site_name" content="{{ $p.name }}">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="{{ if $isPost }}article{{ else }}website{{ end }}">
+<meta property="og:image" content="{{ $og }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ $p.site_title }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $og }}">
+{{- with .OutputFormats.Get "rss" }}
+<link rel="alternate" type="application/rss+xml" title="{{ $p.name }}" href="{{ .Permalink }}">
+{{- end }}
+{{- if .IsHome }}{{ partial "jsonld_person.html" . }}{{ end }}
+{{- if $isPost }}{{ partial "jsonld_post.html" . }}{{ end }}
+{{- partial "style.html" . -}}

@@ -1,0 +1,9 @@
+{{- $p := site.Data.profile -}}
+<nav>
+  <a class="t" href="{{ "/" | relURL }}">{{ $p.name }}</a>
+  <span>
+    {{- range $p.nav }}
+    <a href="{{ .url }}">{{ .name }}</a>
+    {{- end }}
+  </span>
+</nav>

@@ -1,0 +1,52 @@
+{{- $p := site.Data.profile -}}
+# {{ $p.name }}
+
+> {{ $p.summary }}
+
+{{ $p.job_title }} at {{ $p.employer }}. {{ $p.experience }} of experience.
+
+{{- range $p.intro }}
+
+{{ . | strings.TrimSpace }}
+{{- end }}
+
+## Links
+
+- [Homepage]({{ $p.url }})
+- [Writing]({{ "writing/" | absURL }})
+- [About]({{ "about/" | absURL }})
+- [Now]({{ "now/" | absURL }})
+- [Projects]({{ "projects/" | absURL }})
+- [Resume JSON]({{ "resume.json" | absURL }})
+- [RSS]({{ "index.xml" | absURL }})
+- [Full text for language models]({{ "llms-full.txt" | absURL }})
+- [LinkedIn]({{ $p.links.linkedin }})
+- [GitHub]({{ $p.links.github }})
+- Email: {{ $p.email }}
+
+## Now
+
+- {{ $p.job_title }} at {{ $p.employer }}
+- Taking {{ $p.course.name }} ({{ $p.course.provider }}, {{ $p.course.display }}): {{ $p.course.url }}
+- Last updated {{ $p.updated_display }}
+
+## Projects
+
+{{ $p.projects_disclaimer }}
+
+{{- range $p.projects }}
+- {{ .name }} ({{ .label }}){{ with .url }}: {{ . }}{{ end }}
+  {{ .summary }}{{ with .note }} {{ . }}{{ end }}
+{{- end }}
+
+{{- range $p.writing_sections }}
+
+## {{ .heading }}
+
+{{ .description }}
+{{- with site.GetPage .path }}
+{{- range .RegularPages.ByDate.Reverse }}
+- [{{ .Title }}]({{ .Permalink }}){{ if not .Date.IsZero }} ({{ .Date.Format "2006-01-02" }}){{ end }}
+{{- end }}
+{{- end }}
+{{- end }}
